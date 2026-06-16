@@ -11,7 +11,7 @@ Stack utilizada no projeto, separando frontend, backend e banco de dados;
 ### frontend
 HTML, CSS, JS
 ### backend
-lorem ipsum
+Python
 ### banco de dados
 MySql
 
