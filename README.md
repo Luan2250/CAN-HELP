@@ -1,7 +1,7 @@
 # CAN-HELP
 # Alunos
 Luan Felipe da SIlva Santos  22501630|
-Cauã Albano de sousa kamei  22501193 |
+Cauã Albano de Sousa Kamei  22501193 |
 Julia Maria Dutra de Souza  22502521 |
 Miguel David Comini Ramos  22502785 |
 Vinicius Veiga Freitas  22401504 |
