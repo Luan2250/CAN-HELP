@@ -8,4 +8,5 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    teste so que ahora eu loguei
+    
+# vou fazer o crud
