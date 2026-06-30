@@ -7,11 +7,11 @@ Miguel David Comini Ramos  22502785 |
 Vinicius Veiga Freitas  22401504 |
 
 # Stack utilizada no projeto
-Stack utilizada no projeto, separando frontend, backend e banco de dados;
+Flask, html/css + JS, MySql
 ### frontend
 HTML, CSS, JS
 ### backend
-Python
+Flask
 ### banco de dados
 MySql
 
@@ -20,3 +20,4 @@ Aplicativo que conecta pessoas que necessitam de assistência a cuidadores quali
 
 # Instruções básicas para executar o projeto, quando aplicável.
 lorem ipsum
+lorem
