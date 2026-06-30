@@ -20,3 +20,4 @@ Aplicativo que conecta pessoas que necessitam de assistência a cuidadores quali
 
 # Instruções básicas para executar o projeto, quando aplicável.
 lorem ipsum
+lorem
