@@ -126,3 +126,5 @@ CREATE TABLE ItensContratacao(
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
+
+
