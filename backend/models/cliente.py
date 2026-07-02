@@ -1,8 +1,6 @@
 from extensions import db
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
-class cliente(db.Model): 
-    __tablename__ = 'Cliente'
+class Cliente(db.Model): 
+    __tablename__ = 'cliente'
 
     idUsuario = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), primary_key=True)
 

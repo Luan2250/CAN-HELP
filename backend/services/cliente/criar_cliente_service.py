@@ -12,3 +12,9 @@ class CriarClienteService:
         novo_cliente.salvar()
         
         return novo_cliente
+
+
+class ListarClienteService:
+    @staticmethod
+    def executar():
+        return Cliente.listar_todos()

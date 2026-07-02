@@ -80,14 +80,14 @@ tem CORS habilitado para aceitar as chamadas do frontend.
 |---|---|---|
 | Usuario | `Usuario` | ✅ CRUD completo |
 | Perfil | `Perfil` | ✅ CRUD completo |
-| Cliente | `Cliente` | ⏳ pendente |
-| Cuidador | `Cuidador` | ⏳ pendente |
-| Avaliacoes | `Avaliacoes` | ⏳ pendente |
-| Denuncias | `Denuncias` | ⏳ pendente |
-| ListaServicos | `ListaServicos` | ⏳ pendente |
-| Contrato | `Contrato` | ⏳ pendente |
-| Agenda | `Agenda` | ⏳ pendente |
-| Tarefa | `Tarefa` | ⏳ pendente |
+| Cliente | `Cliente` | ✅ ..|
+| Cuidador | `Cuidador` | ✅..  |
+| Avaliacoes | `Avaliacoes` | ⏳ |
+| Denuncias | `Denuncias` | ⏳  |
+| ListaServicos | `ListaServicos` | ⏳  |
+| Contrato | `Contrato` | ✅ .. |
+| Agenda | `Agenda` | ⏳  |
+| Tarefa | `Tarefa` | ⏳  |
 
 ## Funcionalidades implementadas
 
@@ -213,16 +213,7 @@ buscam os dados chamando a API na porta 5000.
 | `/usuarios` | Lista, cadastra, edita e exclui usuários |
 | `/perfis` | Lista, cadastra, edita e exclui perfis |
 
-## Próximos passos
 
-Repetir o mesmo padrão de camadas (Model → Service → Controller → Rota → Tela) para as
-demais entidades da modelagem de domínio: `Cliente`, `Cuidador`, `Avaliacoes`,
-`Denuncias`, `ListaServicos`, `Contrato`, `ItensContrato`, `Agenda` e `Tarefa`.
-
-Cada funcionalidade nova deve ter, igual às já feitas:
-```
-Tela no frontend + Rota na API + Controller + Service + Model + Persistência no banco
-```
 
 
 

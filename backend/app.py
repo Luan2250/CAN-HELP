@@ -4,6 +4,9 @@ from flask_cors import CORS
 from extensions import db
 from controllers.usuario_routes import usuario_bp
 from controllers.perfil_routes import perfil_bp
+from controllers.cliente_routes import cliente_bp
+from controllers.cuidador_routes import cuidador_bp
+from controllers.contrato_routes import contrato_bp
 
 app = Flask(__name__)
 
@@ -19,7 +22,9 @@ CORS(app)
 # Registra as rotas de usuário no Flask pra que elas fiquem disponíveis na aplicação, lembrar que ta importando (la em cima) o usuario_bp do arquivo usuario_routes.py por exemplo. E tem que colocar de todas models
 app.register_blueprint(usuario_bp)
 app.register_blueprint(perfil_bp)
- 
+app.register_blueprint(cliente_bp)
+app.register_blueprint(cuidador_bp)
+app.register_blueprint(contrato_bp)
  
 @app.route("/")
 def status():
