@@ -95,34 +95,67 @@ CREATE TABLE ListaServicos(
 ) ENGINE=InnoDB;
 INSERT INTO ListaServicos (tipoServico) VALUES ('Transporte'), ('Banho'), ('Alimentação'), ('Compras'), ('Medicação'), ('Companhia');
 
-CREATE TABLE Contratacao(
-    idContratacao INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Contrato(
+	idContrato INT AUTO_INCREMENT PRIMARY KEY,
     idCliente INT NOT NULL,
     idCuidador INT NOT NULL,
-    dataContratacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    dataContrato TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     dataAtendimento DATE NOT NULL,
     localizacao VARCHAR(160) NOT NULL,
     nomeAuxiliado VARCHAR(80) NOT NULL,
-    statusContratacao ENUM('pendente', 'aceito', 'recusado', 'cancelado_cliente', 'cancelado_cuidador', 'concluido') DEFAULT 'pendente',
+    statusContrato ENUM('pendente', 'aceito', 'recusado', 'cancelado_cliente', 'cancelado_cuidador', 'concluido') DEFAULT 'pendente',
     valorFinal DECIMAL(10,2) NOT NULL,
     
-    CONSTRAINT fkContratacaoCliente FOREIGN KEY (idCliente) REFERENCES Cliente(idUsuario) ON DELETE CASCADE,
-    CONSTRAINT fkContratacaoCuidador FOREIGN KEY (idCuidador) REFERENCES Cuidador(idUsuario) ON DELETE CASCADE
+    CONSTRAINT fkContratoCliente 
+    FOREIGN KEY (idCliente) 
+    REFERENCES Cliente(idUsuario) 
+    ON DELETE CASCADE,
+    CONSTRAINT fkContratoCuidador 
+    FOREIGN KEY (idCuidador) 
+    REFERENCES Cuidador(idUsuario) 
+    ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- Perguntar p Bernardo 
-CREATE TABLE ItensContratacao(
-	idContratacao INT NOT NULL,
+CREATE TABLE ItensContrato(
+	idContrato INT NOT NULL,
     idServico INT NOT NULL,
-    PRIMARY KEY (idContratacao, idServico),
+    PRIMARY KEY (idContrato, idServico),
     
-    CONSTRAINT fkContratacao 
-    FOREIGN KEY (idContratacao) 
-    REFERENCES Contratacao(idContratacao) 
+    CONSTRAINT fkContrato 
+    FOREIGN KEY (idContrato) 
+    REFERENCES Contrato(idContrato) 
     ON DELETE CASCADE,
     CONSTRAINT fkItensServico 
     FOREIGN KEY (idServico) 
     REFERENCES ListaServicos(idServico) 
+    ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE Agenda(
+	idAgenda INT AUTO_INCREMENT PRIMARY KEY,
+    idContrato INT NOT NULL,
+    dataAgenda DATE NOT NULL,
+    horaAgenda TIME NOT NULL,
+    ocasiao VARCHAR(100) NOT NULL,
+    notificacao BOOLEAN DEFAULT TRUE,
+    
+    CONSTRAINT fkAgendaContrato
+    FOREIGN KEY (idContrato)
+    REFERENCES Contrato(idContrato)
+    ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE Tarefa(
+	idTarefa INT AUTO_INCREMENT PRIMARY KEY,
+    idAgenda INT NOT NULL,
+    descricao TEXT NOT NULL, 
+    horaTarefa TIME NOT NULL,
+    notificacao BOOLEAN DEFAULT TRUE,
+    statusTarefa ENUM('pendente', 'concluida') DEFAULT 'pendente',
+    
+    CONSTRAINT fkTarefaAgenda
+    FOREIGN KEY (idAgenda)
+    REFERENCES Agenda(idAgenda)
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 

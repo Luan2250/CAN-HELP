@@ -1,5 +1,5 @@
 from extensions import db
-class usuario(db.Model): 
+class Usuario(db.Model): 
     __tablename__='usuario'
 
     idUsuario = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
@@ -35,21 +35,21 @@ class usuario(db.Model):
     # 4. READ ALL
     @staticmethod
     def listar_todos():
-        return usuario.query.all()
+        return Usuario.query.all()
 
     # 5. busca por id
     @staticmethod
     def buscar_por_id(id_usuario):
-        return usuario.query.get(id_usuario)
+        return Usuario.query.get(id_usuario)
 
     # 6. OPERAÇÃO EXTRA INTERESSANTE: Buscar por CPF ou Email
     @staticmethod
     def buscar_por_cpf(cpf):
-        return usuario.query.filter_by(cpf=cpf).first()
+        return Usuario.query.filter_by(cpf=cpf).first()
 
     @staticmethod
     def buscar_por_email(email):
-        return usuario.query.filter_by(email=email).first()
+        return Usuario.query.filter_by(email=email).first()
     
     def to_dict(self):
         return {
