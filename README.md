@@ -213,16 +213,7 @@ buscam os dados chamando a API na porta 5000.
 | `/usuarios` | Lista, cadastra, edita e exclui usuários |
 | `/perfis` | Lista, cadastra, edita e exclui perfis |
 
-## Próximos passos
 
-Repetir o mesmo padrão de camadas (Model → Service → Controller → Rota → Tela) para as
-demais entidades da modelagem de domínio: `Cliente`, `Cuidador`, `Avaliacoes`,
-`Denuncias`, `ListaServicos`, `Contrato`, `ItensContrato`, `Agenda` e `Tarefa`.
-
-Cada funcionalidade nova deve ter, igual às já feitas:
-```
-Tela no frontend + Rota na API + Controller + Service + Model + Persistência no banco
-```
 
 
 
