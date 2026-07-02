@@ -5,7 +5,7 @@ class CriarPerfilService:
     @staticmethod
     def executar(dados):
         novo_perfil = Perfil(
-            idUsuario=dados.get('idUsuario'), # Vincula ao ID do usuário que já existe
+            idUsuario=dados.get('idUsuario'),
             fotoURL=dados.get('fotoURL'),
             nome=dados.get('nome'),
             bio=dados.get('bio'),
@@ -14,9 +14,3 @@ class CriarPerfilService:
         )
         novo_perfil.salvar()
         return novo_perfil
-        from models.perfil import Perfil
-
-class ListarPerfilService:
-    @staticmethod
-    def executar():
-        return Perfil.listar_todos()
