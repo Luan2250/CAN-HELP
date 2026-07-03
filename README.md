@@ -80,12 +80,12 @@ tem CORS habilitado para aceitar as chamadas do frontend.
 |---|---|---|
 | Usuario | `Usuario` | ✅ CRUD completo |
 | Perfil | `Perfil` | ✅ CRUD completo |
-| Cliente | `Cliente` | ✅ ..|
-| Cuidador | `Cuidador` | ✅..  |
+| Cliente | `Cliente` | ✅ CRUD completo|
+| Cuidador | `Cuidador` | ✅CRUD completo |
 | Avaliacoes | `Avaliacoes` | ⏳ |
 | Denuncias | `Denuncias` | ⏳  |
 | ListaServicos | `ListaServicos` | ⏳  |
-| Contrato | `Contrato` | ✅ .. |
+| Contrato | `Contrato` | ✅ CRUD completo |
 | Agenda | `Agenda` | ⏳  |
 | Tarefa | `Tarefa` | ⏳  |
 
