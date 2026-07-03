@@ -5,6 +5,7 @@ class CriarCuidadorService:
     @staticmethod
     def executar(dados):
         novo_cuidador = Cuidador(
+            idUsuario=dados.get('idUsuario'),
             certificado=dados.get('certificado'),
             orgaoEmissor=dados.get('orgaoEmissor'),
             valorServico=dados.get('valorServico', 0.00),

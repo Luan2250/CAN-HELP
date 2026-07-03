@@ -21,6 +21,21 @@ def tela_perfis():
     return render_template("perfis.html", active="perfis")
 
 
+@app.route("/clientes")
+def tela_clientes():
+    return render_template("clientes.html", active="clientes")
+
+
+@app.route("/cuidadores")
+def tela_cuidadores():
+    return render_template("cuidadores.html", active="cuidadores")
+
+
+@app.route("/contratos")
+def tela_contratos():
+    return render_template("contratos.html", active="contratos")
+
+
 if __name__ == "__main__":
     # Porta diferente do backend (que roda na 5000) para não haver conflito.
     app.run(debug=True, port=5001)

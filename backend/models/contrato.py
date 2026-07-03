@@ -3,7 +3,7 @@ from extensions import db
 class Contrato(db.Model):
     __tablename__ = 'Contrato'
     idContrato = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    idCliente = db.Column(db.Integer, db.ForeignKey('Cliente.idUsuario', ondelete='CASCADE'), nullable=False)
+    idCliente = db.Column(db.Integer, db.ForeignKey('cliente.idUsuario', ondelete='CASCADE'), nullable=False)
     idCuidador = db.Column(db.Integer, db.ForeignKey('Cuidador.idUsuario', ondelete='CASCADE'), nullable=False)
     dataContrato = db.Column(db.DateTime, default=datetime.utcnow)
     dataAtendimento = db.Column(db.Date, nullable=False)

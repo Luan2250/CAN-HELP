@@ -2,7 +2,7 @@ from extensions import db
 class Cuidador(db.Model):
     __tablename__ = 'Cuidador'
 
-    idUsuario = db.Column(db.Integer, db.ForeignKey('Usuario.idUsuario', ondelete='CASCADE'), primary_key=True)
+    idUsuario = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), primary_key=True)
     certificado = db.Column(db.String(30), nullable=False, unique=True)
     orgaoEmissor = db.Column(db.String(40), nullable=False)
     valorServico = db.Column(db.Numeric(10, 2), nullable=False, default=0.00)
@@ -42,11 +42,11 @@ class Cuidador(db.Model):
         return Cuidador.query.filter_by(certificado=certificado).first()
 
     
-def to_dict(self):
-    return {
-        'idUsuario': self.idUsuario,
-        'certificado': self.certificado,
-        'orgaoEmissor': self.orgaoEmissor,
-        'valorServico': float(self.valorServico) if self.valorServico is not None else 0.00,
-        'disponibilidade': self.disponibilidade
-    }
+    def to_dict(self):
+        return {
+            'idUsuario': self.idUsuario,
+            'certificado': self.certificado,
+            'orgaoEmissor': self.orgaoEmissor,
+            'valorServico': float(self.valorServico) if self.valorServico is not None else 0.00,
+            'disponibilidade': self.disponibilidade
+        }

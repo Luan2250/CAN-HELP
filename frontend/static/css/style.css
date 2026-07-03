@@ -54,16 +54,14 @@ h1, h2 {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: #263B43;
-  color: #5DD1E9;
+  background: var(--teal);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 1em;
-  text-decoration: none;
-
+  font-size: 0.85rem;
 }
 .brand-name {
   font-family: 'Poppins', sans-serif;
@@ -96,6 +94,12 @@ h1, h2 {
   font-size: 0.72rem;
   font-weight: 600;
   color: var(--teal);
+}
+
+.hint {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: -8px 0 20px;
 }
 
 .hero { padding: 40px 0 8px; max-width: 620px; }
@@ -197,7 +201,7 @@ h1, h2 {
   color: var(--ink-soft);
   margin-top: 14px;
 }
-.modal input, .modal textarea {
+.modal input, .modal textarea, .modal select {
   width: 100%;
   margin-top: 6px;
   padding: 10px 12px;
@@ -208,7 +212,7 @@ h1, h2 {
   color: var(--ink);
   background: #FBFDFC;
 }
-.modal input:focus, .modal textarea:focus {
+.modal input:focus, .modal textarea:focus, .modal select:focus {
   outline: none;
   border-color: var(--teal);
   box-shadow: 0 0 0 3px rgba(15, 107, 92, 0.12);

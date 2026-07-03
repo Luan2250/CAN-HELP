@@ -18,6 +18,9 @@
       <nav class="nav">
         <a href="{{ url_for('tela_usuarios') }}" class="nav-link {% if active == 'usuarios' %}active{% endif %}">Usuários</a>
         <a href="{{ url_for('tela_perfis') }}" class="nav-link {% if active == 'perfis' %}active{% endif %}">Perfis</a>
+        <a href="{{ url_for('tela_clientes') }}" class="nav-link {% if active == 'clientes' %}active{% endif %}">Clientes</a>
+        <a href="{{ url_for('tela_cuidadores') }}" class="nav-link {% if active == 'cuidadores' %}active{% endif %}">Cuidadores</a>
+        <a href="{{ url_for('tela_contratos') }}" class="nav-link {% if active == 'contratos' %}active{% endif %}">Contratos</a>
       </nav>
     </div>
   </header>

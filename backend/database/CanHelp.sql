@@ -159,5 +159,9 @@ CREATE TABLE Tarefa(
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
+SELECT idUsuario FROM Usuario;
 
-
+INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
+VALUES ('12345678901', 'Rua das Flores, 123 - Centro', '11999998888', 'usuario@email.com', '1995-05-15', 'senha_criptografada_aqui');
+INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
+VALUES ('98765432100', 'Avenida Paulista, 1000 - Bela Vista', '21988887777', 'contato@email.com', '1988-10-25', 'outra_senha_segura');
