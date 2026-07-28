@@ -145,19 +145,17 @@ CREATE TABLE Agenda(
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-CREATE TABLE Tarefa(
-	idTarefa INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Tarefa (
+    idTarefa INT AUTO_INCREMENT PRIMARY KEY,
     idAgenda INT NOT NULL,
-    descricao TEXT NOT NULL, 
+    descricao TEXT NOT NULL,
     horaTarefa TIME NOT NULL,
     notificacao BOOLEAN DEFAULT TRUE,
     statusTarefa ENUM('pendente', 'concluida') DEFAULT 'pendente',
-    
-    CONSTRAINT fkTarefaAgenda
-    FOREIGN KEY (idAgenda)
-    REFERENCES Agenda(idAgenda)
-    ON DELETE CASCADE
-) ENGINE=InnoDB;
+    CONSTRAINT fkTarefaAgenda FOREIGN KEY (idAgenda)
+        REFERENCES Agenda (idAgenda)
+        ON DELETE CASCADE
+)  ENGINE=INNODB;
 
 SELECT idUsuario FROM Usuario;
 
@@ -165,3 +163,5 @@ INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha)
 VALUES ('12345678901', 'Rua das Flores, 123 - Centro', '11999998888', 'usuario@email.com', '1995-05-15', 'senha_criptografada_aqui');
 INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
 VALUES ('98765432100', 'Avenida Paulista, 1000 - Bela Vista', '21988887777', 'contato@email.com', '1988-10-25', 'outra_senha_segura');
+
+SELECT * FROM contrato;

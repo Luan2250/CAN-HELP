@@ -20,23 +20,23 @@ class ContratoController:
         return jsonify([p.to_dict() for p in contratos]), 200
 
     @staticmethod
-    def buscar_por_id(id_contrato): # Alterado para id_contrato
-        contrato = BuscarContratoService.executar(id_contrato)
+    def buscar_por_id(idContrato):
+        contrato = BuscarContratoService.executar(idContrato)
         if not contrato:
             return jsonify({"erro": "contrato não encontrado"}), 404
         return jsonify(contrato.to_dict()), 200
 
     @staticmethod
-    def atualizar(id_contrato): # Alterado para id_contrato
+    def atualizar(idContrato):
         dados = request.get_json()
-        contrato_atualizado = AtualizarContratoService.executar(id_contrato, dados)
+        contrato_atualizado = AtualizarContratoService.executar(idContrato, dados)
         if not contrato_atualizado:
             return jsonify({"erro": "contrato não encontrado"}), 404
         return jsonify(contrato_atualizado.to_dict()), 200
 
     @staticmethod
-    def deletar(id_contrato): # Alterado para id_contrato
-        sucesso = DeletarContratoService.executar(id_contrato)
+    def deletar(idContrato):
+        sucesso = DeletarContratoService.executar(idContrato)
         if not sucesso:
             return jsonify({"erro": "contrato não encontrado"}), 404
         return jsonify({"mensagem": "contrato deletado com sucesso"}), 200
