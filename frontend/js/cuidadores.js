@@ -44,7 +44,7 @@ function limparFormularioCuidador() {
 function editarCuidador(cuidador) {
   document.getElementById('cuidador-id-original').value = cuidador.idUsuario;
   document.getElementById('cuidador-id-usuario').value = cuidador.idUsuario;
-  document.getElementById('cuidador-id-usuario').disabled = true; // é a PK, não muda na edição
+  document.getElementById('cuidador-id-usuario').disabled = true;
   document.getElementById('cuidador-certificado').value = cuidador.certificado ?? '';
   document.getElementById('cuidador-orgao-emissor').value = cuidador.orgaoEmissor ?? '';
   document.getElementById('cuidador-valor-servico').value = cuidador.valorServico ?? '';
@@ -55,7 +55,6 @@ function editarCuidador(cuidador) {
 
 async function removerCuidador(idUsuario) {
   if (!confirm('Tem certeza que deseja excluir este cuidador? Contratos vinculados também serão removidos.')) return;
-
   try {
     await api.del(`${CUIDADORES_URL}/${idUsuario}`);
     showToast('Cuidador excluído.');
@@ -78,7 +77,6 @@ document.getElementById('form-cuidador').addEventListener('submit', async (event
   evento.preventDefault();
 
   const idOriginal = document.getElementById('cuidador-id-original').value;
-
   const dados = {
     idUsuario: document.getElementById('cuidador-id-usuario').value,
     certificado: document.getElementById('cuidador-certificado').value,

@@ -1,6 +1,3 @@
-
-
-
 from flask import Blueprint
 from controllers.agenda_controller import AgendaController
 

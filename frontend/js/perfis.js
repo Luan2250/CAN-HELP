@@ -1,7 +1,5 @@
 // Tela de Perfis: lista, cria, edita e remove usando a API /perfis.
-//
-// ATENÇÃO: assume que o to_dict() do Model Perfil devolve "idUsuario"
-// como identificador (é a PK da tabela Perfil, conforme o CanHelp.sql).
+// idUsuario é a PK de Perfil (mesmo dado do Usuario vinculado).
 
 const PERFIS_URL = '/perfis';
 
@@ -59,7 +57,6 @@ function editarPerfil(perfil) {
 
 async function removerPerfil(idUsuario) {
   if (!confirm('Tem certeza que deseja excluir este perfil?')) return;
-
   try {
     await api.del(`${PERFIS_URL}/${idUsuario}`);
     showToast('Perfil excluído.');

@@ -32,7 +32,6 @@ async function carregarClientes() {
 
 async function removerCliente(idUsuario) {
   if (!confirm('Tem certeza que deseja excluir este cliente? Contratos vinculados também serão removidos.')) return;
-
   try {
     await api.del(`${CLIENTES_URL}/${idUsuario}`);
     showToast('Cliente excluído.');
@@ -53,7 +52,6 @@ document.getElementById('btn-cancelar-cliente').addEventListener('click', () => 
 
 document.getElementById('form-cliente').addEventListener('submit', async (evento) => {
   evento.preventDefault();
-
   const idUsuario = document.getElementById('cliente-id-usuario').value;
 
   try {

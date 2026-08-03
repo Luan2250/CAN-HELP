@@ -72,7 +72,6 @@ function editarContrato(contrato) {
 
 async function removerContrato(id) {
   if (!confirm('Tem certeza que deseja excluir este contrato?')) return;
-
   try {
     await api.del(`${CONTRATOS_URL}/${id}`);
     showToast('Contrato excluído.');
@@ -95,7 +94,6 @@ document.getElementById('form-contrato').addEventListener('submit', async (event
   evento.preventDefault();
 
   const id = document.getElementById('contrato-id').value;
-
   const dados = {
     idCliente: document.getElementById('contrato-id-cliente').value,
     idCuidador: document.getElementById('contrato-id-cuidador').value,

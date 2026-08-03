@@ -1,3 +1,4 @@
+from datetime import datetime
 from extensions import db
 class Contrato(db.Model):
     __tablename__ = 'Contrato'

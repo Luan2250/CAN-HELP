@@ -1,12 +1,16 @@
 // Tela de Usuários: lista, cria, edita e remove usando a API /usuarios.
 //
-// ATENÇÃO: este arquivo assume que o to_dict() do seu Model Usuario
-// devolve a chave "idUsuario" para o identificador. Se o seu to_dict()
-// usar outro nome (ex: "id"), troque a função pegarId() abaixo — é a
-// única linha que precisa mudar.
+// Esse arquivo é o MODELO para as outras 9 telas. A receita é sempre:
+// 1. carregarX()      -> busca a lista e monta as linhas da tabela
+// 2. limparFormulario -> reseta o form pro modo "criar"
+// 3. editarX(objeto)  -> preenche o form com os dados de uma linha (modo "editar")
+// 4. removerX(id)     -> confirma e chama api.del
+// 5. listeners de clique (botão novo / cancelar) e de submit do form
 
 const USUARIOS_URL = '/usuarios';
 
+// ATENÇÃO: assume que o to_dict() do Model Usuario devolve "idUsuario".
+// Se usar outro nome, essa linha nos devemos mudar.
 function pegarId(usuario) {
   return usuario.idUsuario ?? usuario.id;
 }
@@ -54,7 +58,7 @@ function limparFormularioUsuario() {
 function editarUsuario(usuario) {
   document.getElementById('usuario-id').value = pegarId(usuario);
   document.getElementById('usuario-cpf').value = usuario.cpf ?? '';
-  document.getElementById('usuario-cpf').disabled = true; // CPF geralmente não deve mudar
+  document.getElementById('usuario-cpf').disabled = true; // CPF não deve mudar
   document.getElementById('usuario-email').value = usuario.email ?? '';
   document.getElementById('usuario-telefone').value = usuario.telefone ?? '';
   document.getElementById('usuario-endereco').value = usuario.endereco ?? '';
@@ -66,7 +70,6 @@ function editarUsuario(usuario) {
 
 async function removerUsuario(id) {
   if (!confirm('Tem certeza que deseja excluir este usuário? Isso também remove o perfil vinculado.')) return;
-
   try {
     await api.del(`${USUARIOS_URL}/${id}`);
     showToast('Usuário excluído.');
@@ -102,8 +105,8 @@ document.getElementById('form-usuario').addEventListener('submit', async (evento
 
   try {
     if (id) {
-      // Atualização: o AtualizarUsuarioService não aceita cpf/dataNascimento,
-      // então mandamos só os campos que ele realmente usa.
+      // Atualização: manda só os campos que o AtualizarUsuarioService aceita
+      // (cpf e dataNascimento não são atualizáveis no seu Service).
       await api.put(`${USUARIOS_URL}/${id}`, {
         email: dados.email,
         telefone: dados.telefone,
