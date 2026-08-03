@@ -78,34 +78,16 @@ tem CORS habilitado para aceitar as chamadas do frontend.
 
 | Model | Tabela no banco | Status |
 |---|---|---|
-| Usuario | `Usuario` | ✅ CRUD completo |
-| Perfil | `Perfil` | ✅ CRUD completo |
-| Cliente | `Cliente` | ✅ CRUD completo|
-| Cuidador | `Cuidador` | ✅CRUD completo |
-| Avaliacoes | `Avaliacoes` | ⏳ |
-| Denuncias | `Denuncias` | ⏳  |
-| ListaServicos | `ListaServicos` | ⏳  |
-| Contrato | `Contrato` | ✅ CRUD completo |
-| Agenda | `Agenda` | ⏳  |
-| Tarefa | `Tarefa` | ⏳  |
-
-## Funcionalidades implementadas
-
-**CRUD de Usuário:**
-- Cadastrar usuário
-- Listar usuários
-- Buscar usuário por id
-- Atualizar usuário
-- Excluir usuário
-
-**CRUD de Perfil:**
-- Cadastrar perfil (vinculado a um `idUsuario` existente)
-- Listar perfis
-- Buscar perfil por id
-- Atualizar perfil
-- Excluir perfil
-
-Cada funcionalidade acima já possui: tela no frontend + rota na API + Controller + Service + Model + persistência real no banco (testado via Thunder Client e pela tela).
+| Usuario | `Usuario` | 
+| Perfil | `Perfil` |
+| Cliente | `Cliente` | 
+| Cuidador | `Cuidador` |
+| Avaliacoes | `Avaliacoes` |
+| Denuncias | `Denuncias` | 
+| ListaServicos | `ListaServicos` | 
+| Contrato | `Contrato` | 
+| Agenda | `Agenda` | 
+| Tarefa | `Tarefa` | 
 
 ## Pré-requisitos
 
