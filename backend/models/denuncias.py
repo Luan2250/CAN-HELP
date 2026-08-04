@@ -4,9 +4,6 @@ class Denuncias(db.Model):
     __tablename__ = 'Denuncias'
 
     idDenuncia = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    
-    idContratacao = db.Column(db.Integer, db.ForeignKey('contratacao.idContratacao', ondelete='CASCADE'), nullable=False)
-    
     idDenunciante = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), nullable=False)
     idDenunciado = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), nullable=False)
     tipoDenunciante = db.Column(db.Enum('cliente', 'cuidador'), nullable=False)
@@ -16,7 +13,6 @@ class Denuncias(db.Model):
     dataDenuncia = db.Column(db.DateTime, default=db.func.current_timestamp())
 
   
-    contratacao = db.relationship('contratacao', backref='denuncias', lazy=True)
 
     # 1. CREATE 
     def salvar(self):
@@ -57,8 +53,7 @@ class Denuncias(db.Model):
 
     def to_dict(self):
         return {
-            'idDenuncia': self.idDenuncia,
-            'idContratacao': self.idContratacao,
+            'idDenuncia': self.idDenuncia,   
             'idDenunciante': self.idDenunciante,
             'idDenunciado': self.idDenunciado,
             'tipoDenunciante': self.tipoDenunciante,

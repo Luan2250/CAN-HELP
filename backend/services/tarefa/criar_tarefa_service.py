@@ -5,6 +5,7 @@ class CriarTarefaService:
     def executar(dados):
 
         novo_tarefa = Tarefa(
+            idAgenda=dados.get('idAgenda'),
             descricao=dados.get('descricao'),
             horaTarefa=dados.get('horaTarefa'),
             notificacao=dados.get('notificacao'),

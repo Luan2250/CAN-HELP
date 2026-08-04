@@ -1,10 +1,10 @@
 from extensions import db
-
+from datetime import datetime
 class Avaliacoes(db.Model):
     __tablename__ = 'Avaliacoes'
     idAvaliacao = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    idAvaliador = db.Column(db.Integer, db.ForeignKey('Usuario.idUsuario', ondelete='CASCADE'), nullable=False)
-    idAvaliado = db.Column(db.Integer, db.ForeignKey('Usuario.idUsuario', ondelete='CASCADE'), nullable=False)
+    idAvaliador = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), nullable=False)
+    idAvaliado = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), nullable=False)
     tipoAvaliador = db.Column(db.Enum('cliente', 'cuidador'), nullable=False)
     nota = db.Column(db.Integer, nullable=False) # TINYINT vira Integer comum no Flask
     comentario = db.Column(db.String(180))
@@ -28,6 +28,8 @@ class Avaliacoes(db.Model):
             self.gorjeta = gorjeta
         if dataAvaliacao is not None:
             self.dataAvaliacao = dataAvaliacao
+        
+        db.session.commit()
     # 3. DELETE 
     def deletar(self):
         db.session.delete(self)

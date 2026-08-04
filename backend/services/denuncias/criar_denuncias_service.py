@@ -1,15 +1,13 @@
-# app/services/denuncias/criar_denuncias_service.py
-from models.denuncias import denuncias
+from models.denuncias import Denuncias
 
 class CriardenunciasService:
     @staticmethod
     def executar(dados):
-        novo_denuncias = denuncias(
-idContratacao=dados.get('idContratacao'),
+        novo_denuncias = Denuncias(
             idDenunciante=dados.get('idDenunciante'),
             idDenunciado=dados.get('idDenunciado'),
             tipoDenunciante=dados.get('tipoDenunciante'),
-            descricao=dados.get('descricao'),           
+            descricao=dados.get('descricao'),
             penalidade=dados.get('penalidade', 'Nenhuma'),
             statusDenuncia=dados.get('statusDenuncia', 'pendente')
         )
