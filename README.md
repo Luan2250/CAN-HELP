@@ -7,11 +7,11 @@ Miguel David Comini Ramos  22502785 |
 Vinicius Veiga Freitas  22401504 |
 
 # Stack utilizada no projeto
-Flask,Jinja2, MySql
+python, MySql
 ### frontend
-JINJA2 / HTML, CSS, JS
+HTML, CSS, JS
 ### backend
-Flask
+python
 ### banco de dados
 MySql
 
@@ -19,15 +19,15 @@ MySql
 Aplicativo que conecta pessoas que necessitam de assistência a cuidadores qualificados, oferecendo ferramentas de contratação, comunicação, acompanhamento de serviços, agenda de tarefas, avaliações e notificações para garantir mais segurança e praticidade no cuidado diário.
 
 # Instruções básicas para executar o projeto(por enquanto CRUD API)
-# CanHelp — CRUD com Flask + SQLAlchemy
+# CanHelp — CRUD + SQLAlchemy
 
 Este repositório é a API e as telas do projeto **CanHelp**, seguindo a arquitetura de
 camadas (Controller → Service → Model) definida no material de estudo da disciplina.
 
-O projeto está dividido em dois apps Flask independentes:
+O projeto está dividido em:
 
 - **backend/** — a API (Controllers, Services, Models, banco de dados);
-- **frontend/** — as telas (Jinja + HTML/CSS/JS) que consomem a API.
+- **frontend/** — as telas que consomem a API.
 
 ## Estrutura do projeto
 
@@ -73,21 +73,6 @@ Banco de dados MySQL
 
 Como backend e frontend são dois servidores diferentes (portas 5000 e 5001), o backend
 tem CORS habilitado para aceitar as chamadas do frontend.
-
-## Models implementadas até agora
-
-| Model | Tabela no banco | Status |
-|---|---|---|
-| Usuario | `Usuario` | 
-| Perfil | `Perfil` |
-| Cliente | `Cliente` | 
-| Cuidador | `Cuidador` |
-| Avaliacoes | `Avaliacoes` |
-| Denuncias | `Denuncias` | 
-| ListaServicos | `ListaServicos` | 
-| Contrato | `Contrato` | 
-| Agenda | `Agenda` | 
-| Tarefa | `Tarefa` | 
 
 ## Pré-requisitos
 
