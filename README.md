@@ -1,33 +1,44 @@
 # CAN-HELP
-# Alunos
-Luan Felipe da SIlva Santos  22501630|
-Cauã Albano de Sousa Kamei  22501193 |
-Julia Maria Dutra de Souza  22502521 |
-Miguel David Comini Ramos  22502785 |
-Vinicius Veiga Freitas  22401504 |
 
-# Stack utilizada no projeto
-python, MySql
-### frontend
-HTML, CSS, JS
-### backend
-python
-### banco de dados
-MySql
+## Alunos
+Luan Felipe da Silva Santos — 22501630
+Cauã Albano de Sousa Kamei — 22501193
+Julia Maria Dutra de Souza — 22502521
+Miguel David Comini Ramos — 22502785
+Vinicius Veiga Freitas — 22401504
 
-# Breve descrição do sistema
-Aplicativo que conecta pessoas que necessitam de assistência a cuidadores qualificados, oferecendo ferramentas de contratação, comunicação, acompanhamento de serviços, agenda de tarefas, avaliações e notificações para garantir mais segurança e praticidade no cuidado diário.
+## Stack utilizada no projeto
+Python, MySQL
 
-# Instruções básicas para executar o projeto(por enquanto CRUD API)
-# CanHelp — CRUD + SQLAlchemy
+### Frontend
+HTML, CSS, JavaScript (aplicação estática, sem renderização no servidor)
+
+### Backend
+Python (Flask + SQLAlchemy)
+
+### Banco de dados
+MySQL
+
+## Breve descrição do sistema
+Aplicativo que conecta pessoas que necessitam de assistência a cuidadores qualificados,
+oferecendo ferramentas de contratação, comunicação, acompanhamento de serviços, agenda
+de tarefas, avaliações e notificações para garantir mais segurança e praticidade no
+cuidado diário.
+
+---
+
+# Instruções para executar o projeto (CRUD completo — 10 entidades)
 
 Este repositório é a API e as telas do projeto **CanHelp**, seguindo a arquitetura de
 camadas (Controller → Service → Model) definida no material de estudo da disciplina.
 
-O projeto está dividido em:
+O projeto está dividido em duas aplicações **totalmente independentes**:
 
-- **backend/** — a API (Controllers, Services, Models, banco de dados);
-- **frontend/** — as telas que consomem a API.
+- **backend/** — a API Flask (Controllers, Services, Models, banco de dados). É a
+  única parte que fala com o MySQL.
+- **frontend/** — HTML, CSS e JavaScript puros, sem nenhum framework ou renderização
+  no servidor. Consome a API do backend via `fetch`, exatamente como uma aplicação
+  cliente separada deve fazer.
 
 ## Estrutura do projeto
 
@@ -44,19 +55,30 @@ CAN-HELP/
 │   ├── app.py
 │   └── requirements.txt
 └── frontend/
-    ├── templates/
-    ├── static/
-    │   ├── css/
-    │   └── js/
-    ├── app.py
-    └── requirements.txt
+    ├── index.html
+    ├── usuarios.html
+    ├── perfis.html
+    ├── clientes.html
+    ├── cuidadores.html
+    ├── contratos.html
+    ├── agenda.html
+    ├── tarefas.html
+    ├── avaliacoes.html
+    ├── denuncias.html
+    ├── lista-servicos.html
+    ├── itens-contrato.html
+    ├── css/
+    │   └── style.css
+    └── js/
+        ├── app.js
+        └── (um arquivo .js por tela)
 ```
 
 ## Arquitetura usada no projeto
 
 ```
-Frontend 
-   ↓  HTTP (JSON)
+Frontend (HTML/CSS/JS estático)
+   ↓  fetch (HTTP + JSON)
 Controller
    ↓
 Service
@@ -71,8 +93,9 @@ Banco de dados MySQL
 - **Model**: representa a tabela do banco e concentra os métodos de persistência (`salvar`, `atualizar`, `deletar`, `listar_todos`, `buscar_por_id`).
 - **Repository**: reservado para consultas que não são CRUD simples (filtros, relatórios, rankings) — ainda não utilizado neste estágio do projeto.
 
-Como backend e frontend são dois servidores diferentes (portas 5000 e 5001), o backend
-tem CORS habilitado para aceitar as chamadas do frontend.
+Como o frontend é uma aplicação separada do backend (servida em outra porta, sem
+nenhum código Python renderizando páginas), o backend tem **CORS** habilitado para
+aceitar as chamadas vindas do frontend.
 
 ## Pré-requisitos
 
@@ -125,35 +148,34 @@ http://127.0.0.1:5000
 
 ## Como executar o frontend
 
+Como o frontend é 100% estático (sem Flask, sem Jinja), qualquer servidor de arquivos
+simples funciona. A forma mais direta:
+
 1. Em **outro terminal**, entre na pasta do frontend:
    ```
    cd frontend
    ```
 
-2. (Opcional) Crie e ative um ambiente virtual, do mesmo jeito que no backend.
-
-3. Instale as dependências:
+2. Suba um servidor estático:
    ```
-   pip install -r requirements.txt
+   python -m http.server 5500
    ```
 
-4. Execute o frontend:
+3. Acesse no navegador:
    ```
-   python app.py
+   http://127.0.0.1:5500
    ```
 
-Acesse:
-```
-http://127.0.0.1:5001
-```
+⚠️ O **backend precisa estar rodando ao mesmo tempo** que o frontend, já que todas as
+telas buscam os dados chamando a API na porta 5000 (`API_BASE` configurado em
+`frontend/js/app.js`).
 
-⚠️ O backend precisa estar rodando **ao mesmo tempo** que o frontend, já que as telas
-buscam os dados chamando a API na porta 5000.
+Alternativa: usar a extensão **Live Server** do VS Code, clicando com o botão direito
+em `index.html` → "Open with Live Server".
 
 ## Rotas da API
 
 ### Usuário
-
 | Método | Rota | Descrição |
 |---|---|---|
 | GET | `/usuarios` | Lista todos os usuários |
@@ -163,7 +185,6 @@ buscam os dados chamando a API na porta 5000.
 | DELETE | `/usuarios/<id>` | Remove um usuário (remove o perfil vinculado junto, por CASCADE) |
 
 ### Perfil
-
 | Método | Rota | Descrição |
 |---|---|---|
 | GET | `/perfis` | Lista todos os perfis |
@@ -172,15 +193,119 @@ buscam os dados chamando a API na porta 5000.
 | PUT | `/perfis/<id>` | Atualiza um perfil |
 | DELETE | `/perfis/<id>` | Remove um perfil |
 
-### Telas (frontend)
+### Cliente
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/clientes` | Lista todos os clientes |
+| GET | `/clientes/<id>` | Busca um cliente pelo id |
+| POST | `/clientes` | Marca um usuário existente como cliente |
+| DELETE | `/clientes/<id>` | Remove o vínculo de cliente |
 
+> Cliente só tem `idUsuario` (PK/FK de Usuario) — não há campos próprios para atualizar.
+
+### Cuidador
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/cuidadores` | Lista todos os cuidadores |
+| GET | `/cuidadores/<id>` | Busca um cuidador pelo id |
+| POST | `/cuidadores` | Cadastra um cuidador (precisa de um `idUsuario` existente) |
+| PUT | `/cuidadores/<id>` | Atualiza um cuidador |
+| DELETE | `/cuidadores/<id>` | Remove um cuidador |
+
+### Contrato
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/contratos` | Lista todos os contratos |
+| GET | `/contratos/<id>` | Busca um contrato pelo id |
+| POST | `/contratos` | Cadastra um contrato (precisa de `idCliente` e `idCuidador` existentes) |
+| PUT | `/contratos/<id>` | Atualiza um contrato |
+| DELETE | `/contratos/<id>` | Remove um contrato |
+
+### Agenda
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/agendas` | Lista todos os compromissos |
+| GET | `/agendas/<id>` | Busca um compromisso pelo id |
+| POST | `/agendas` | Cadastra um compromisso (precisa de um `idContrato` existente) |
+| PUT | `/agendas/<id>` | Atualiza um compromisso |
+| DELETE | `/agendas/<id>` | Remove um compromisso |
+
+### Tarefa
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/tarefas` | Lista todas as tarefas |
+| GET | `/tarefas/<id>` | Busca uma tarefa pelo id |
+| POST | `/tarefas` | Cadastra uma tarefa (precisa de um `idAgenda` existente) |
+| PUT | `/tarefas/<id>` | Atualiza uma tarefa |
+| DELETE | `/tarefas/<id>` | Remove uma tarefa |
+
+### Avaliações
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/avaliacoess` | Lista todas as avaliações |
+| GET | `/avaliacoess/<id>` | Busca uma avaliação pelo id |
+| POST | `/avaliacoess` | Cadastra uma avaliação (precisa de `idAvaliador` e `idAvaliado` existentes) |
+| PUT | `/avaliacoess/<id>` | Atualiza uma avaliação |
+| DELETE | `/avaliacoess/<id>` | Remove uma avaliação |
+
+### Denúncias
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/denuncias` | Lista todas as denúncias |
+| GET | `/denuncias/<id>` | Busca uma denúncia pelo id |
+| POST | `/denuncias` | Cadastra uma denúncia (precisa de `idDenunciante` e `idDenunciado` existentes) |
+| PUT | `/denuncias/<id>` | Atualiza uma denúncia |
+| DELETE | `/denuncias/<id>` | Remove uma denúncia |
+
+### Lista de Serviços
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/listasServicos` | Lista todos os tipos de serviço |
+| GET | `/listasServicos/<id>` | Busca um tipo de serviço pelo id |
+| POST | `/listasServicos` | Cadastra um novo tipo de serviço |
+| PUT | `/listasServicos/<id>` | Atualiza um tipo de serviço |
+| DELETE | `/listasServicos/<id>` | Remove um tipo de serviço |
+
+### Itens do Contrato
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/itensContrato` | Lista todos os vínculos contrato+serviço |
+| GET | `/itensContrato/<idContrato>` | Lista os serviços vinculados a um contrato específico |
+| POST | `/itensContrato` | Vincula um serviço a um contrato (`idContrato` + `idServico`) |
+| DELETE | `/itensContrato/<idContrato>/<idServico>` | Remove um vínculo específico |
+
+> ItensContrato tem **chave composta** (`idContrato` + `idServico` juntos, sem id
+> próprio) — por isso não há rota de `PUT`: o vínculo é criado ou removido, nunca
+> editado.
+
+### Telas (frontend)
 | Rota | Descrição |
 |---|---|
-| `/` | Página inicial |
-| `/usuarios` | Lista, cadastra, edita e exclui usuários |
-| `/perfis` | Lista, cadastra, edita e exclui perfis |
+| `/index.html` | Página inicial |
+| `/usuarios.html` | CRUD de usuários |
+| `/perfis.html` | CRUD de perfis |
+| `/clientes.html` | Criar / listar / excluir clientes |
+| `/cuidadores.html` | CRUD de cuidadores |
+| `/contratos.html` | CRUD de contratos |
+| `/agenda.html` | CRUD de compromissos |
+| `/tarefas.html` | CRUD de tarefas |
+| `/avaliacoes.html` | CRUD de avaliações |
+| `/denuncias.html` | CRUD de denúncias |
+| `/lista-servicos.html` | CRUD de tipos de serviço |
+| `/itens-contrato.html` | Vincular / listar / remover itens de contrato |
 
+## Status das entidades
 
-
-
-
+| Model | Tabela no banco | Status |
+|---|---|---|
+| Usuario | `Usuario` | ✅ CRUD completo (back + front) |
+| Perfil | `Perfil` | ✅ CRUD completo (back + front) |
+| Cliente | `Cliente` | ✅ Criar/listar/excluir (back + front) |
+| Cuidador | `Cuidador` | ✅ CRUD completo (back + front) |
+| Contrato | `Contrato` | ✅ CRUD completo (back + front) |
+| Agenda | `Agenda` | ✅ CRUD completo (back + front) |
+| Tarefa | `Tarefa` | ✅ CRUD completo (back + front) |
+| Avaliacoes | `Avaliacoes` | ✅ CRUD completo (back + front) |
+| Denuncias | `Denuncias` | ✅ CRUD completo (back + front) |
+| ListaServicos | `ListaServicos` | ✅ CRUD completo (back + front) |
+| ItensContrato | `ItensContrato` | ✅ Vincular/listar/remover (back + front) |
