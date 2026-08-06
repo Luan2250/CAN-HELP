@@ -14,7 +14,7 @@ from controllers.tarefa_routes import tarefa_bp
 from controllers.avaliacoes_routes import avaliacoes_bp
 from controllers.denuncias_routes import denuncia_bp
 from controllers.listaServico_routes import listaServico_bp
-
+from controllers.itensContrato_routes import itensContrato_bp
 app = Flask(__name__)
 
 # Configuração do banco de dados
@@ -38,7 +38,7 @@ app.register_blueprint(tarefa_bp)
 app.register_blueprint(avaliacoes_bp)
 app.register_blueprint(denuncia_bp)
 app.register_blueprint(listaServico_bp)
- 
+app.register_blueprint(itensContrato_bp)
 @app.route("/")
 def status():
     return "API canhelp tá rodando"

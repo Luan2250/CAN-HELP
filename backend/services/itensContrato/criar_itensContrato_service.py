@@ -4,12 +4,11 @@ from models.itensContrato import ItensContrato
 class CriarItensContratoService:
     @staticmethod
     def executar(dados):
-        novo_itensContrato = ItensContrato(
-            id_contrato = dados.get('idContrato'),
-            id_servico = dados.get('idServico')
+        novo_item = ItensContrato(
+            idContrato=dados.get('idContrato'),
+            idServico=dados.get('idServico')
         )
-        
-        # Chama o método salvar que criamos na Model (Active Record)
-        novo_itensContrato.salvar()
-        
-        return novo_itensContrato
+
+        novo_item.salvar()
+
+        return novo_item
