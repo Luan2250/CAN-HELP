@@ -55,7 +55,7 @@ CAN-HELP/
 ## Arquitetura usada no projeto
 
 ```
-Frontend (Jinja + fetch)
+Frontend 
    ↓  HTTP (JSON)
 Controller
    ↓
