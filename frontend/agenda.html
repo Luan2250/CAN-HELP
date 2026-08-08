@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Agenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav">
+        <a href="usuarios.html" class="nav-link">Usuários</a>
+        <a href="perfis.html" class="nav-link">Perfis</a>
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="cuidadores.html" class="nav-link">Cuidadores</a>
+        <a href="contratos.html" class="nav-link">Contratos</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="tarefas.html" class="nav-link">Tarefas</a>
+        <a href="avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="denuncias.html" class="nav-link">Denúncias</a>
+        <a href="lista-servicos.html" class="nav-link">Serviços</a>
+        <a href="itens-contrato.html" class="nav-link">Itens do contrato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">Agenda</span>
+        <h1>Compromissos agendados</h1>
+      </div>
+      <button class="btn btn-primary" id="btn-novo-agenda">+ Novo compromisso</button>
+    </section>
+
+    <p class="hint">Informe o ID de um Contrato já cadastrado.</p>
+
+    <section class="card">
+      <table class="table" id="tabela-agenda">
+        <thead>
+          <tr><th>ID</th><th>Contrato</th><th>Data</th><th>Hora</th><th>Ocasião</th><th>Notificação</th><th></th></tr>
+        </thead>
+        <tbody id="agenda-corpo">
+          <tr><td colspan="7" class="empty">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="modal-backdrop" id="modal-agenda">
+      <form class="modal" id="form-agenda">
+        <h2 id="modal-agenda-titulo">Novo compromisso</h2>
+        <input type="hidden" id="agenda-id">
+        <label>ID do contrato <input type="number" id="agenda-id-contrato" required></label>
+        <label>Data <input type="date" id="agenda-data" required></label>
+        <label>Hora <input type="time" id="agenda-hora" required></label>
+        <label>Ocasião <input type="text" id="agenda-ocasiao" required></label>
+        <label>
+          <input type="checkbox" id="agenda-notificacao" style="width:auto;display:inline-block;margin-right:6px;" checked>
+          Notificar
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btn-cancelar-agenda">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/agenda.js"></script>
+</body>
+</html>
