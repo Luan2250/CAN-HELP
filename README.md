@@ -309,3 +309,66 @@ em `index.html` → "Open with Live Server".
 | Denuncias | `Denuncias` | ✅ CRUD completo (back + front) |
 | ListaServicos | `ListaServicos` | ✅ CRUD completo (back + front) |
 | ItensContrato | `ItensContrato` | ✅ Vincular/listar/remover (back + front) |
+
+## Funcionalidades além do CRUD (Repository + Procedures)
+
+Além do CRUD básico de cada entidade, foram implementadas 4 funcionalidades que
+envolvem filtros, buscas, ordenação e combinação de dados entre tabelas. Seguindo a
+orientação da disciplina, essas consultas **não** ficam no Model — foram implementadas
+como *procedures* no banco de dados, encapsuladas na camada **Repository**, com
+Controller e Service próprios para cada caso de uso.
+
+```
+Frontend (fetch)
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Repository  →  CALL procedure() no MySQL
+```
+
+### Procedures criadas
+
+| Procedure | Parâmetros | O que faz |
+|---|---|---|
+| `BuscarCuidadoresFiltro` | `p_cidade VARCHAR(40)`, `p_ordenar_por_nota BOOLEAN` | Retorna os cuidadores (com JOIN em Perfil e Avaliações), filtrando por cidade e permitindo ordenar por nota média |
+| `EncontrarCuidadoresDisponiveis` | `p_data DATE` | Retorna os cuidadores que **não** têm nenhum contrato aceito na data informada, ordenados por nota média |
+| `IdentificarTipoUsuario` | `p_idUsuario INT` | Retorna os dados do usuário indicando, via JOIN com Cliente e Cuidador, se ele é cliente, cuidador ou ambos |
+| `RelatorioContratosCliente` | `p_idCliente INT` | Retorna o histórico de contratos de um cliente, combinando Contrato, Perfil (do cuidador), ItensContrato e ListaServicos, com os serviços agrupados via `GROUP_CONCAT` |
+
+### Repositories, Services e Controllers utilizados
+
+| Funcionalidade | Repository | Service | Controller |
+|---|---|---|---|
+| Filtro de busca de cuidadores | `FiltrarCuidadorRepository` | `FiltrarCuidadoresService` | `CuidadorController.buscar_cuidadores` |
+| Encontrar cuidadores disponíveis | `CuidadoresDisponiveisRepository` | `CuidadoresDisponiveisService` | `CuidadorController.buscar_disponiveis` |
+| Diferenciar tipo de usuário | `TipoUsuarioRepository` | `VerificarTipoUsuarioService` | `UsuarioController.verificar_tipo` |
+| Relatório de histórico de contratos | `RelatorioContratoRepository` | `RelatorioContratosService` | `ContratoController.relatorio_cliente` |
+
+### Rotas da API (além do CRUD)
+
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/cuidadores/busca?cidade=&ordem_nota=` | Busca cuidadores filtrando por cidade e/ou ordenando por nota média |
+| GET | `/cuidadores/disponiveis?data=` | Lista cuidadores disponíveis (sem contrato aceito) numa data específica |
+| GET | `/usuarios/<id_usuario>/tipo` | Retorna se o usuário é cliente, cuidador ou ambos |
+| GET | `/clientes/<id_cliente>/relatorio-contratos` | Retorna o histórico de contratos de um cliente |
+
+### Telas (frontend) que consomem essas rotas
+
+| Rota da tela | Descrição |
+|---|---|
+| `/cuidadores.html` | Inclui filtro de busca por cidade e ordenação por nota (usa `/cuidadores/busca`) |
+| `/cuidadores.html` | Inclui filtro de disponibilidade por data (usa `/cuidadores/disponiveis`) |
+| `/usuarios.html` | Exibe se o usuário é cliente, cuidador ou ambos (usa `/usuarios/<id_usuario>/tipo`) |
+| `/contratos.html` | Exibe o histórico de contratos por cliente (usa `/clientes/<id_cliente>/relatorio-contratos`) |
+
+### Status das funcionalidades além do CRUD
+
+| Funcionalidade | Status |
+|---|---|
+| Filtro de busca de cuidadores | ✅ Procedure + Repository + Service + Controller + tela |
+| Encontrar cuidadores disponíveis | ✅ Procedure + Repository + Service + Controller + tela |
+| Diferenciar tipo de usuário (cliente/cuidador) | ✅ Procedure + Repository + Service + Controller + tela |
+| Relatório de histórico de contratos | ✅ Procedure + Repository + Service + Controller + tela |
