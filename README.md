@@ -355,20 +355,11 @@ Repository  →  CALL procedure() no MySQL
 | GET | `/usuarios/<id_usuario>/tipo` | Retorna se o usuário é cliente, cuidador ou ambos |
 | GET | `/clientes/<id_cliente>/relatorio-contratos` | Retorna o histórico de contratos de um cliente |
 
-### Telas (frontend) que consomem essas rotas
-
-| Rota da tela | Descrição |
-|---|---|
-| `/cuidadores.html` | Inclui filtro de busca por cidade e ordenação por nota (usa `/cuidadores/busca`) |
-| `/cuidadores.html` | Inclui filtro de disponibilidade por data (usa `/cuidadores/disponiveis`) |
-| `/usuarios.html` | Exibe se o usuário é cliente, cuidador ou ambos (usa `/usuarios/<id_usuario>/tipo`) |
-| `/contratos.html` | Exibe o histórico de contratos por cliente (usa `/clientes/<id_cliente>/relatorio-contratos`) |
-
 ### Status das funcionalidades além do CRUD
 
 | Funcionalidade | Status |
 |---|---|
-| Filtro de busca de cuidadores | ✅ Procedure + Repository + Service + Controller + tela |
-| Encontrar cuidadores disponíveis | ✅ Procedure + Repository + Service + Controller + tela |
-| Diferenciar tipo de usuário (cliente/cuidador) | ✅ Procedure + Repository + Service + Controller + tela |
-| Relatório de histórico de contratos | ✅ Procedure + Repository + Service + Controller + tela |
+| Filtro de busca de cuidadores | ✅ Procedure + Repository + Service + Controller  |
+| Encontrar cuidadores disponíveis | ✅ Procedure + Repository + Service + Controller |
+| Diferenciar tipo de usuário (cliente/cuidador) | ✅ Procedure + Repository + Service + Controller  |
+| Relatório de histórico de contratos | ✅ Procedure + Repository + Service + Controller  |
