@@ -140,7 +140,6 @@ h2 {
   margin: 12px 0 28px;
 }
 
-<<<<<<< HEAD
 .file-upload {
   margin-top: 6px;
   display: flex;
@@ -161,8 +160,6 @@ h2 {
   border: 1px solid var(--line);
 }
 
-=======
->>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 .grid-links {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -297,11 +294,8 @@ h2 {
   background: #FAFBFB;
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 .table tbody tr:last-child td {
   border-bottom: none;
 }
