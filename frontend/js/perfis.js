@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+=======
+// Tela de Perfis: lista, cria, edita e remove usando a API /perfis.
+// idUsuario é a PK de Perfil (mesmo dado do Usuario vinculado).
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 
 const PERFIS_URL = '/perfis';
 
@@ -34,6 +39,7 @@ async function carregarPerfis() {
   }
 }
 
+<<<<<<< HEAD
 
 function mostrarBlocoCriacao(mostrar) {
   document.getElementById('bloco-dados-usuario').style.display = mostrar ? 'block' : 'none';
@@ -54,17 +60,32 @@ function limparFormularioPerfil() {
   document.getElementById('campos-cuidador').style.display = 'none';
   document.getElementById('modal-perfil-titulo').textContent = 'Novo perfil';
   mostrarBlocoCriacao(true); 
+=======
+function limparFormularioPerfil() {
+  document.getElementById('form-perfil').reset();
+  document.getElementById('perfil-id-original').value = '';
+  document.getElementById('perfil-id-usuario').disabled = false;
+  document.getElementById('modal-perfil-titulo').textContent = 'Novo perfil';
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 }
 
 function editarPerfil(perfil) {
   document.getElementById('perfil-id-original').value = perfil.idUsuario;
+<<<<<<< HEAD
+=======
+  document.getElementById('perfil-id-usuario').value = perfil.idUsuario;
+  document.getElementById('perfil-id-usuario').disabled = true; // é a PK, não muda na edição
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
   document.getElementById('perfil-nome').value = perfil.nome ?? '';
   document.getElementById('perfil-foto-url').value = perfil.fotoURL ?? '';
   document.getElementById('perfil-cidade').value = perfil.cidade ?? '';
   document.getElementById('perfil-estado').value = perfil.estado ?? '';
   document.getElementById('perfil-bio').value = perfil.bio ?? '';
   document.getElementById('modal-perfil-titulo').textContent = 'Editar perfil';
+<<<<<<< HEAD
   mostrarBlocoCriacao(false); // modo editar: esconde dados de usuário e tipo
+=======
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
   abrirModal('modal-perfil');
 }
 
@@ -79,6 +100,7 @@ async function removerPerfil(idUsuario) {
   }
 }
 
+<<<<<<< HEAD
 document.getElementById('perfil-foto-arquivo').addEventListener('change', (evento) => {
   const arquivo = evento.target.files[0];
   if (!arquivo) return;
@@ -92,6 +114,8 @@ document.getElementById('perfil-foto-arquivo').addEventListener('change', (event
   leitor.readAsDataURL(arquivo);
 });
 
+=======
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 document.getElementById('btn-novo-perfil').addEventListener('click', () => {
   limparFormularioPerfil();
   abrirModal('modal-perfil');
@@ -101,6 +125,7 @@ document.getElementById('btn-cancelar-perfil').addEventListener('click', () => {
   fecharModal('modal-perfil');
 });
 
+<<<<<<< HEAD
 document.getElementById('perfil-tipo').addEventListener('change', (e) => {
   document.getElementById('campos-cuidador').style.display =
     e.target.value === 'cuidador' ? 'block' : 'none';
@@ -108,11 +133,14 @@ document.getElementById('perfil-tipo').addEventListener('change', (e) => {
 
 
 
+=======
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 document.getElementById('form-perfil').addEventListener('submit', async (evento) => {
   evento.preventDefault();
 
   const idOriginal = document.getElementById('perfil-id-original').value;
 
+<<<<<<< HEAD
   try {
     if (idOriginal) {
       await api.put(`${PERFIS_URL}/${idOriginal}`, {
@@ -147,6 +175,28 @@ document.getElementById('form-perfil').addEventListener('submit', async (evento)
         dados.valorServico = document.getElementById('perfil-valor').value || 0;
       }
 
+=======
+  const dados = {
+    idUsuario: document.getElementById('perfil-id-usuario').value,
+    nome: document.getElementById('perfil-nome').value,
+    fotoURL: document.getElementById('perfil-foto-url').value,
+    cidade: document.getElementById('perfil-cidade').value,
+    estado: document.getElementById('perfil-estado').value,
+    bio: document.getElementById('perfil-bio').value,
+  };
+
+  try {
+    if (idOriginal) {
+      await api.put(`${PERFIS_URL}/${idOriginal}`, {
+        nome: dados.nome,
+        fotoURL: dados.fotoURL,
+        cidade: dados.cidade,
+        estado: dados.estado,
+        bio: dados.bio,
+      });
+      showToast('Perfil atualizado.');
+    } else {
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
       await api.post(PERFIS_URL, dados);
       showToast('Perfil criado.');
     }

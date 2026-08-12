@@ -4,6 +4,7 @@ class Cliente(db.Model):
 
     idUsuario = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), primary_key=True)
 
+<<<<<<< HEAD
     usuario_pai = db.relationship(
     'Usuario',
     backref=db.backref('return_client', passive_deletes=True),
@@ -11,6 +12,9 @@ class Cliente(db.Model):
     uselist=False,
     passive_deletes=True
     )
+=======
+    usuario_pai = db.relationship('Usuario', backref='return_client', lazy=True, uselist=False)
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 
     # 1. CREATE 
     def salvar(self):
@@ -34,7 +38,11 @@ class Cliente(db.Model):
     # 5. BUSCA POR ID
     @staticmethod
     def buscar_por_id(id_usuario):
+<<<<<<< HEAD
         return Cliente.query.get(id_usuario)
+=======
+        return cliente.query.get(id_usuario)
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 
     def to_dict(self):
         return {

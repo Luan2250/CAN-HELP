@@ -1,4 +1,5 @@
 # app/services/perfil/criar_perfil_service.py
+<<<<<<< HEAD
 from extensions import db
 from models.usuario import Usuario
 from models.perfil import Perfil
@@ -7,10 +8,14 @@ from models.cuidador import Cuidador
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
 
+=======
+from models.perfil import Perfil
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 
 class CriarPerfilService:
     @staticmethod
     def executar(dados):
+<<<<<<< HEAD
         try:
             data_nasc = datetime.strptime(dados.get('dataNascimento'), '%Y-%m-%d')
             if data_nasc.year < 1900 or data_nasc.year > 2026:
@@ -74,3 +79,15 @@ class CriarPerfilService:
             "perfil": novo_perfil.to_dict(),
             "tipo": tipo
         }
+=======
+        novo_perfil = Perfil(
+            idUsuario=dados.get('idUsuario'),
+            fotoURL=dados.get('fotoURL'),
+            nome=dados.get('nome'),
+            bio=dados.get('bio'),
+            cidade=dados.get('cidade'),
+            estado=dados.get('estado')
+        )
+        novo_perfil.salvar()
+        return novo_perfil
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e

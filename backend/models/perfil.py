@@ -1,12 +1,19 @@
 from extensions import db
+<<<<<<< HEAD
 from sqlalchemy.dialects.mysql import LONGTEXT
+=======
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 
 class Perfil(db.Model):
     __tablename__ = 'perfil'
 
     # idUsuario é PK e FK ao mesmo tempo (relação 1:1)
     idUsuario = db.Column(db.Integer, db.ForeignKey('usuario.idUsuario', ondelete='CASCADE'), primary_key=True)
+<<<<<<< HEAD
     fotoURL = db.Column(LONGTEXT, nullable=True)
+=======
+    fotoURL = db.Column(db.String(255), nullable=True)
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
     nome = db.Column(db.String(70), nullable=False)
     bio = db.Column(db.String(220), nullable=True)
     cidade = db.Column(db.String(40), nullable=True)

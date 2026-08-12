@@ -11,6 +11,7 @@ class PerfilController:
     @staticmethod
     def criar():
         dados = request.get_json()
+<<<<<<< HEAD
         try:
             resultado = CriarPerfilService.executar(dados)
             return jsonify(resultado), 201
@@ -18,6 +19,11 @@ class PerfilController:
             return jsonify({"erro": str(e)}), 400
         except Exception as e:
             return jsonify({"erro": "Erro ao criar perfil"}), 500
+=======
+        # O JSON enviado deve conter o 'idUsuario' para vincular ao Usuário correspondente
+        perfil = CriarPerfilService.executar(dados)
+        return jsonify(perfil.to_dict()), 201
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 
     @staticmethod
     def listar():

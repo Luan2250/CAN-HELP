@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 019af874be68aa5cc08bad2fb47866974e0f9d2e
 from flask import Blueprint
 from controllers.perfil_controller import PerfilController
 
