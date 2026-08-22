@@ -10,7 +10,10 @@ from controllers.avaliacoes_controller import AvaliacoesController
 from controllers.denuncias_controller import DenunciaController
 from controllers.listaServico_controller import ListaServicosController
 from controllers.itensContrato_controller import ItensContratoController
+<<<<<<< HEAD
 from controllers.mensagem_controller import MensagemController
+=======
+>>>>>>> 5afb6c677fcae1c35df33e3ca3c480eb32bd30de
 
 # Agenda
 

@@ -411,6 +411,7 @@ h2 {
   .table {
     font-size: 0.8rem;
   }
+<<<<<<< HEAD
 }
 /* ===== Chat (RF09) ===== */
 .chat-layout {
@@ -591,3 +592,6 @@ h2 {
     max-height: 45vh;
   }
 }
+=======
+}
+>>>>>>> 5afb6c677fcae1c35df33e3ca3c480eb32bd30de
