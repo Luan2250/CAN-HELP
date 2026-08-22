@@ -27,6 +27,102 @@ cuidado diário.
 
 ---
 
+# Funcionalidades Implementadas
+
+## 01 – Cadastro de usuários
+O sistema permite o cadastro de usuários com informações pessoais (CPF, endereço, telefone, email, data de nascimento e senha). Após o cadastro, o usuário pode ser vinculado a um perfil e classificado como **cliente** ou **cuidador**.
+
+- **Backend**: `CriarUsuarioService`, `CriarPerfilService`, `CriarClienteService`, `CriarCuidadorService`
+- **Endpoints**: `POST /usuarios`, `POST /perfis`, `POST /clientes`, `POST /cuidadores`
+- **Frontend**: `usuarios.html`, `perfis.html`, `clientes.html`, `cuidadores.html`
+
+---
+
+## 02 – Login de usuários autenticados
+O sistema permite que usuários autenticados realizem login utilizando suas credenciais cadastradas.
+
+- **Backend**: Autenticação com JWT (JSON Web Token)
+- **Endpoints**: `POST /login`, `GET /usuarios/<id>/tipo`
+- **Frontend**: `login.html`
+
+---
+
+## 03 – Contratação de cuidadores
+O sistema permite que usuários contratem cuidadores para prestação de serviços, criando contratos com informações como data de atendimento, localização, nome do auxiliado e valor final.
+
+- **Backend**: `CriarContratoService`
+- **Endpoints**: `POST /contratos`
+- **Frontend**: `contratos.html`
+
+---
+
+## 04 – Busca e visualização de cuidadores disponíveis
+O sistema permite buscar cuidadores filtrando por cidade e/ou ordenando por nota média, além de listar cuidadores disponíveis em uma data específica.
+
+- **Backend**: `FiltrarCuidadorRepository`, `CuidadoresDisponiveisRepository`, `FiltrarCuidadoresService`, `CuidadoresDisponiveisService`
+- **Procedures**: `BuscarCuidadoresFiltro`, `EncontrarCuidadoresDisponiveis`
+- **Endpoints**: `GET /cuidadores/busca?cidade=&ordem_nota=`, `GET /cuidadores/disponiveis?data=`
+- **Frontend**: `cuidadores.html`
+
+---
+
+## 05 – Solicitação de ajuda para tarefas específicas
+O sistema permite que clientes solicitem ajuda para tarefas específicas, criando contratos com a possibilidade de adicionar serviços (transporte, banho, alimentação, etc.) e agendar o atendimento.
+
+- **Backend**: `CriarContratoService`, `ItensContrato`, `Agenda`
+- **Endpoints**: `POST /contratos`, `POST /itensContrato`, `POST /agendas`
+- **Frontend**: `contratos.html`, `itens-contrato.html`, `agenda.html`
+
+---
+
+## 06 – Exibição de perfis de usuários
+O sistema exibe perfis de usuários contendo informações pessoais, experiência (certificados, disponibilidade) e avaliações recebidas (nota média e comentários).
+
+- **Backend**: `Perfil`, `Cuidador`, `Avaliacoes`
+- **Endpoints**: `GET /perfis/<id>`, `GET /cuidadores/<id>`
+- **Frontend**: `perfis.html`, `cuidadores.html`
+
+---
+
+## 07 – Avaliação de usuários após conclusão de serviço
+O sistema permite que usuários avaliem outros usuários após a conclusão de um serviço, enviando nota (1 a 5), comentário e gorjeta.
+
+- **Backend**: `CriarAvaliacoesService`
+- **Validações**: nota entre 1 e 5, não pode auto-avaliar, só pode avaliar após serviço concluído, não pode avaliar duas vezes
+- **Endpoints**: `POST /avaliacoess`, `GET /avaliacoess/<id>`
+- **Frontend**: `avaliacoes.html`
+
+---
+
+## 08 – Acompanhamento do status das solicitações de ajuda
+O sistema permite o acompanhamento do status das solicitações de ajuda, com transições válidas entre os estados: pendente, aceito, recusado, cancelado_cliente, cancelado_cuidador e concluido.
+
+- **Backend**: `AtualizarStatusContratoService`, `ListarContratosPorStatusService`
+- **Validações**: transições válidas, permissões por tipo de usuário
+- **Endpoints**: `PATCH /contratos/<id>/status`, `GET /contratos/acompanhar`, `GET /contratos/<id>/acompanhar`
+- **Frontend**: `contratos.html`
+
+---
+
+## 09 – Chat para comunicação entre usuários
+O sistema disponibiliza um chat para comunicação entre usuários durante o processo de solicitação e prestação do serviço.
+
+- **Backend**: Chat em tempo real com WebSocket
+- **Endpoints**: `POST /mensagens`, `GET /mensagens/<id_contrato>`
+- **Frontend**: `chat.html`
+
+---
+
+## 10 – Cancelamento de solicitações de ajuda
+O sistema permite o cancelamento de solicitações de ajuda antes da conclusão do serviço, tanto pelo cliente quanto pelo cuidador, com regras específicas para cada caso.
+
+- **Backend**: `CancelarContratoService`
+- **Validações**: apenas o cliente pode cancelar como `cancelado_cliente`, apenas o cuidador pode cancelar como `cancelado_cuidador`, não pode cancelar contrato concluído ou recusado
+- **Endpoints**: `POST /contratos/<id>/cancelar`, `POST /contratos/<id>/cancelar-cuidador`, `GET /contratos/<id>/verificar-cancelamento`
+- **Frontend**: `contratos.html`
+
+---
+
 # Instruções para executar o projeto (CRUD completo — 10 entidades)
 
 Este repositório é a API e as telas do projeto **CanHelp**, seguindo a arquitetura de
