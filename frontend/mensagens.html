@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav">
+        <a href="usuarios.html" class="nav-link">Usuários</a>
+        <a href="perfis.html" class="nav-link">Perfis</a>
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="cuidadores.html" class="nav-link">Cuidadores</a>
+        <a href="contratos.html" class="nav-link">Contratos</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="tarefas.html" class="nav-link">Tarefas</a>
+        <a href="avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="denuncias.html" class="nav-link">Denúncias</a>
+        <a href="lista-servicos.html" class="nav-link">Serviços</a>
+        <a href="itens-contrato.html" class="nav-link">Itens do contrato</a>
+        <a href="mensagens.html" class="nav-link">Chat</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">RF09 · Comunicação</span>
+        <h1>Chat</h1>
+      </div>
+    </section>
+
+    <p class="hint">
+      Converse com o cliente ou cuidador de um contrato. Se você ainda não fez login,
+      informe abaixo o ID do usuário que está usando o chat (útil pra testar as duas pontas
+      da conversa em duas abas diferentes).
+    </p>
+
+    <section class="card" style="padding: 14px 16px; margin-bottom: 16px; overflow: visible;">
+      <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color: var(--ink-soft);">
+        Meu ID de usuário
+        <input type="number" id="chat-id-usuario" placeholder="Ex: 1" style="width:100px; padding:8px 10px; border-radius:8px; border:1px solid var(--line);">
+        <button class="btn btn-ghost" id="btn-usar-id">Usar este ID</button>
+        <span id="chat-usuario-atual" style="margin-left:auto; font-weight:600; color: var(--ink);"></span>
+      </label>
+    </section>
+
+    <section class="card">
+      <div class="chat-layout">
+        <aside class="chat-conversas" id="chat-lista-conversas">
+          <div class="chat-vazio">Informe seu ID de usuário acima para ver suas conversas.</div>
+        </aside>
+
+        <div class="chat-painel">
+          <div class="chat-painel-topo" id="chat-painel-topo">
+            Selecione uma conversa
+          </div>
+          <div class="chat-mensagens" id="chat-mensagens">
+            <div class="chat-vazio">Nenhuma conversa selecionada.</div>
+          </div>
+          <form class="chat-form" id="chat-form" style="display:none;">
+            <input type="text" id="chat-input-texto" placeholder="Digite sua mensagem..." autocomplete="off" required>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/mensagens.js"></script>
+</body>
+</html>

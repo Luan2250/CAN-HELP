@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Tarefas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav">
+        <a href="usuarios.html" class="nav-link">Usuários</a>
+        <a href="perfis.html" class="nav-link">Perfis</a>
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="cuidadores.html" class="nav-link">Cuidadores</a>
+        <a href="contratos.html" class="nav-link">Contratos</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="tarefas.html" class="nav-link">Tarefas</a>
+        <a href="avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="denuncias.html" class="nav-link">Denúncias</a>
+        <a href="lista-servicos.html" class="nav-link">Serviços</a>
+        <a href="itens-contrato.html" class="nav-link">Itens do contrato</a>
+        <a href="mensagens.html" class="nav-link">Chat</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">Tarefas</span>
+        <h1>Tarefas cadastradas</h1>
+      </div>
+      <button class="btn btn-primary" id="btn-nova-tarefa">+ Nova tarefa</button>
+    </section>
+
+    <p class="hint">Informe o ID de um compromisso da Agenda já cadastrado.</p>
+
+    <section class="card">
+      <table class="table" id="tabela-tarefas">
+        <thead>
+          <tr><th>ID</th><th>Agenda</th><th>Descrição</th><th>Hora</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody id="tarefas-corpo">
+          <tr><td colspan="6" class="empty">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="modal-backdrop" id="modal-tarefa">
+      <form class="modal" id="form-tarefa">
+        <h2 id="modal-tarefa-titulo">Nova tarefa</h2>
+        <input type="hidden" id="tarefa-id">
+        <label>ID da agenda <input type="number" id="tarefa-id-agenda" required></label>
+        <label>Descrição <textarea id="tarefa-descricao" rows="2" required></textarea></label>
+        <label>Hora <input type="time" id="tarefa-hora" required></label>
+        <label>Status
+          <select id="tarefa-status">
+            <option value="pendente">Pendente</option>
+            <option value="concluida">Concluída</option>
+          </select>
+        </label>
+        <label>
+          <input type="checkbox" id="tarefa-notificacao" style="width:auto;display:inline-block;margin-right:6px;" checked>
+          Notificar
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btn-cancelar-tarefa">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/tarefas.js"></script>
+  
+</body>
+</html>
