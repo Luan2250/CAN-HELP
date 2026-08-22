@@ -1,4 +1,5 @@
-from extensions import db
+from extensions import db, bcrypt
+
 class Usuario(db.Model): 
     __tablename__='usuario'
 
@@ -10,10 +11,12 @@ class Usuario(db.Model):
     dataNascimento = db.Column(db.Date, nullable=False)
     dataCadastro = db.Column(db.DateTime, default=db.func.current_timestamp())
     senha = db.Column(db.String(255), nullable=False)
+
     # 1. CREATE 
     def salvar(self):
         db.session.add(self)
         db.session.commit()
+
     # 2. UPDATE 
     def atualizar(self, endereco=None, telefone=None, email=None, senha=None):
         if endereco is not None:
@@ -23,8 +26,8 @@ class Usuario(db.Model):
         if email is not None:
             self.email = email
         if senha is not None:
-            self.senha = senha  # Lembra de criptografar a senha no futuro!
-            
+            self.definir_senha(senha)  # agora gera hash, não salva texto puro
+
         db.session.commit()
 
     # 3. DELETE 
@@ -50,7 +53,17 @@ class Usuario(db.Model):
     @staticmethod
     def buscar_por_email(email):
         return Usuario.query.filter_by(email=email).first()
-    
+
+    # 7. SENHA (login) — usadas pelo cadastro, atualização e autenticação
+    def definir_senha(self, senha_texto_plano):
+        """Gera o hash bcrypt da senha e guarda no campo self.senha.
+        NUNCA salve a senha em texto puro — sempre passe por aqui."""
+        self.senha = bcrypt.generate_password_hash(senha_texto_plano).decode('utf-8')
+
+    def verificar_senha(self, senha_texto_plano):
+        """Compara uma senha em texto puro (vinda do login) com o hash salvo."""
+        return bcrypt.check_password_hash(self.senha, senha_texto_plano)
+
     def to_dict(self):
         return {
             'idUsuario': self.idUsuario,
@@ -65,8 +78,3 @@ class Usuario(db.Model):
             # IMPORTANTE: Repare que NÃO colocamos a 'senha' aqui para que ela nunca 
             # seja enviada de volta na resposta da API, garantindo a segurança!
         }
-
-    # 3. Suas outras operações (salvar, deletar, etc.)
-    def salvar(self):
-        db.session.add(self)
-        db.session.commit()

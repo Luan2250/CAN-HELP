@@ -1,4 +1,3 @@
-# app/services/perfil/criar_perfil_service.py
 from extensions import db
 from models.usuario import Usuario
 from models.perfil import Perfil
@@ -31,9 +30,11 @@ class CriarPerfilService:
             endereco=dados.get('endereco'),
             telefone=dados.get('telefone'),
             email=dados.get('email'),
-            dataNascimento=dados.get('dataNascimento'),
-            senha=dados.get('senha')
+            dataNascimento=dados.get('dataNascimento')
         )
+        novo_usuario.definir_senha(dados.get('senha'))
+
+        novo_perfil = None
 
         try:
             novo_usuario.salvar()

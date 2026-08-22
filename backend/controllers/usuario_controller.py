@@ -6,6 +6,7 @@ from services.usuario.buscar_usuario_service import BuscarUsuarioService
 from services.usuario.atualizar_usuario_service import AtualizarUsuarioService
 from services.usuario.deletar_usuario_service import DeletarUsuarioService
 from services.usuario.verificar_tipo_service import VerificarTipoUsuarioService
+from services.usuario.login_usuario_service import LoginUsuarioService
 
 class UsuarioController:
 
@@ -53,3 +54,21 @@ class UsuarioController:
         if not resultado:
             return jsonify({"erro": "usuário não encontrado"}), 404
         return jsonify(resultado), 200
+
+    @staticmethod
+    def login():
+        dados = request.get_json()
+        email = dados.get('email')
+        senha = dados.get('senha')
+
+        if not email or not senha:
+            return jsonify({"erro": "Email e senha são obrigatórios"}), 400
+
+        usuario = LoginUsuarioService.executar(email, senha)
+
+        if usuario is None:
+            # Mensagem genérica de propósito: não revela se foi o email
+            # ou a senha que errou, por segurança.
+            return jsonify({"erro": "Email ou senha inválidos"}), 401
+
+        return jsonify(usuario.to_dict()), 200

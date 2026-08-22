@@ -1,5 +1,3 @@
-# Arquivo único de rotas, no lugar dos antigos *_routes.py (um por entidade).
-# Fica ao lado de app.py e extensions.py dentro de backend/.
 from flask import Blueprint
 from controllers.usuario_controller import UsuarioController
 from controllers.perfil_controller import PerfilController
@@ -121,6 +119,7 @@ usuario_bp.add_url_rule('/usuarios/<int:id_usuario>/tipo', view_func=UsuarioCont
 usuario_bp.add_url_rule('/usuarios/<int:id_usuario>', view_func=UsuarioController.buscar_por_id, methods=['GET'])
 usuario_bp.add_url_rule('/usuarios/<int:id_usuario>', view_func=UsuarioController.atualizar, methods=['PUT'])
 usuario_bp.add_url_rule('/usuarios/<int:id_usuario>', view_func=UsuarioController.deletar, methods=['DELETE'])
+usuario_bp.add_url_rule('/login', view_func=UsuarioController.login, methods=['POST'])
 
 # Itens Contrato
 
