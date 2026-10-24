@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Buscar cuidadores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav">
+        <a href="usuarios.html" class="nav-link">Usuários</a>
+        <a href="perfis.html" class="nav-link">Perfis</a>
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="cuidadores.html" class="nav-link">Cuidadores</a>
+        <a href="busca-cuidadores.html" class="nav-link">Buscar cuidadores</a>
+        <a href="contratos.html" class="nav-link">Contratos</a>
+        <a href="historico.html" class="nav-link">Histórico</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="tarefas.html" class="nav-link">Tarefas</a>
+        <a href="avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="denuncias.html" class="nav-link">Denúncias</a>
+        <a href="lista-servicos.html" class="nav-link">Serviços</a>
+        <a href="itens-contrato.html" class="nav-link">Itens do contrato</a>
+        <a href="mensagens.html" class="nav-link">Chat</a>
+        <a href="meu-perfil.html" class="nav-link">Editar perfil</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">RF18 · Busca</span>
+        <h1>Buscar cuidadores</h1>
+      </div>
+    </section>
+
+    <section class="card" style="padding:16px; margin-bottom:20px;">
+      <form id="form-filtros" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end;">
+        <label>Cidade <input type="text" id="filtro-cidade" placeholder="Ex: Recife"></label>
+        <label>Estado <input type="text" id="filtro-estado" placeholder="Ex: PE"></label>
+        <label>Valor máximo (R$) <input type="number" min="0" step="0.01" id="filtro-valor-max"></label>
+        <label>Nota mínima
+          <select id="filtro-nota-min">
+            <option value="">Qualquer</option>
+            <option value="1">1 ou mais</option>
+            <option value="2">2 ou mais</option>
+            <option value="3">3 ou mais</option>
+            <option value="4">4 ou mais</option>
+            <option value="5">5</option>
+          </select>
+        </label>
+        <label>Disponível em <input type="date" id="filtro-data"></label>
+        <label>Ordenar por
+          <select id="filtro-ordenar">
+            <option value="">Padrão</option>
+            <option value="nota">Melhor nota</option>
+            <option value="valor_asc">Menor valor</option>
+            <option value="valor_desc">Maior valor</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button type="button" class="btn btn-ghost" id="btn-limpar">Limpar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <table class="table">
+        <thead>
+          <tr><th>Nome</th><th>Cidade</th><th>Valor do serviço</th><th>Nota média</th><th>Disponibilidade</th><th></th></tr>
+        </thead>
+        <tbody id="busca-corpo">
+          <tr><td colspan="6" class="empty">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="modal-backdrop" id="modal-detalhes">
+      <div class="modal">
+        <h2 id="det-nome">Cuidador</h2>
+        <p id="det-bio" style="color:var(--ink-soft); margin:6px 0 0;"></p>
+        <p style="margin:16px 0 0;"><strong>Local:</strong> <span id="det-local"></span></p>
+        <p style="margin:6px 0 0;"><strong>Valor do serviço:</strong> <span id="det-valor"></span></p>
+        <p style="margin:6px 0 0;"><strong>Nota média:</strong> <span id="det-nota"></span></p>
+        <p style="margin:6px 0 0;"><strong>Disponibilidade:</strong> <span id="det-disp"></span></p>
+        <h3 style="margin:20px 0 6px;">Avaliações</h3>
+        <p id="det-avaliacoes-resumo" style="color:var(--ink-soft); margin:0 0 8px;"></p>
+        <div id="det-avaliacoes-lista" style="max-height:220px; overflow-y:auto;"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btn-fechar-detalhes">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/busca-cuidadores.js"></script>
+</body>
+</html>

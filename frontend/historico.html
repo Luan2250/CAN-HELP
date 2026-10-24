@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Histórico de serviços</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav">
+        <a href="usuarios.html" class="nav-link">Usuários</a>
+        <a href="perfis.html" class="nav-link">Perfis</a>
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="cuidadores.html" class="nav-link">Cuidadores</a>
+        <a href="busca-cuidadores.html" class="nav-link">Buscar cuidadores</a>
+        <a href="contratos.html" class="nav-link">Contratos</a>
+        <a href="historico.html" class="nav-link">Histórico</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="tarefas.html" class="nav-link">Tarefas</a>
+        <a href="avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="denuncias.html" class="nav-link">Denúncias</a>
+        <a href="lista-servicos.html" class="nav-link">Serviços</a>
+        <a href="itens-contrato.html" class="nav-link">Itens do contrato</a>
+        <a href="mensagens.html" class="nav-link">Chat</a>
+        <a href="meu-perfil.html" class="nav-link">Editar perfil</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">RF19 · Histórico</span>
+        <h1>Histórico de serviços</h1>
+      </div>
+    </section>
+
+    <section class="card" style="padding:16px; margin-bottom:20px;">
+      <form id="form-filtros" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end;">
+        <label>Status
+          <select id="filtro-status">
+            <option value="">Todos</option>
+            <option value="pendente">Pendente</option>
+            <option value="aceito">Aceito (em andamento)</option>
+            <option value="concluido">Concluído</option>
+            <option value="recusado">Recusado</option>
+            <option value="cancelado_cliente">Cancelado pelo cliente</option>
+            <option value="cancelado_cuidador">Cancelado pelo cuidador</option>
+          </select>
+        </label>
+        <label>Meu papel
+          <select id="filtro-papel">
+            <option value="">Todos</option>
+            <option value="cliente">Como cliente</option>
+            <option value="cuidador">Como cuidador</option>
+          </select>
+        </label>
+        <button type="button" class="btn btn-ghost" id="btn-limpar">Limpar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <table class="table">
+        <thead>
+          <tr><th>Data do atendimento</th><th>Meu papel</th><th>Outra parte</th><th>Auxiliado</th><th>Serviços</th><th>Status</th><th>Valor</th><th></th></tr>
+        </thead>
+        <tbody id="historico-corpo">
+          <tr><td colspan="8" class="empty">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <div class="modal-backdrop" id="modal-contrato">
+      <div class="modal">
+        <h2 id="ct-titulo">Contrato</h2>
+        <p style="margin:14px 0 0;"><strong>Cliente:</strong> <span id="ct-cliente"></span></p>
+        <p style="margin:6px 0 0;"><strong>Cuidador:</strong> <span id="ct-cuidador"></span></p>
+        <p style="margin:6px 0 0;"><strong>Auxiliado:</strong> <span id="ct-auxiliado"></span></p>
+        <p style="margin:6px 0 0;"><strong>Local:</strong> <span id="ct-local"></span></p>
+        <p style="margin:6px 0 0;"><strong>Contratado em:</strong> <span id="ct-contratado"></span></p>
+        <p style="margin:6px 0 0;"><strong>Atendimento em:</strong> <span id="ct-atendimento"></span></p>
+        <p style="margin:6px 0 0;"><strong>Serviços:</strong> <span id="ct-servicos"></span></p>
+        <p style="margin:6px 0 0;"><strong>Status:</strong> <span id="ct-status"></span></p>
+        <p style="margin:6px 0 0;"><strong>Valor final:</strong> <span id="ct-valor"></span></p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btn-fechar-contrato">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/historico.js"></script>
+</body>
+</html>

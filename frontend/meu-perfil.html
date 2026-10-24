@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Meu perfil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav">
+        <a href="usuarios.html" class="nav-link">Usuários</a>
+        <a href="perfis.html" class="nav-link">Perfis</a>
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="cuidadores.html" class="nav-link">Cuidadores</a>
+        <a href="busca-cuidadores.html" class="nav-link">Buscar cuidadores</a>
+        <a href="contratos.html" class="nav-link">Contratos</a>
+        <a href="historico.html" class="nav-link">Histórico</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="tarefas.html" class="nav-link">Tarefas</a>
+        <a href="avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="denuncias.html" class="nav-link">Denúncias</a>
+        <a href="lista-servicos.html" class="nav-link">Serviços</a>
+        <a href="itens-contrato.html" class="nav-link">Itens do contrato</a>
+        <a href="mensagens.html" class="nav-link">Chat</a>
+        <a href="meu-perfil.html" class="nav-link">Editar perfil</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">Conta</span>
+        <h1>Meu perfil</h1>
+      </div>
+    </section>
+
+    <section class="card">
+      <form id="form-meu-perfil">
+        <label>Nome <input type="text" id="meu-nome" required></label>
+
+        <label>Foto</label>
+        <div class="file-upload">
+          <input type="file" id="meu-foto-arquivo" accept="image/*" hidden>
+          <label for="meu-foto-arquivo" class="btn btn-ghost file-upload-btn">Escolher foto</label>
+          <img id="meu-foto-preview" class="foto-preview" style="display:none" alt="Foto de perfil">
+        </div>
+        <input type="hidden" id="meu-foto-url">
+
+        <label>Cidade <input type="text" id="meu-cidade"></label>
+        <label>Estado <input type="text" id="meu-estado" maxlength="40"></label>
+        <label>Bio <textarea id="meu-bio" rows="3" maxlength="220"></textarea></label>
+
+        <button type="submit" class="btn btn-primary">Salvar alterações</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/meu-perfil.js"></script>
+</body>
+</html>
