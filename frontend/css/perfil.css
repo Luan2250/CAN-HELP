@@ -1,0 +1,474 @@
+/* ================================
+   PÁGINA DE PERFIS
+================================ */
+
+.perfis-page {
+  max-width: 1080px;
+}
+
+
+/* ================================
+   CABEÇALHO AZUL DA PÁGINA
+================================ */
+
+.perfis-page .page-head {
+  background: #2960AB;
+  border-radius: 16px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow: 0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* TEXTO PEQUENO */
+
+.perfis-page .eyebrow {
+  color: #5DD1E9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+/* TÍTULO */
+
+.perfis-page .page-head h1 {
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  margin: 6px 0 0;
+}
+
+
+/* BOTÃO NOVO PERFIL */
+
+.perfis-page .page-head .btn-primary {
+  background: #FFFFFF;
+  color: #2960AB;
+
+  border: 1px solid #FFFFFF;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+  white-space: nowrap;
+
+  box-shadow: none;
+}
+
+.perfis-page .page-head .btn-primary:hover {
+  background: #5DD1E9;
+  border-color: #5DD1E9;
+  color: #263B43;
+
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   TABELA
+================================ */
+
+.perfis-page .card {
+  background: #FFFFFF;
+  border: 1px solid #AEC5D7;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(38, 59, 67, 0.06);
+}
+
+.perfis-page .table th {
+  color: #263B43;
+  background: #F4F4F5;
+}
+
+.perfis-page .table tbody tr:hover {
+  background: #F4F7FA;
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.perfis-page .modal-backdrop {
+  background: rgba(38, 59, 67, 0.50);
+  backdrop-filter: blur(3px);
+}
+
+
+/* ================================
+   CAIXA DO MODAL
+================================ */
+
+.perfis-page .cadastro-modal {
+  width: 500px;
+  max-width: calc(100vw - 30px);
+  max-height: 90vh;
+  padding: 0;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border: 1px solid #AEC5D7;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(38, 59, 67, 0.25);
+}
+
+
+/* ================================
+   TOPO AZUL DO MODAL
+================================ */
+
+.perfis-page .cadastro-header {
+  background: #2960AB;
+  padding: 28px 30px 24px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+/* ================================
+   QUADRADO CH
+================================ */
+
+.perfis-page .cadastro-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #5DD1E9;
+  color: #263B43;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   TÍTULO DO MODAL
+================================ */
+
+.perfis-page .cadastro-header h2 {
+  margin: 0;
+
+  color: #FFFFFF;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+
+/* ================================
+   TEXTO DO TOPO
+================================ */
+
+.perfis-page .cadastro-header p {
+  margin: 8px 0 0;
+
+  color: #EAF6FA;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+
+/* ================================
+   CONTEÚDO BRANCO
+================================ */
+
+.perfis-page .cadastro-conteudo {
+  padding: 26px 30px 30px;
+}
+
+
+/* ================================
+   LABELS
+================================ */
+
+.perfis-page .cadastro-conteudo label {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+.perfis-page .cadastro-conteudo input,
+.perfis-page .cadastro-conteudo textarea,
+.perfis-page .cadastro-conteudo select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-top: 7px;
+
+  padding: 11px 13px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #AEC5D7;
+
+  border-radius: 9px;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+
+  outline: none;
+}
+
+
+/* ================================
+   PLACEHOLDER
+================================ */
+
+.perfis-page .cadastro-conteudo input::placeholder,
+.perfis-page .cadastro-conteudo textarea::placeholder {
+  color: #7B8A92;
+}
+
+
+/* ================================
+   FOCO
+================================ */
+
+.perfis-page .cadastro-conteudo input:focus,
+.perfis-page .cadastro-conteudo textarea:focus,
+.perfis-page .cadastro-conteudo select:focus {
+  border-color: #2498DD;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* ================================
+   TEXTAREA
+================================ */
+
+.perfis-page .cadastro-conteudo textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+
+/* ================================
+   TIPO DE PERFIL
+================================ */
+
+.perfis-page .tipo-label {
+  margin-bottom: 8px !important;
+}
+
+
+/* ================================
+   BOTÕES CUIDADOR / CLIENTE
+================================ */
+
+.perfis-page .tipos-perfil {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.perfis-page .tipos-perfil .tipo {
+  flex: 1;
+
+  min-height: 44px;
+
+  padding: 10px 16px;
+
+  border: 1px solid #AEC5D7;
+  border-radius: 9px;
+
+  background: #AEC5D7;
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.perfis-page .tipos-perfil .tipo:hover {
+  background: #5DD1E9;
+  border-color: #5DD1E9;
+}
+
+
+/* BOTÃO ATIVO */
+
+.perfis-page .tipos-perfil .tipo.ativo {
+  background: #2960AB;
+  border-color: #2960AB;
+  color: #FFFFFF;
+}
+
+
+/* ================================
+   CAMPOS DO CUIDADOR
+================================ */
+
+.perfis-page #campos-cuidador {
+  margin-top: 8px;
+}
+
+
+/* ================================
+   UPLOAD DA FOTO
+================================ */
+
+.perfis-page .file-upload {
+  margin-bottom: 18px;
+}
+
+.perfis-page .file-upload-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: auto !important;
+
+  margin-top: 0 !important;
+
+  cursor: pointer;
+}
+
+
+/* ================================
+   PREVIEW DA FOTO
+================================ */
+
+.perfis-page .foto-preview {
+  display: block;
+
+  width: 100%;
+  max-height: 220px;
+
+  object-fit: cover;
+
+  margin-top: 12px;
+
+  border-radius: 12px;
+
+  border: 1px solid #AEC5D7;
+}
+
+
+/* ================================
+   BOTÕES DO MODAL
+================================ */
+
+.perfis-page .modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 26px;
+}
+
+
+/* ================================
+   BOTÃO CANCELAR
+================================ */
+
+.perfis-page .btn-ghost {
+  border: 1px solid #DDE5EA;
+
+  background: #FFFFFF;
+
+  color: #5B6B75;
+}
+
+.perfis-page .btn-ghost:hover {
+  border-color: #2960AB;
+
+  color: #2960AB;
+
+  background: #F4F7F6;
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 640px) {
+
+  .perfis-page {
+    padding: 28px 20px 60px;
+  }
+
+  .perfis-page .page-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .perfis-page .page-head .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .perfis-page .card {
+    overflow-x: auto;
+  }
+
+  .perfis-page .table {
+    min-width: 800px;
+  }
+
+  .perfis-page .cadastro-modal {
+    width: calc(100vw - 30px);
+    max-height: 90vh;
+    border-radius: 16px;
+  }
+
+  .perfis-page .cadastro-header {
+    padding: 24px 20px 20px;
+  }
+
+  .perfis-page .cadastro-conteudo {
+    padding: 22px 20px 24px;
+  }
+
+  .perfis-page .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .perfis-page .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,375 @@
+/* =========================================
+   PÁGINA INICIAL - CANHELP
+   ========================================= */
+
+.index-page {
+    max-width: 1180px;
+
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+
+/* =========================================
+   ÁREA DE APRESENTAÇÃO
+   ========================================= */
+
+.index-hero {
+    
+
+    color: #FFFFFF;
+
+    border-radius: 16px;
+
+    padding: 42px 40px;
+
+    margin-bottom: 40px;
+
+    min-height: 300px;
+
+    box-shadow: 0 8px 20px rgba(38, 59, 67, 0.12);
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(41, 96, 171, 0.5)), url("https://images.pexels.com/photos/3782210/pexels-photo-3782210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Mantém centralizado verticalmente (no meio da altura) */
+    align-items: flex-start;  /* Alinha tudo na esquerda horizontalmente */
+    text-align: left;        /* Garante que os textos comecem da esquerda */
+    gap: 15px;               
+    padding-left: 10%;      
+}
+
+
+/* CANHELP */
+
+.index-hero .eyebrow {
+    color: #5DD1E9;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* TÍTULO */
+
+.index-hero h1 {
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 2.2rem;
+
+    margin: 8px 0 10px;
+}
+
+
+/* TEXTO */
+
+.index-hero p {
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 1rem;
+
+    margin: 0;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================
+   TÍTULO DA SEÇÃO
+   ========================================= */
+
+.index-section {
+    width: 100%;
+}
+
+.index-section .section-title {
+    margin-bottom: 20px;
+}
+
+
+/* TEXTO "ACESSOS RÁPIDOS" */
+
+.index-section .section-title .eyebrow {
+    color: #2498DD;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* PRINCIPAIS ÁREAS */
+
+.index-section .section-title h2 {
+    color: #263B43;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.5rem;
+
+    margin: 5px 0 0;
+}
+
+
+/* =========================================
+   GRADE DOS QUADRADOS
+   ========================================= */
+
+.index-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   QUADRADOS AZUIS
+   ========================================= */
+
+.index-card {
+    min-height: 180px;
+
+    background: linear-gradient(145deg, #2F6DBB 0%, #24579D 100%);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(24, 62, 112, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* =========================================
+   QUADRADO DO EMOJI
+   ========================================= */
+
+.index-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 19px;
+    background: linear-gradient(145deg, #FFFFFF 0%, #E8F7FC 100%);
+    color: #245A9F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 7px 16px rgba(12, 40, 78, 0.18), inset 0 1px 0 #FFFFFF;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.index-card-icon svg {
+    width: 36px;
+    height: 36px;
+    display: block;
+    overflow: visible;
+}
+
+
+/* =========================================
+   NOME DA PÁGINA
+   ========================================= */
+
+.index-card h3 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   EFEITO AO PASSAR O MOUSE
+   ========================================= */
+
+.index-card:hover {
+    transform: translateY(-4px);
+
+    background: linear-gradient(145deg, #318BC5 0%, #2960AB 100%);
+    border-color: #54CBE3;
+    box-shadow: 0 14px 26px rgba(38, 59, 67, 0.2);
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .index-page {
+        padding: 30px 24px 50px;
+    }
+
+    .index-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 640px) {
+
+    .index-page {
+        padding: 25px 16px 50px;
+    }
+
+    .index-hero {
+        padding: 32px 24px;
+
+        margin-bottom: 30px;
+    }
+
+    .index-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .index-hero p {
+        font-size: 0.9rem;
+    }
+
+    .index-cards {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .index-card {
+        min-height: 155px;
+
+        padding: 16px;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUENO
+   ========================================= */
+
+@media (max-width: 420px) {
+
+    .index-cards {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .index-card {
+        min-height: 145px;
+
+        padding: 14px;
+    }
+
+    .index-card-icon {
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 1.4rem;
+    }
+
+    .index-card h3 {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* Acabamento visual dos atalhos */
+.index-card::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    right: -65px;
+    top: -75px;
+    background: rgba(255, 255, 255, 0.07);
+    z-index: -1;
+}
+
+.index-card:hover .index-card-icon,
+.index-card:focus-visible .index-card-icon {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 20px rgba(12, 40, 78, 0.22);
+}
+
+.index-card:focus-visible {
+    outline: 3px solid #5DD1E9;
+    outline-offset: 4px;
+}
+
+@media (min-width: 1200px) {
+    .index-card { min-height: 190px; }
+}
+
+@media (max-width: 640px) {
+    .index-card {
+        min-height: 148px;
+        border-radius: 16px;
+    }
+    .index-card-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 17px;
+    }
+    .index-card-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .index-card,
+    .index-card-icon {
+        transition: none;
+    }
+}

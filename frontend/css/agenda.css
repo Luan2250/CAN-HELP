@@ -1,0 +1,770 @@
+/* =====================================================
+   AGENDA
+===================================================== */
+
+.agenda-page {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 35px 24px 70px;
+}
+
+
+/* =====================================================
+   FAIXA AZUL
+===================================================== */
+
+.agenda-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(41, 96, 171, 0.5)), url("../img/agendafoto.jpg");
+
+    min-height: 200px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: #FFFFFF;
+
+    border-radius: 18px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+.agenda-hero .eyebrow {
+    color: #5DD1E9;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.agenda-hero h1 {
+    margin: 7px 0 0;
+
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   BOTÃO NOVO
+===================================================== */
+
+.btn-novo-compromisso {
+    border: none;
+
+    background: #FFFFFF;
+
+    color: #2960AB;
+
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-novo-compromisso:hover {
+    background: #5DD1E9;
+
+    color: #263B43;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+.agenda-filtro {
+    margin-bottom: 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+}
+
+.agenda-filtro-topo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    color: #5B6B75;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.agenda-filtro input {
+    height: 38px;
+
+    padding: 0 10px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 8px;
+
+    background: #F4F7F6;
+
+    color: #263B43;
+
+    font-family: "Inter", sans-serif;
+
+    outline: none;
+}
+
+.agenda-filtro input:focus {
+    border-color: #2498DD;
+
+    background: #FFFFFF;
+}
+
+.btn-filtro {
+    border: none;
+
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.btn-filtro:hover {
+    background: #2498DD;
+}
+
+.btn-filtro.secundario {
+    background: #AEC5D7;
+
+    color: #263B43;
+}
+
+.btn-filtro.secundario:hover {
+    background: #5DD1E9;
+}
+
+
+/* =====================================================
+   LISTA
+===================================================== */
+
+.agenda-lista {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   GRUPO DO DIA
+===================================================== */
+
+.agenda-dia {
+    width: 100%;
+}
+
+.agenda-dia-titulo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #263B43;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ITEM
+===================================================== */
+
+.agenda-item {
+    display: grid;
+
+    grid-template-columns: 95px 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 16px;
+
+    margin-bottom: 10px;
+
+    background: #E8E8E8;
+
+    border: 1px solid #D5D5D5;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 10px rgba(38, 59, 67, 0.06);
+}
+
+.agenda-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   HORA
+===================================================== */
+
+.agenda-hora {
+    color: #263B43;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   OCASIÃO
+===================================================== */
+
+.agenda-ocasiao {
+    color: #263B43;
+
+    font-size: 14px;
+}
+
+.agenda-contrato {
+    margin-top: 4px;
+
+    color: #7B858A;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   NOTIFICAÇÃO
+===================================================== */
+
+.agenda-notificacao {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 4px;
+
+    color: #263B43;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+.agenda-notificacao.ativa {
+    color: #263B43;
+}
+
+
+/* =====================================================
+   AÇÕES
+===================================================== */
+
+.agenda-acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.btn-agenda {
+    border: none;
+
+    background: transparent;
+
+    color: #2960AB;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn-agenda:hover {
+    text-decoration: underline;
+}
+
+.btn-agenda.danger {
+    color: #C0392B;
+}
+
+
+/* =====================================================
+   CARREGANDO / VAZIO / ERRO
+===================================================== */
+
+.agenda-loading,
+.agenda-empty,
+.agenda-erro {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 14px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #5B6B75;
+
+    font-size: 14px;
+}
+
+.agenda-erro {
+    color: #C0392B;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.agenda-page + .modal-backdrop {
+    background: rgba(38, 59, 67, 0.58) !important;
+
+    backdrop-filter: blur(5px);
+}
+
+.cadastro-modal {
+    width: 500px !important;
+
+    max-width: calc(100vw - 30px);
+
+    max-height: 90vh;
+
+    padding: 0 !important;
+
+    overflow-y: auto;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(38, 59, 67, 0.30);
+}
+
+
+/* =====================================================
+   TOPO MODAL
+===================================================== */
+
+.cadastro-modal .cadastro-header {
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    min-height: 170px;
+
+    padding: 28px 30px 25px;
+
+    background: #2960AB !important;
+
+    border-radius: 18px 18px 0 0;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.cadastro-modal .cadastro-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #5DD1E9;
+
+    color: #263B43;
+
+    border-radius: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.cadastro-modal .cadastro-header h2 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+.cadastro-modal .cadastro-header p {
+    margin: 8px 0 0;
+
+    color: #EAF6FA;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   CORPO MODAL
+===================================================== */
+
+.cadastro-conteudo {
+    padding: 25px 30px 30px;
+
+    background: #FFFFFF;
+}
+
+.cadastro-conteudo label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #263B43;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.cadastro-conteudo input[type="number"],
+.cadastro-conteudo input[type="date"],
+.cadastro-conteudo input[type="time"],
+.cadastro-conteudo input[type="text"] {
+    display: block;
+
+    width: 100%;
+
+    height: 44px;
+
+    box-sizing: border-box;
+
+    margin-top: 7px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 9px;
+
+    background: #F4F7F6;
+
+    color: #263B43;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.cadastro-conteudo input:focus {
+    border-color: #2498DD;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.checkbox-label {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 5px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: #2960AB;
+}
+
+.checkbox-label span {
+    color: #263B43;
+}
+
+
+/* =====================================================
+   MODAL ACTIONS
+===================================================== */
+
+.cadastro-modal .modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 600;
+}
+
+.btn-ghost {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    color: #5B6B75;
+
+    border-radius: 999px;
+
+    padding: 9px 16px;
+}
+
+.btn-ghost:hover {
+    border-color: #2960AB;
+
+    color: #2960AB;
+
+    background: #F4F7F6;
+}
+
+.btn-primary {
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    border-radius: 999px;
+
+    padding: 9px 18px;
+}
+
+.btn-primary:hover {
+    background: #2498DD;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    background: #263B43;
+
+    color: #FFFFFF;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .agenda-page {
+        padding: 25px 16px 55px;
+    }
+
+    .agenda-hero {
+        padding: 24px 20px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .agenda-hero h1 {
+        font-size: 24px;
+    }
+
+    .btn-novo-compromisso {
+        width: 100%;
+    }
+
+    .agenda-filtro-topo {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .agenda-filtro input,
+    .btn-filtro {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .agenda-item {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .agenda-notificacao {
+        justify-content: flex-start;
+    }
+
+    .agenda-acoes {
+        justify-content: flex-end;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .cadastro-modal {
+        width: calc(100vw - 30px) !important;
+
+        border-radius: 16px;
+    }
+
+    .cadastro-modal .cadastro-header {
+        border-radius: 16px 16px 0 0;
+
+        padding: 24px 20px;
+    }
+
+    .cadastro-conteudo {
+        padding: 22px 20px 25px;
+    }
+
+    .cadastro-modal .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cadastro-modal .modal-actions button {
+        width: 100%;
+    }
+
+}

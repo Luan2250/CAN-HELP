@@ -1,0 +1,520 @@
+/* =========================================================
+   PÁGINA DE CONTRATOS
+========================================================= */
+
+.contratos-page {
+  max-width: 1080px;
+}
+
+
+/* =========================================================
+   FAIXA AZUL DO CABEÇALHO DA PÁGINA
+========================================================= */
+
+.contratos-page .page-head {
+  background: #2960AB;
+
+  border-radius: 16px;
+
+  padding: 28px 30px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow: 0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* =========================================================
+   TEXTO PEQUENO
+========================================================= */
+
+.contratos-page .eyebrow {
+  color: #5DD1E9;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.contratos-page .page-head h1 {
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.contratos-page .hint {
+  color: #5B6B75;
+}
+
+
+/* =========================================================
+   BOTÃO NOVO CONTRATO
+========================================================= */
+
+.contratos-page .page-head .btn-primary {
+  background: #FFFFFF;
+
+  color: #2960AB;
+
+  border: 1px solid #FFFFFF;
+
+  box-shadow: none;
+}
+
+.contratos-page .page-head .btn-primary:hover {
+  background: #5DD1E9;
+
+  border-color: #5DD1E9;
+
+  color: #263B43;
+}
+
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+========================================================= */
+
+.contratos-page .btn-primary {
+  background: #2960AB;
+
+  color: #FFFFFF;
+}
+
+.contratos-page .btn-primary:hover {
+  background: #2498DD;
+}
+
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.contratos-page .card {
+  background: #FFFFFF;
+
+  border: 1px solid #AEC5D7;
+
+  border-radius: 12px;
+}
+
+.contratos-page .table th {
+  background: #F4F4F5;
+
+  color: #263B43;
+}
+
+.contratos-page .table tbody tr:hover {
+  background: #F4F4F5;
+}
+
+
+/* =========================================================
+   FUNDO DO MODAL
+========================================================= */
+
+.modal-backdrop {
+  background: rgba(38, 59, 67, 0.58) !important;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.contrato-modal {
+  width: 100%;
+
+  max-width: 500px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 0 30px 30px;
+
+  background: #FFFFFF;
+
+  border: none;
+
+  border-radius: 18px;
+
+  box-shadow: 0 20px 50px rgba(38, 59, 67, 0.3);
+}
+
+
+/* =========================================================
+   FAIXA AZUL DO MODAL
+========================================================= */
+
+.contrato-modal .contrato-header {
+  margin: 0 -30px 22px;
+
+  padding: 25px 30px 22px;
+
+  background: #2960AB !important;
+
+  border-radius: 18px 18px 0 0;
+
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   ÍCONE CH
+========================================================= */
+
+.contrato-modal .contrato-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 62px;
+
+  height: 62px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 12px;
+
+  background: #5DD1E9 !important;
+
+  color: #263B43 !important;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TÍTULO DO MODAL
+========================================================= */
+
+.contrato-modal .contrato-header h2 {
+  margin: 0;
+
+  color: #FFFFFF !important;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 1.45rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO DO MODAL
+========================================================= */
+
+.contrato-modal .contrato-header p {
+  margin: 6px 0 0;
+
+  color: #DDEEFF !important;
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.contrato-modal label {
+  display: block;
+
+  margin-top: 14px;
+
+  color: #263B43;
+
+  font-size: 0.82rem;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUTS E SELECTS
+========================================================= */
+
+.contrato-modal input,
+.contrato-modal select {
+  width: 100%;
+
+  margin-top: 6px;
+
+  padding: 11px 12px;
+
+  border: 1px solid #AEC5D7;
+
+  border-radius: 8px;
+
+  background: #FFFFFF;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.contrato-modal input::placeholder {
+  color: #8A9AA4;
+}
+
+
+/* =========================================================
+   INPUT FOCADO
+========================================================= */
+
+.contrato-modal input:focus,
+.contrato-modal select:focus {
+  outline: none;
+
+  border-color: #2498DD;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 152, 221, 0.14);
+}
+
+
+/* =========================================================
+   GRID DO FORMULÁRIO
+========================================================= */
+
+.contrato-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0 12px;
+}
+
+
+/* =========================================================
+   CAMPO DE VALOR
+========================================================= */
+
+.valor-input {
+  position: relative;
+}
+
+.valor-input span {
+  position: absolute;
+
+  left: 12px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #5B6B75;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  z-index: 1;
+}
+
+.valor-input input {
+  padding-left: 38px;
+}
+
+
+/* =========================================================
+   INFORMAÇÃO
+========================================================= */
+
+.contrato-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 18px;
+
+  padding: 11px 12px;
+
+  border-radius: 8px;
+
+  background: #F4F4F5;
+
+  color: #5B6B75;
+
+  font-size: 0.78rem;
+}
+
+.contrato-info span {
+  color: #2960AB;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   BOTÕES DO MODAL
+========================================================= */
+
+.contrato-modal .modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.contrato-modal .modal-actions .btn {
+  justify-content: center;
+
+  min-width: 120px;
+}
+
+
+/* =========================================================
+   BOTÃO CANCELAR
+========================================================= */
+
+.contrato-modal .btn-ghost {
+  background: #FFFFFF;
+
+  color: #5B6B75;
+
+  border: 1px solid #AEC5D7;
+}
+
+.contrato-modal .btn-ghost:hover {
+  border-color: #2960AB;
+
+  color: #2960AB;
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR
+========================================================= */
+
+.contrato-modal .btn-primary {
+  background: #2960AB;
+
+  color: #FFFFFF;
+}
+
+.contrato-modal .btn-primary:hover {
+  background: #2498DD;
+}
+
+
+/* =========================================================
+   BARRA DE ROLAGEM
+========================================================= */
+
+.contrato-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contrato-modal::-webkit-scrollbar-track {
+  background: #F4F4F5;
+}
+
+.contrato-modal::-webkit-scrollbar-thumb {
+  background: #AEC5D7;
+
+  border-radius: 10px;
+}
+
+.contrato-modal::-webkit-scrollbar-thumb:hover {
+  background: #2960AB;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .contratos-page {
+    padding: 28px 20px 60px;
+  }
+
+  .contratos-page .page-head {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .contratos-page .page-head .btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .contratos-page .card {
+    overflow-x: auto;
+  }
+
+  .contratos-page .table {
+    min-width: 760px;
+  }
+
+  .contrato-modal {
+    max-width: 100%;
+
+    max-height: 92vh;
+
+    padding: 0 24px 24px;
+  }
+
+  .contrato-modal .contrato-header {
+    margin-left: -24px;
+
+    margin-right: -24px;
+
+    padding-left: 24px;
+
+    padding-right: 24px;
+  }
+
+  .contrato-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contrato-modal .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .contrato-modal .modal-actions .btn {
+    width: 100%;
+  }
+}

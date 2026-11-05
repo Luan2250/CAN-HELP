@@ -1,0 +1,353 @@
+/* =====================================================
+   PÁGINA DE SERVIÇOS
+===================================================== */
+
+.servicos-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px 24px 60px;
+}
+
+
+/* =====================================================
+   BOTÃO VOLTAR
+===================================================== */
+
+.btn-voltar-servicos {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    padding: 10px 18px;
+
+    background: #2960AB;
+    color: #FFFFFF;
+
+    border-radius: 9px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.btn-voltar-servicos:hover {
+    background: #2498DD;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.servicos-header {
+    background: #2960AB;
+    color: #FFFFFF;
+
+    border-radius: 18px;
+
+    padding: 28px 32px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 8px 20px rgba(38, 59, 67, 0.10);
+}
+
+.servicos-header .eyebrow {
+    color: #5DD1E9;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.servicos-header h1 {
+    margin: 8px 0 6px;
+
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 28px;
+}
+
+.servicos-header p {
+    margin: 0;
+
+    color: #EAF6FA;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+.servicos-conteudo {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 8px 24px rgba(38, 59, 67, 0.06);
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.servicos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   BOTÃO DE SERVIÇO
+===================================================== */
+
+.servico-item {
+    border: 1px solid #AEC5D7;
+
+    background: #FFFFFF;
+
+    color: #263B43;
+
+    border-radius: 12px;
+
+    padding: 18px 14px;
+
+    min-height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.servico-item:hover {
+    border-color: #2498DD;
+
+    background: #EAF6FA;
+
+    transform: translateY(-2px);
+}
+
+.servico-item.selecionado {
+    background: #2960AB;
+
+    border-color: #2960AB;
+
+    color: #FFFFFF;
+
+    box-shadow:
+        0 6px 14px rgba(41, 96, 171, 0.18);
+}
+
+.servico-icone {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.servico-nome {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   CARREGANDO / ERRO
+===================================================== */
+
+.carregando-servicos,
+.erro-servicos,
+.vazio-servicos {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 35px 15px;
+
+    color: #5B6B75;
+
+    font-size: 14px;
+}
+
+.erro-servicos {
+    color: #C0392B;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.servicos-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 22px;
+}
+
+
+/* =====================================================
+   CONTINUAR
+===================================================== */
+
+.btn-continuar {
+    min-width: 150px;
+
+    padding: 12px 24px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-continuar:hover:not(:disabled) {
+    background: #2498DD;
+
+    transform: translateY(-1px);
+}
+
+.btn-continuar:disabled {
+    background: #AEC5D7;
+
+    color: #6B7B84;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    background: #263B43;
+
+    color: #FFFFFF;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.2s ease;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .servicos-page {
+        padding: 20px 16px 50px;
+    }
+
+    .servicos-header {
+        padding: 24px 20px;
+
+        border-radius: 14px;
+    }
+
+    .servicos-header h1 {
+        font-size: 23px;
+    }
+
+    .servicos-conteudo {
+        padding: 18px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .servico-item {
+        min-height: 100px;
+
+        padding: 14px 10px;
+    }
+
+    .servico-icone {
+        font-size: 25px;
+    }
+
+    .servico-nome {
+        font-size: 12px;
+    }
+
+    .servicos-footer {
+        justify-content: stretch;
+    }
+
+    .btn-continuar {
+        width: 100%;
+    }
+
+}

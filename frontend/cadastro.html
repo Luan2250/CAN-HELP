@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2960ab">
+  <title>CanHelp · Criar conta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/png" href="../img/canhelplogo.png">
+
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-intro" aria-label="Apresentação CanHelp">
+      <a class="login-brand" href="index.html"><span class="brand-mark">CH</span><span class="brand-name">CanHelp</span></a>
+      <div class="intro-copy">
+        <span class="eyebrow">FAÇA PARTE</span>
+        <h1>Comece sua jornada com o CanHelp.</h1>
+        <p>Crie sua conta para dar o primeiro passo.</p>
+      </div>
+      <div class="intro-decoration" aria-hidden="true"><span class="decoration-circle circle-one"></span><span class="decoration-circle circle-two"></span><span class="decoration-cross">+</span></div>
+    </section>
+    <section class="login-content" aria-labelledby="register-title">
+      <div class="login-card register-card">
+        <div class="mobile-brand" aria-hidden="true"><span class="brand-mark">CH</span><span class="brand-name">CanHelp</span></div>
+        <a class="register-top-link" href="index.html">← Voltar</a>
+        <span class="eyebrow">NOVO CADASTRO</span>
+        <h2 id="register-title">Criar sua conta</h2>
+        <p class="login-subtitle">Escolha o tipo de conta e preencha seus dados.</p>
+        <form class="register-form" id="form-cadastro" novalidate>
+          <label for="cadastro-tipo">Quero me cadastrar como</label>
+          <select id="cadastro-tipo" name="tipo" required>
+            <option value="cliente">Cliente — preciso de cuidados</option>
+            <option value="cuidador">Cuidador(a) — quero oferecer cuidados</option>
+          </select>
+          <label for="cadastro-nome">Nome completo</label>
+          <input id="cadastro-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome completo" required>
+          <label for="cadastro-bio">Sobre você (opcional)</label>
+          <textarea id="cadastro-bio" name="bio" rows="3" maxlength="220" placeholder="Conte um pouco sobre você"></textarea>
+          <div class="register-two-columns">
+            <div><label for="cadastro-cidade">Cidade</label><input id="cadastro-cidade" name="cidade" type="text" placeholder="Sua cidade"></div>
+            <div><label for="cadastro-estado">Estado</label><input id="cadastro-estado" name="estado" type="text" maxlength="40" placeholder="Ex.: RJ"></div>
+          </div>
+          <label for="cadastro-cpf">CPF</label>
+          <input id="cadastro-cpf" name="cpf" type="text" inputmode="numeric" maxlength="11" placeholder="Somente números" required>
+          <label for="cadastro-email">E-mail</label>
+          <input id="cadastro-email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required>
+          <label for="cadastro-telefone">Telefone</label>
+          <input id="cadastro-telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+          <label for="cadastro-endereco">Endereço</label>
+          <input id="cadastro-endereco" name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número e bairro">
+          <label for="cadastro-nascimento">Data de nascimento</label>
+          <input id="cadastro-nascimento" name="dataNascimento" type="date" required>
+          <div id="campos-cuidador" class="caregiver-fields" hidden>
+            <span class="caregiver-heading">Dados profissionais do cuidador</span>
+            <label for="cadastro-certificado">Certificado</label>
+            <input id="cadastro-certificado" name="certificado" type="text" placeholder="Nome do certificado">
+            <label for="cadastro-orgao-emissor">Órgão emissor</label>
+            <input id="cadastro-orgao-emissor" name="orgaoEmissor" type="text" placeholder="Instituição que emitiu o certificado">
+            <label for="cadastro-valor-servico">Valor do serviço (R$)</label>
+            <input id="cadastro-valor-servico" name="valorServico" type="number" min="0" step="0.01" placeholder="0,00">
+            <label for="cadastro-disponibilidade">Disponibilidade (opcional)</label>
+            <input id="cadastro-disponibilidade" name="disponibilidade" type="text" placeholder="Ex.: dias úteis, manhãs">
+          </div>
+          <label for="cadastro-senha">Senha</label>
+          <input id="cadastro-senha" name="senha" type="password" autocomplete="new-password" minlength="6" placeholder="Crie uma senha (mínimo 6 caracteres)" required>
+          <label for="cadastro-confirmar-senha">Confirmar senha</label>
+          <input id="cadastro-confirmar-senha" name="confirmarSenha" type="password" autocomplete="new-password" minlength="6" placeholder="Digite a senha novamente" required>
+          <button class="login-submit" type="submit">Criar conta</button>
+          <p id="cadastro-feedback" class="register-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <a class="back-link" href="index.html">Já tem uma conta? Entrar</a>
+      </div>
+      <p class="login-footer">CanHelp · Conectando pessoas a cuidados.</p>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>

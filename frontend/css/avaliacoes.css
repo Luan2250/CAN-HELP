@@ -1,0 +1,494 @@
+/* =========================================================
+   PÁGINA DE AVALIAÇÕES
+========================================================= */
+
+.avaliacoes-page {
+    max-width: 1080px;
+    padding-top: 42px;
+}
+
+
+/* =========================================================
+   CABEÇALHO AZUL DA PÁGINA
+========================================================= */
+
+.avaliacoes-page .page-head {
+    background: #2960AB;
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    box-shadow: 0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* =========================================================
+   TEXTO PEQUENO
+========================================================= */
+
+.avaliacoes-page .eyebrow {
+    color: #5DD1E9;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.avaliacoes-page .page-head h1 {
+    color: #FFFFFF;
+    font-size: 1.7rem;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.avaliacoes-page .hint {
+    color: #5B6B75;
+    margin: 0 0 24px;
+    font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   BOTÃO NOVA AVALIAÇÃO
+========================================================= */
+
+.avaliacoes-page .page-head .btn-primary {
+    background: #FFFFFF;
+    color: #2960AB;
+    padding: 11px 20px;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    box-shadow: none;
+}
+
+.avaliacoes-page .page-head .btn-primary:hover {
+    background: #5DD1E9;
+    border-color: #5DD1E9;
+    color: #263B43;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.avaliacoes-page .card {
+    background: #FFFFFF;
+    border: 1px solid #AEC5D7;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(38, 59, 67, 0.05);
+}
+
+.avaliacoes-page .table th {
+    background: #F4F4F5;
+    color: #263B43;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 15px 18px;
+    border-bottom: 1px solid #AEC5D7;
+}
+
+.avaliacoes-page .table td {
+    padding: 16px 18px;
+    color: #263B43;
+    border-bottom: 1px solid #DDE5EA;
+}
+
+.avaliacoes-page .table tbody tr:hover td {
+    background: #F4F7F6;
+}
+
+
+/* =========================================================
+   BOTÕES DA TABELA
+========================================================= */
+
+.avaliacoes-page .btn-icon {
+    color: #2960AB;
+    font-weight: 600;
+    border: 1px solid #AEC5D7;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 7px 12px;
+}
+
+.avaliacoes-page .btn-icon:hover {
+    background: #5DD1E9;
+    border-color: #5DD1E9;
+    color: #263B43;
+}
+
+.avaliacoes-page .btn-icon.danger:hover {
+    background: #FBEAE8;
+    border-color: #C0392B;
+    color: #C0392B;
+}
+
+
+/* =========================================================
+   MENSAGEM VAZIA
+========================================================= */
+
+.avaliacoes-page .empty {
+    color: #5B6B75;
+    padding: 30px 18px;
+}
+
+
+/* =========================================================
+   FUNDO DO MODAL
+========================================================= */
+
+.avaliacoes-page .modal-backdrop {
+    background: rgba(38, 59, 67, 0.58) !important;
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.avaliacoes-page .cadastro-modal {
+    width: 500px !important;
+    max-width: calc(100vw - 30px);
+    max-height: 90vh;
+
+    padding: 0 !important;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid #AEC5D7;
+    border-radius: 18px;
+
+    box-shadow: 0 25px 60px rgba(38, 59, 67, 0.30);
+}
+
+
+/* =========================================================
+   TOPO AZUL DO MODAL
+========================================================= */
+
+.avaliacoes-page .cadastro-header {
+    display: block !important;
+
+    width: 100% !important;
+    min-height: 175px;
+
+    padding: 28px 30px 25px !important;
+
+    box-sizing: border-box;
+
+    background: #2960AB !important;
+
+    border-radius: 18px 18px 0 0;
+
+    text-align: center !important;
+
+    color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   LOGO CH
+========================================================= */
+
+.avaliacoes-page .cadastro-icon {
+    width: 58px !important;
+    height: 58px !important;
+
+    margin: 0 auto 14px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #5DD1E9 !important;
+
+    border-radius: 15px;
+
+    color: #263B43 !important;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TÍTULO DO MODAL
+========================================================= */
+
+.avaliacoes-page .cadastro-header h2 {
+    display: block !important;
+
+    margin: 0 !important;
+
+    color: #FFFFFF !important;
+
+    font-family: 'Poppins', sans-serif !important;
+
+    font-size: 25px !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO DO MODAL
+========================================================= */
+
+.avaliacoes-page .cadastro-header p {
+    display: block !important;
+
+    margin: 8px 0 0 !important;
+
+    color: #EAF6FA !important;
+
+    font-family: 'Inter', sans-serif !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   CORPO DO MODAL
+========================================================= */
+
+.avaliacoes-page .cadastro-conteudo {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 25px 30px 30px;
+
+    background: #FFFFFF;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.avaliacoes-page .cadastro-conteudo label {
+    display: block;
+
+    margin: 0 0 14px;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS / SELECT / TEXTAREA
+========================================================= */
+
+.avaliacoes-page .cadastro-conteudo input,
+.avaliacoes-page .cadastro-conteudo select,
+.avaliacoes-page .cadastro-conteudo textarea {
+    display: block;
+
+    width: 100% !important;
+
+    box-sizing: border-box;
+
+    margin-top: 7px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 9px;
+
+    background: #F4F7F6;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.avaliacoes-page .cadastro-conteudo textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.avaliacoes-page .cadastro-conteudo input::placeholder,
+.avaliacoes-page .cadastro-conteudo textarea::placeholder {
+    color: #7B858A;
+}
+
+
+/* =========================================================
+   FOCO
+========================================================= */
+
+.avaliacoes-page .cadastro-conteudo input:focus,
+.avaliacoes-page .cadastro-conteudo select:focus,
+.avaliacoes-page .cadastro-conteudo textarea:focus {
+    border-color: #2498DD;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =========================================================
+   BOTÕES DO MODAL
+========================================================= */
+
+.avaliacoes-page .modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   CANCELAR
+========================================================= */
+
+.avaliacoes-page .modal-actions .btn-ghost {
+    background: #FFFFFF !important;
+
+    border: 1px solid #AEC5D7 !important;
+
+    color: #5B6B75 !important;
+
+    border-radius: 999px;
+}
+
+.avaliacoes-page .modal-actions .btn-ghost:hover {
+    border-color: #2960AB !important;
+
+    color: #2960AB !important;
+
+    background: #F4F7F6 !important;
+}
+
+
+/* =========================================================
+   SALVAR
+========================================================= */
+
+.avaliacoes-page .modal-actions .btn-primary {
+    background: #2960AB !important;
+
+    color: #FFFFFF !important;
+
+    border-radius: 999px;
+
+    box-shadow: 0 4px 10px rgba(41, 96, 171, 0.20);
+}
+
+.avaliacoes-page .modal-actions .btn-primary:hover {
+    background: #2498DD !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .avaliacoes-page {
+        padding: 30px 16px 60px;
+    }
+
+    .avaliacoes-page .page-head {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .avaliacoes-page .page-head .btn-primary {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .avaliacoes-page .card {
+        overflow-x: auto;
+    }
+
+    .avaliacoes-page .table {
+        min-width: 750px;
+    }
+
+    .avaliacoes-page .cadastro-modal {
+        width: calc(100vw - 30px) !important;
+
+        max-height: 90vh;
+
+        border-radius: 16px;
+    }
+
+    .avaliacoes-page .cadastro-header {
+        padding: 24px 20px !important;
+    }
+
+    .avaliacoes-page .cadastro-conteudo {
+        padding: 22px 20px 25px;
+    }
+
+    .avaliacoes-page .modal-actions {
+        flex-direction: column-reverse;
+
+        width: 100%;
+    }
+
+    .avaliacoes-page .modal-actions button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,618 @@
+/* =========================================
+   PÁGINA
+========================================= */
+
+.itens-contrato-page {
+    max-width: 1080px;
+}
+
+
+/* =========================================
+   CABEÇALHO AZUL
+========================================= */
+
+.itens-contrato-page .page-head {
+    background: #2960AB;
+
+    border-radius: 16px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* =========================================
+   TEXTO PEQUENO
+========================================= */
+
+.itens-contrato-page .eyebrow {
+    color: #5DD1E9;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.itens-contrato-page .page-head h1 {
+    color: #FFFFFF;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 1.7rem;
+
+    margin: 6px 0 0;
+}
+
+
+/* =========================================
+   BOTÃO PRINCIPAL
+========================================= */
+
+.itens-contrato-page .page-head .btn-primary {
+    background: #FFFFFF;
+
+    color: #2960AB;
+
+    border: 1px solid #FFFFFF;
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow: none;
+}
+
+.itens-contrato-page .page-head .btn-primary:hover {
+    background: #5DD1E9;
+
+    border-color: #5DD1E9;
+
+    color: #263B43;
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.itens-contrato-page .hint {
+    color: #5B6B75;
+
+    font-size: 0.88rem;
+
+    line-height: 1.5;
+
+    margin: 0 0 22px;
+}
+
+
+/* =========================================
+   FILTRO
+========================================= */
+
+.itens-contrato-page .filtro-card {
+    margin-bottom: 20px;
+
+    padding: 18px 20px;
+
+    overflow: visible;
+}
+
+.itens-contrato-page .filtro-conteudo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.itens-contrato-page .filtro-conteudo label {
+    color: #5B6B75;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+.itens-contrato-page .filtro-conteudo input {
+    width: 150px;
+
+    padding: 9px 11px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 0.88rem;
+
+    outline: none;
+}
+
+.itens-contrato-page .filtro-conteudo input:focus {
+    border-color: #2498DD;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =========================================
+   BOTÕES DO FILTRO
+========================================= */
+
+.itens-contrato-page .filtro-conteudo .btn-ghost {
+    padding: 9px 15px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 999px;
+
+    background: #FFFFFF;
+
+    color: #5B6B75;
+}
+
+.itens-contrato-page .filtro-conteudo .btn-ghost:hover {
+    border-color: #2960AB;
+
+    color: #2960AB;
+
+    background: #F4F7F6;
+}
+
+
+/* =========================================
+   TABELA
+========================================= */
+
+.itens-contrato-page .card {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(38, 59, 67, 0.06);
+
+    overflow: hidden;
+}
+
+.itens-contrato-page .table th {
+    color: #263B43;
+
+    background: #F4F4F5;
+}
+
+.itens-contrato-page .table td {
+    color: #5B6B75;
+}
+
+.itens-contrato-page .table tbody tr:hover td {
+    background: #F4F7FA;
+}
+
+
+/* =========================================
+   BOTÃO EXCLUIR
+========================================= */
+
+.itens-contrato-page .btn-icon.danger {
+    color: #2960AB;
+
+    border: 1px solid #AEC5D7;
+
+    background: #FFFFFF;
+}
+
+.itens-contrato-page .btn-icon.danger:hover {
+    background: #FBEAE8;
+
+    border-color: #C0392B;
+
+    color: #C0392B;
+}
+
+
+/* =========================================
+   FUNDO DO MODAL
+========================================= */
+
+.itens-contrato-page .modal-backdrop {
+    background: rgba(38, 59, 67, 0.55);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.itens-contrato-page .cadastro-modal {
+    width: 500px !important;
+
+    max-width: calc(100vw - 30px);
+
+    padding: 0 !important;
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(38, 59, 67, 0.30);
+}
+
+
+/* =========================================
+   CABEÇALHO AZUL DO MODAL
+========================================= */
+
+.itens-contrato-page .cadastro-header {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 28px 30px 25px;
+
+    background: #2960AB;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================
+   ÍCONE CH
+========================================= */
+
+.itens-contrato-page .cadastro-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #5DD1E9;
+
+    border-radius: 15px;
+
+    color: #263B43;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TÍTULO DO MODAL
+========================================= */
+
+.itens-contrato-page .cadastro-header h2 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TEXTO DO CABEÇALHO
+========================================= */
+
+.itens-contrato-page .cadastro-header p {
+    margin: 8px 0 0;
+
+    color: #EAF6FA;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CORPO DO MODAL
+========================================= */
+
+.itens-contrato-page .cadastro-conteudo {
+    padding: 28px 30px 30px;
+
+    background: #FFFFFF;
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.itens-contrato-page .cadastro-conteudo label {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.itens-contrato-page .cadastro-conteudo input {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 7px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 9px;
+
+    background: #FFFFFF;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.itens-contrato-page .cadastro-conteudo input::placeholder {
+    color: #7B858A;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+.itens-contrato-page .cadastro-conteudo input:focus {
+    border-color: #2498DD;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =========================================
+   CAIXA DE INFORMAÇÃO
+========================================= */
+
+.itens-contrato-page .info-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 5px;
+
+    padding: 11px 13px;
+
+    background: #F4F4F5;
+
+    border-radius: 9px;
+
+    color: #5B6B75;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 0.82rem;
+
+    line-height: 1.4;
+}
+
+.itens-contrato-page .info-icon {
+    color: #2960AB;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.itens-contrato-page .modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   CANCELAR
+========================================= */
+
+.itens-contrato-page .modal-actions .btn-ghost {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    color: #5B6B75;
+
+    border-radius: 999px;
+}
+
+.itens-contrato-page .modal-actions .btn-ghost:hover {
+    border-color: #2960AB;
+
+    color: #2960AB;
+
+    background: #F4F7F6;
+}
+
+
+/* =========================================
+   SALVAR
+========================================= */
+
+.itens-contrato-page .modal-actions .btn-primary {
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    border-radius: 999px;
+}
+
+.itens-contrato-page .modal-actions .btn-primary:hover {
+    background: #2498DD;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+    .itens-contrato-page {
+        padding: 28px 20px 60px;
+    }
+
+    .itens-contrato-page .page-head {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .itens-contrato-page .page-head .btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .itens-contrato-page .filtro-conteudo {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .itens-contrato-page .filtro-conteudo label {
+        width: 100%;
+    }
+
+    .itens-contrato-page .filtro-conteudo input {
+        width: 100%;
+
+        margin-top: 5px;
+    }
+
+    .itens-contrato-page .filtro-conteudo button {
+        width: 100%;
+    }
+
+    .itens-contrato-page .card {
+        overflow-x: auto;
+    }
+
+    .itens-contrato-page .table {
+        min-width: 600px;
+    }
+
+    .itens-contrato-page .cadastro-modal {
+        width: calc(100vw - 30px) !important;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+        border-radius: 16px;
+    }
+
+    .itens-contrato-page .cadastro-header {
+        padding: 24px 20px;
+    }
+
+    .itens-contrato-page .cadastro-conteudo {
+        padding: 22px 20px 25px;
+    }
+
+    .itens-contrato-page .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .itens-contrato-page .modal-actions button {
+        width: 100%;
+    }
+}

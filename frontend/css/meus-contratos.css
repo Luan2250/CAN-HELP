@@ -1,0 +1,89 @@
+.meus-page {
+  padding-top:42px;
+}
+.meus-page h1 {
+  margin:7px 0;
+}
+.meus-intro {
+  color:#687b87;
+  max-width:680px;
+  line-height:1.6;
+}
+.meus-status {
+  margin:22px 0;
+  color:#687b87;
+}
+.meus-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:16px;
+}
+.contrato-card {
+  background:#fff;
+  border:1px solid #dce5ec;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 5px 20px #263b430a;
+}
+.contrato-card h2 {
+  font-size:1.05rem;
+  margin:0 0 5px;
+}
+.contrato-card p {
+  color:#687b87;
+  font-size:.85rem;
+  margin:7px 0;
+}
+.contrato-card .linha {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 0;
+  border-bottom:1px solid #edf1f4;
+  font-size:.82rem;
+}
+.contrato-card .linha span {
+  color:#71818c;
+}
+.status-pill {
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#edf5fa;
+  color:#2960ab;
+  font-size:.72rem;
+  font-weight:700;
+}
+.contrato-acoes {
+  display:flex;
+  gap:9px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+.contrato-acoes button {
+  border:0;
+  border-radius:10px;
+  padding:10px 13px;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-chat-contrato {
+  background:#2960ab;
+  color:white;
+}
+.btn-cancelar-contrato {
+  background:#fff0f0;
+  color:#b42318;
+}
+.btn-cancelar-contrato:disabled {
+  opacity:.45;
+  cursor:not-allowed;
+}
+.contrato-vazio {
+  padding:25px;
+  background:#fff;
+  border:1px dashed #cbd8e1;
+  border-radius:15px;
+  color:#71818c;
+  text-align:center;
+}

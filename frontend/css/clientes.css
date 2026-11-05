@@ -1,0 +1,357 @@
+/* ================================
+   PÁGINA DE CLIENTES
+================================ */
+
+.clientes-page {
+  max-width: 1080px;
+}
+
+
+/* ================================
+   CABEÇALHO AZUL
+================================ */
+
+.clientes-page .page-head {
+  background: #2960AB;
+  border-radius: 16px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow: 0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* TEXTO PEQUENO */
+
+.clientes-page .eyebrow {
+  color: #5DD1E9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+/* TÍTULO */
+
+.clientes-page .page-head h1 {
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  margin: 6px 0 0;
+}
+
+
+/* BOTÃO PRINCIPAL */
+
+.clientes-page .page-head .btn-primary {
+  background: #FFFFFF;
+  color: #2960AB;
+
+  border: 1px solid #FFFFFF;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+  white-space: nowrap;
+
+  box-shadow: none;
+}
+
+.clientes-page .page-head .btn-primary:hover {
+  background: #5DD1E9;
+  border-color: #5DD1E9;
+  color: #263B43;
+
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   TABELA
+================================ */
+
+.clientes-page .card {
+  background: #FFFFFF;
+  border: 1px solid #AEC5D7;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(38, 59, 67, 0.06);
+}
+
+.clientes-page .table th {
+  color: #263B43;
+  background: #F4F4F5;
+}
+
+.clientes-page .table tbody tr:hover {
+  background: #F4F7FA;
+}
+
+
+/* ================================
+   MODAL BACKDROP
+================================ */
+
+.clientes-page .modal-backdrop {
+  background: rgba(38, 59, 67, 0.50);
+  backdrop-filter: blur(3px);
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.clientes-page .cadastro-modal {
+  width: 500px;
+  max-width: calc(100vw - 30px);
+  padding: 0;
+  overflow: hidden;
+
+  background: #FFFFFF;
+
+  border: 1px solid #AEC5D7;
+  border-radius: 18px;
+
+  box-shadow: 0 24px 60px rgba(38, 59, 67, 0.25);
+}
+
+
+/* ================================
+   TOPO AZUL
+================================ */
+
+.clientes-page .cadastro-header {
+  background: #2960AB;
+
+  padding: 28px 30px 24px;
+
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+
+/* ================================
+   ÍCONE CH
+================================ */
+
+.clientes-page .cadastro-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #5DD1E9;
+  color: #263B43;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+
+.clientes-page .cadastro-header h2 {
+  margin: 0;
+
+  color: #FFFFFF;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+
+/* ================================
+   TEXTO
+================================ */
+
+.clientes-page .cadastro-header p {
+  margin: 8px 0 0;
+
+  color: #EAF6FA;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+
+/* ================================
+   CONTEÚDO BRANCO
+================================ */
+
+.clientes-page .cadastro-conteudo {
+  padding: 26px 30px 30px;
+}
+
+
+/* ================================
+   LABEL
+================================ */
+
+.clientes-page .cadastro-conteudo label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.clientes-page .cadastro-conteudo input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-top: 7px;
+
+  padding: 12px 13px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #AEC5D7;
+
+  border-radius: 9px;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+
+  outline: none;
+}
+
+
+/* ================================
+   PLACEHOLDER
+================================ */
+
+.clientes-page .cadastro-conteudo input::placeholder {
+  color: #7B8A92;
+}
+
+
+/* ================================
+   FOCO
+================================ */
+
+.clientes-page .cadastro-conteudo input:focus {
+  border-color: #2498DD;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.clientes-page .modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+
+/* ================================
+   CANCELAR
+================================ */
+
+.clientes-page .btn-ghost {
+  border: 1px solid #DDE5EA;
+
+  background: #FFFFFF;
+
+  color: #5B6B75;
+}
+
+.clientes-page .btn-ghost:hover {
+  border-color: #2960AB;
+
+  color: #2960AB;
+
+  background: #F4F7F6;
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 640px) {
+
+  .clientes-page {
+    padding: 28px 20px 60px;
+  }
+
+  .clientes-page .page-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .clientes-page .page-head .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .clientes-page .card {
+    overflow-x: auto;
+  }
+
+  .clientes-page .table {
+    min-width: 500px;
+  }
+
+  .clientes-page .cadastro-modal {
+    width: calc(100vw - 30px);
+    border-radius: 16px;
+  }
+
+  .clientes-page .cadastro-header {
+    padding: 24px 20px 20px;
+  }
+
+  .clientes-page .cadastro-conteudo {
+    padding: 22px 20px 24px;
+  }
+
+  .clientes-page .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .clientes-page .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,676 @@
+/* =====================================================
+   TAREFAS
+===================================================== */
+
+.tarefas-page {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 35px 24px 70px;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.tarefas-hero {
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    border-radius: 18px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+.tarefas-hero .eyebrow {
+    color: #5DD1E9;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.tarefas-hero h1 {
+    margin: 7px 0 0;
+
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   BOTÃO NOVA TAREFA
+===================================================== */
+
+.btn-nova-tarefa {
+    border: none;
+
+    background: #FFFFFF;
+
+    color: #2960AB;
+
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-nova-tarefa:hover {
+    background: #5DD1E9;
+
+    color: #263B43;
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.tarefas-filtro {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.filtro-tarefa {
+    border: 1px solid #AEC5D7;
+
+    background: #FFFFFF;
+
+    color: #5B6B75;
+
+    padding: 8px 15px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.filtro-tarefa:hover {
+    border-color: #2960AB;
+
+    color: #2960AB;
+}
+
+.filtro-tarefa.ativo {
+    background: #2960AB;
+
+    border-color: #2960AB;
+
+    color: #FFFFFF;
+}
+
+
+/* =====================================================
+   LISTA
+===================================================== */
+
+.tarefas-lista {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.tarefa-card {
+    display: grid;
+
+    grid-template-columns: 80px 1fr auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 16px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(38, 59, 67, 0.05);
+}
+
+.tarefa-card:hover {
+    background: #F8FAFA;
+}
+
+
+/* =====================================================
+   HORA
+===================================================== */
+
+.tarefa-hora {
+    color: #2960AB;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+.tarefa-conteudo h2 {
+    margin: 0 0 5px;
+
+    color: #263B43;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+}
+
+.tarefa-conteudo p {
+    margin: 0 0 7px;
+
+    color: #7B858A;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.tarefa-status,
+.tarefa-notificacao {
+    display: inline-block;
+
+    margin-right: 6px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.tarefa-status.pendente {
+    color: #996B00;
+}
+
+.tarefa-status.concluida {
+    color: #20833D;
+}
+
+.tarefa-notificacao {
+    color: #2960AB;
+}
+
+
+/* =====================================================
+   AÇÕES
+===================================================== */
+
+.tarefa-acoes {
+    display: flex;
+
+    gap: 7px;
+}
+
+.btn-tarefa {
+    border: 1px solid #AEC5D7;
+
+    background: #FFFFFF;
+
+    color: #2960AB;
+
+    border-radius: 8px;
+
+    padding: 7px 10px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn-tarefa:hover {
+    background: #5DD1E9;
+
+    border-color: #5DD1E9;
+
+    color: #263B43;
+}
+
+.btn-tarefa.danger {
+    color: #C0392B;
+}
+
+.btn-tarefa.danger:hover {
+    background: #FBEAE8;
+
+    border-color: #C0392B;
+
+    color: #C0392B;
+}
+
+
+/* =====================================================
+   ESTADOS
+===================================================== */
+
+.tarefas-loading,
+.tarefas-empty,
+.tarefas-erro {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 14px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #5B6B75;
+
+    font-size: 14px;
+}
+
+.tarefas-erro {
+    color: #C0392B;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.tarefas-page + .modal-backdrop {
+    background: rgba(38, 59, 67, 0.58) !important;
+
+    backdrop-filter: blur(5px);
+}
+
+.cadastro-modal {
+    width: 500px !important;
+
+    max-width: calc(100vw - 30px);
+
+    max-height: 90vh;
+
+    padding: 0 !important;
+
+    overflow-y: auto;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(38, 59, 67, 0.30);
+}
+
+
+/* =====================================================
+   TOPO MODAL
+===================================================== */
+
+.cadastro-modal .cadastro-header {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    min-height: 170px;
+
+    padding: 28px 30px 25px;
+
+    background: #2960AB;
+
+    border-radius: 18px 18px 0 0;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.cadastro-modal .cadastro-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #5DD1E9;
+
+    color: #263B43;
+
+    border-radius: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.cadastro-modal .cadastro-header h2 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 25px;
+}
+
+.cadastro-modal .cadastro-header p {
+    margin: 8px 0 0;
+
+    color: #EAF6FA;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CORPO
+===================================================== */
+
+.cadastro-conteudo {
+    padding: 25px 30px 30px;
+}
+
+.cadastro-conteudo label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #263B43;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.cadastro-conteudo input[type="number"],
+.cadastro-conteudo input[type="time"],
+.cadastro-conteudo textarea,
+.cadastro-conteudo select {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 7px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 9px;
+
+    background: #F4F7F6;
+
+    color: #263B43;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.cadastro-conteudo textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+.cadastro-conteudo input:focus,
+.cadastro-conteudo textarea:focus,
+.cadastro-conteudo select:focus {
+    border-color: #2498DD;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.checkbox-label {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 5px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: #2960AB;
+}
+
+.checkbox-label span {
+    color: #263B43;
+}
+
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 600;
+}
+
+.btn-ghost {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    color: #5B6B75;
+
+    border-radius: 999px;
+
+    padding: 9px 16px;
+}
+
+.btn-ghost:hover {
+    border-color: #2960AB;
+
+    color: #2960AB;
+}
+
+.btn-primary {
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    border-radius: 999px;
+
+    padding: 9px 18px;
+}
+
+.btn-primary:hover {
+    background: #2498DD;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    background: #263B43;
+
+    color: #FFFFFF;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .tarefas-page {
+        padding: 25px 16px 55px;
+    }
+
+    .tarefas-hero {
+        padding: 24px 20px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .tarefas-hero h1 {
+        font-size: 24px;
+    }
+
+    .btn-nova-tarefa {
+        width: 100%;
+    }
+
+    .tarefas-filtro {
+        overflow-x: auto;
+    }
+
+    .tarefa-card {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .tarefa-acoes {
+        justify-content: flex-end;
+    }
+
+    .cadastro-modal {
+        width: calc(100vw - 30px) !important;
+
+        border-radius: 16px;
+    }
+
+    .cadastro-modal .cadastro-header {
+        border-radius: 16px 16px 0 0;
+
+        padding: 24px 20px;
+    }
+
+    .cadastro-conteudo {
+        padding: 22px 20px 25px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanHelp · Histórico de serviços</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/historico.css">
+    <link rel="icon" type="image/png" href="../img/canhelplogo.png">
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">CanHelp</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+  <a href="home.html" class="nav-link">Início</a>
+  <a href="buscar-cuidador.html" class="nav-link">Buscar cuidador</a>
+  <a href="agenda.html" class="nav-link">Agenda</a>
+  <a href="servicos.html" class="nav-link">Serviços</a>
+  <a href="chat.html" class="nav-link">Chat</a>
+  <a href="login.html" class="nav-link">Entrar</a>
+  <a href="cadastro.html" class="nav-link">Criar conta</a>
+  <details class="nav-more">
+    <summary class="nav-link nav-summary">Minha área</summary>
+    <div class="nav-dropdown" aria-label="Páginas do usuário">
+      <a href="contratos.html" class="nav-link nav-dropdown-link">Contratos</a>
+      <a href="itens-contrato.html" class="nav-link nav-dropdown-link">Serviços do contrato</a>
+      <a href="tarefas.html" class="nav-link nav-dropdown-link">Tarefas</a>
+      <a href="minha-agenda.html" class="nav-link nav-dropdown-link">Minha agenda</a>
+      <a href="historico.html" class="nav-link nav-dropdown-link">Histórico</a>
+      <a href="avaliacoes.html" class="nav-link nav-dropdown-link">Avaliações</a>
+      <a href="notificacoes.html" class="nav-link nav-dropdown-link">Notificações</a>
+      <a href="lembretes.html" class="nav-link nav-dropdown-link">Lembretes</a>
+      <a href="meu-perfil.html" class="nav-link nav-dropdown-link">Meu perfil</a>
+    <a href="meus-contratos.html" class="nav-link nav-dropdown-link">Meus contratos</a></div>
+  </details>
+</nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-head">
+      <div>
+        <span class="eyebrow">RF19 · Histórico</span>
+        <h1>Histórico de serviços</h1>
+      </div>
+    </section>
+
+    <section class="card historico-filtros-card">
+      <form id="form-filtros" class="historico-filtros-form">
+        <label>Status
+          <select id="filtro-status">
+            <option value="">Todos</option>
+            <option value="pendente">Pendente</option>
+            <option value="aceito">Aceito (em andamento)</option>
+            <option value="concluido">Concluído</option>
+            <option value="recusado">Recusado</option>
+            <option value="cancelado_cliente">Cancelado pelo cliente</option>
+            <option value="cancelado_cuidador">Cancelado pelo cuidador</option>
+          </select>
+        </label>
+        <label>Meu papel
+          <select id="filtro-papel">
+            <option value="">Todos</option>
+            <option value="cliente">Como cliente</option>
+            <option value="cuidador">Como cuidador</option>
+          </select>
+        </label>
+        <button type="button" class="btn btn-ghost" id="btn-limpar">Limpar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <table class="table">
+        <thead>
+          <tr><th>Data do atendimento</th><th>Meu papel</th><th>Outra parte</th><th>Auxiliado</th><th>Serviços</th><th>Status</th><th>Valor</th><th></th></tr>
+        </thead>
+        <tbody id="historico-corpo">
+          <tr><td colspan="8" class="empty">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <div class="modal-backdrop" id="modal-contrato">
+      <div class="modal">
+        <h2 id="ct-titulo">Contrato</h2>
+        <p class="historico-detalhe-primeiro"><strong>Cliente:</strong> <span id="ct-cliente"></span></p>
+        <p class="historico-detalhe"><strong>Cuidador:</strong> <span id="ct-cuidador"></span></p>
+        <p class="historico-detalhe"><strong>Auxiliado:</strong> <span id="ct-auxiliado"></span></p>
+        <p class="historico-detalhe"><strong>Local:</strong> <span id="ct-local"></span></p>
+        <p class="historico-detalhe"><strong>Contratado em:</strong> <span id="ct-contratado"></span></p>
+        <p class="historico-detalhe"><strong>Atendimento em:</strong> <span id="ct-atendimento"></span></p>
+        <p class="historico-detalhe"><strong>Serviços:</strong> <span id="ct-servicos"></span></p>
+        <p class="historico-detalhe"><strong>Status:</strong> <span id="ct-status"></span></p>
+        <p class="historico-detalhe"><strong>Valor final:</strong> <span id="ct-valor"></span></p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btn-fechar-contrato">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/historico.js"></script>
+<nav class="mobile-bottom-nav" aria-label="Navegação rápida no celular">
+  <a class="mobile-nav-item" href="home.html" data-mobile-page="home.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg><span>Início</span></a>
+  <a class="mobile-nav-item" href="chat.html" data-mobile-page="chat.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>Chat</span></a>
+  <a class="mobile-nav-item" href="agenda.html" data-mobile-page="agenda.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg><span>Agenda</span></a>
+  <a class="mobile-nav-item" href="notificacoes.html" data-mobile-page="notificacoes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span>Avisos</span></a>
+  <a class="mobile-nav-item" href="meu-perfil.html" data-mobile-page="meu-perfil.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg><span>Perfil</span></a>
+</nav>
+<script src="js/mobile-nav.js"></script>
+</body>
+</html>

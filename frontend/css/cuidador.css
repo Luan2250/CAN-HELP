@@ -1,0 +1,435 @@
+/* =========================================================
+   PÁGINA DE CUIDADORES
+========================================================= */
+
+.cuidadores-page {
+  max-width: 1080px;
+}
+
+
+/* =========================================================
+   CABEÇALHO AZUL
+========================================================= */
+
+.cuidadores-page .page-head {
+  background: #2960AB;
+  border-radius: 16px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow: 0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* =========================================================
+   TEXTO PEQUENO
+========================================================= */
+
+.cuidadores-page .eyebrow {
+  color: #5DD1E9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.cuidadores-page .page-head h1 {
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  margin: 6px 0 0;
+}
+
+
+/* =========================================================
+   BOTÃO NOVO CUIDADOR
+========================================================= */
+
+.cuidadores-page .page-head .btn-primary {
+  background: #FFFFFF;
+  color: #2960AB;
+
+  border: 1px solid #FFFFFF;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+  white-space: nowrap;
+
+  box-shadow: none;
+}
+
+.cuidadores-page .page-head .btn-primary:hover {
+  background: #5DD1E9;
+  border-color: #5DD1E9;
+  color: #263B43;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.cuidadores-page .card {
+  background: #FFFFFF;
+  border: 1px solid #AEC5D7;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(38, 59, 67, 0.06);
+}
+
+.cuidadores-page .table th {
+  color: #263B43;
+  background: #F4F4F5;
+}
+
+.cuidadores-page .table tbody tr:hover td {
+  background: #F4F7F6;
+}
+
+
+/* =========================================================
+   FUNDO ESCURO DO MODAL
+========================================================= */
+
+.modal-backdrop {
+  background: rgba(38, 59, 67, 0.58) !important;
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   MODAL DO CUIDADOR
+========================================================= */
+
+.cadastro-modal {
+  width: 500px !important;
+  max-width: calc(100vw - 30px);
+  max-height: 90vh;
+
+  padding: 0 !important;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #FFFFFF !important;
+
+  border: 1px solid #AEC5D7;
+  border-radius: 18px;
+
+  box-shadow: 0 25px 60px rgba(38, 59, 67, 0.30);
+}
+
+
+/* =========================================================
+   TOPO AZUL DO MODAL
+========================================================= */
+
+.cadastro-modal .cadastro-header {
+  display: block !important;
+
+  width: 100% !important;
+  min-height: 175px;
+
+  padding: 28px 30px 25px !important;
+
+  box-sizing: border-box;
+
+  background: #2960AB !important;
+
+  text-align: center !important;
+
+  color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   LOGO CH
+========================================================= */
+
+.cadastro-modal .cadastro-icon {
+  width: 58px !important;
+  height: 58px !important;
+
+  margin: 0 auto 14px !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  background: #5DD1E9 !important;
+
+  border-radius: 15px;
+
+  color: #263B43 !important;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.cadastro-modal .cadastro-header h2 {
+  display: block !important;
+
+  margin: 0 !important;
+
+  color: #FFFFFF !important;
+
+  font-family: 'Poppins', sans-serif !important;
+
+  font-size: 25px !important;
+
+  font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.cadastro-modal .cadastro-header p {
+  display: block !important;
+
+  margin: 8px 0 0 !important;
+
+  color: #EAF6FA !important;
+
+  font-family: 'Inter', sans-serif !important;
+
+  font-size: 14px !important;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   CORPO DO FORMULÁRIO
+========================================================= */
+
+.cadastro-modal .cadastro-conteudo {
+  display: block;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 25px 30px 30px;
+
+  background: #FFFFFF;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.cadastro-modal .cadastro-conteudo label {
+  display: block;
+
+  margin: 0 0 14px;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.cadastro-modal .cadastro-conteudo input {
+  display: block;
+
+  width: 100% !important;
+
+  height: 44px;
+
+  box-sizing: border-box;
+
+  margin-top: 7px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #AEC5D7;
+
+  border-radius: 9px;
+
+  background: #F4F7F6;
+
+  color: #263B43;
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.cadastro-modal .cadastro-conteudo input::placeholder {
+  color: #7B858A;
+}
+
+
+/* =========================================================
+   INPUT FOCADO
+========================================================= */
+
+.cadastro-modal .cadastro-conteudo input:focus {
+  border-color: #2498DD;
+
+  background: #FFFFFF;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.cadastro-modal .modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   CANCELAR
+========================================================= */
+
+.cadastro-modal .modal-actions .btn-ghost {
+  background: #FFFFFF !important;
+
+  border: 1px solid #AEC5D7 !important;
+
+  color: #5B6B75 !important;
+
+  border-radius: 999px;
+}
+
+.cadastro-modal .modal-actions .btn-ghost:hover {
+  border-color: #2960AB !important;
+
+  color: #2960AB !important;
+
+  background: #F4F7F6 !important;
+}
+
+
+/* =========================================================
+   SALVAR
+========================================================= */
+
+.cadastro-modal .modal-actions .btn-primary {
+  background: #2960AB !important;
+
+  color: #FFFFFF !important;
+
+  border-radius: 999px;
+
+  box-shadow: 0 4px 10px rgba(41, 96, 171, 0.20);
+}
+
+.cadastro-modal .modal-actions .btn-primary:hover {
+  background: #2498DD !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .cuidadores-page {
+    padding: 28px 20px 60px;
+  }
+
+  .cuidadores-page .page-head {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .cuidadores-page .page-head .btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .cuidadores-page .card {
+    overflow-x: auto;
+  }
+
+  .cuidadores-page .table {
+    min-width: 700px;
+  }
+
+
+  .cadastro-modal {
+    width: calc(100vw - 30px) !important;
+
+    max-height: 90vh;
+
+    border-radius: 16px;
+  }
+
+  .cadastro-modal .cadastro-header {
+    min-height: 165px;
+
+    padding: 24px 20px !important;
+  }
+
+  .cadastro-modal .cadastro-conteudo {
+    padding: 22px 20px 25px;
+  }
+
+  .cadastro-modal .modal-actions {
+    flex-direction: column-reverse;
+
+    width: 100%;
+  }
+
+  .cadastro-modal .modal-actions button {
+    width: 100%;
+  }
+}

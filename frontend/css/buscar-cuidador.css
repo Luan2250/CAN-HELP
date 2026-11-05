@@ -1,0 +1,725 @@
+/* =====================================================
+   BUSCAR CUIDADOR
+===================================================== */
+
+.buscar-page {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+
+/* =====================================================
+   FAIXA AZUL
+===================================================== */
+
+.buscar-hero {
+    color: white;
+    border-radius: 18px;
+    padding: 38px 42px;
+    margin-bottom: 26px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(41, 96, 171, 0.5)), url("../img/cuidador.jpg");
+    background-size: cover;
+    background-position: center;    
+    min-height: 220px;
+}
+
+.buscar-hero .eyebrow {
+    color: #5DD1E9;
+}
+
+.buscar-hero h1 {
+    margin: 10px 0 8px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.buscar-hero p {
+    margin: 0;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   ÁREA DE BUSCA
+===================================================== */
+
+.buscar-area {
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   CAMPO DE BUSCA
+===================================================== */
+
+.search-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #AEC5D7;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    height: 44px;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 15px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #263B43;
+}
+
+.search-box input::placeholder {
+    color: #527187;
+}
+
+.search-box input:focus {
+    background: #FFFFFF;
+    box-shadow: inset 0 0 0 1px #2498DD;
+}
+
+.btn-search {
+    width: 52px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.filtros {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    border: none;
+    background: #5DD1E9;
+    color: #2960AB;
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filtro:hover {
+    background: #2498DD;
+    color: #FFFFFF;
+}
+
+.filtro.ativo {
+    background: #2960AB;
+    color: white;
+}
+
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.resultados {
+    margin-top: 35px;
+    min-height: 120px;
+}
+
+.carregando,
+.sem-resultados,
+.erro {
+    text-align: center;
+    padding: 45px 20px;
+    color: #527187;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+.erro {
+    color: #C0392B;
+}
+
+
+/* =====================================================
+   GRID DOS CUIDADORES DA API
+===================================================== */
+
+.cuidadores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+
+/* =====================================================
+   CARDS DOS CUIDADORES DA API
+===================================================== */
+
+.cuidador-card {
+    background: #FFFFFF;
+    border: 1px solid #AEC5D7;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(38, 59, 67, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cuidador-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(38, 59, 67, 0.13);
+}
+
+
+/* =====================================================
+   FOTO DOS CARDS DA API
+===================================================== */
+
+.cuidador-foto {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #2498DD,
+        #5DD1E9
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+.cuidador-info {
+    width: 100%;
+}
+
+.cuidador-topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.cuidador-topo h2 {
+    margin: 0 0 8px;
+    color: #263B43;
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+}
+
+.cuidador-topo h3 {
+    margin: 0 0 8px;
+    color: #263B43;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+}
+
+.cuidador-dados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #5B6B75;
+    font-size: 13px;
+}
+
+.cuidador-dados span {
+    white-space: nowrap;
+}
+
+.cuidador-dados .disponivel {
+    color: #268B45;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PREÇO
+===================================================== */
+
+.cuidador-preco {
+    color: #2960AB;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.cuidador-card .valor {
+    margin-top: 12px;
+    color: #2960AB;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   DETALHES
+===================================================== */
+
+.cuidador-detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    margin-top: 18px;
+    padding-top: 16px;
+
+    border-top: 1px solid #DDE5EA;
+}
+
+.cuidador-detalhes div {
+    background: #F4F4F5;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.cuidador-detalhes span {
+    display: block;
+    color: #7B858A;
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+
+.cuidador-detalhes strong {
+    display: block;
+    color: #263B43;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   AÇÕES
+===================================================== */
+
+.cuidador-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+
+/* =====================================================
+   BOTÃO VISUALIZAR
+===================================================== */
+
+.btn-visualizar {
+    border: none;
+    background: #2960AB;
+    color: #FFFFFF;
+
+    padding: 10px 22px;
+    border-radius: 999px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-visualizar:hover {
+    background: #2498DD;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   EXEMPLO VISUAL - CARLOS
+===================================================== */
+
+.resultado-exemplo {
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   CARD PEQUENO
+===================================================== */
+
+.resultado-exemplo .cuidador-card {
+    width: 260px;
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+    border-radius: 14px;
+
+    padding: 14px;
+
+    box-shadow: 0 6px 16px rgba(38, 59, 67, 0.08);
+}
+
+
+/* =====================================================
+   FOTO DO CARLOS
+===================================================== */
+
+.resultado-exemplo .cuidador-foto {
+    width: 100%;
+    height: 170px;
+
+    margin-bottom: 12px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #2498DD,
+        #5DD1E9
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 65px;
+}
+
+
+/* =====================================================
+   NOME DO CARLOS
+===================================================== */
+
+.resultado-exemplo .cuidador-topo {
+    display: block;
+}
+
+.resultado-exemplo .cuidador-topo h2 {
+    margin: 0 0 6px;
+
+    color: #263B43;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   DADOS DO CARLOS
+===================================================== */
+
+.resultado-exemplo .cuidador-dados {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    color: #5B6B75;
+
+    font-size: 12px;
+}
+
+.resultado-exemplo .disponivel {
+    color: #268B45;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PREÇO DO CARLOS
+===================================================== */
+
+.resultado-exemplo .cuidador-preco {
+    margin-top: 7px;
+
+    color: #2960AB;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   DETALHES DO CARLOS
+===================================================== */
+
+.resultado-exemplo .cuidador-detalhes {
+    display: block;
+
+    margin-top: 10px;
+
+    padding-top: 0;
+
+    border-top: none;
+}
+
+.resultado-exemplo .cuidador-detalhes div {
+    background: transparent;
+    padding: 2px 0;
+}
+
+.resultado-exemplo .cuidador-detalhes span {
+    display: inline;
+
+    color: #5B6B75;
+
+    font-size: 11px;
+}
+
+.resultado-exemplo .cuidador-detalhes strong {
+    color: #263B43;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   BOTÃO DO CARLOS
+===================================================== */
+
+.resultado-exemplo .cuidador-acoes {
+    display: block;
+
+    margin-top: 12px;
+}
+
+.resultado-exemplo .btn-visualizar {
+    width: 100%;
+
+    background: #5DD1E9;
+    color: #2960AB;
+
+    border: none;
+    border-radius: 7px;
+
+    padding: 8px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.resultado-exemplo .btn-visualizar:hover {
+    background: #2498DD;
+    color: #FFFFFF;
+}
+
+
+/* =====================================================
+   SEM RESULTADOS
+===================================================== */
+
+.sem-resultados {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(38, 59, 67, 0.05);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .buscar-page {
+        padding: 25px 18px 80px;
+    }
+
+    .buscar-hero {
+        padding: 30px;
+    }
+
+    .buscar-hero h1 {
+        font-size: 28px;
+    }
+
+    .cuidadores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 640px) {
+
+    .buscar-page {
+        padding: 25px 16px 70px;
+    }
+
+    .buscar-hero {
+        padding: 25px;
+        border-radius: 14px;
+    }
+
+    .buscar-hero h1 {
+        font-size: 24px;
+    }
+
+    .buscar-hero p {
+        font-size: 14px;
+    }
+
+    .cuidadores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cuidador-card {
+        padding: 15px;
+    }
+
+    .cuidador-foto {
+        height: 170px;
+    }
+
+    .cuidador-topo {
+        flex-direction: column;
+    }
+
+    .cuidador-preco {
+        font-size: 17px;
+    }
+
+    .cuidador-detalhes {
+        grid-template-columns: 1fr;
+    }
+
+    .cuidador-acoes {
+        justify-content: stretch;
+    }
+
+    .btn-visualizar {
+        width: 100%;
+    }
+
+
+    /* EXEMPLO DO CARLOS */
+
+    .resultado-exemplo .cuidador-card {
+        width: 100%;
+    }
+
+}
+
+/* Filtros avançados e resultados */
+.filtros-rapidos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 18px;
+}
+.filtros-avancados {
+    background: #fff;
+    border: 1px solid #DDE5EA;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 5px 16px rgba(38,59,67,.04);
+}
+.filtros-avancados > summary {
+    color: #263B43;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+.filtros-avancados > summary::-webkit-details-marker { display: none; }
+.filtros-avancados > summary span {
+    display: block;
+    margin-top: 4px;
+    color: #71818B;
+    font-size: 12px;
+    font-weight: 400;
+}
+.filtros-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 17px;
+}
+.filtros-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #52636D;
+    font-size: 12px;
+    font-weight: 600;
+}
+.filtros-form input, .filtros-form select {
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid #D5E0E7;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: #fff;
+    color: #263B43;
+    font: 14px "Inter", sans-serif;
+}
+.filtros-form input:focus, .filtros-form select:focus {
+    outline: 2px solid rgba(36,152,221,.2);
+    border-color: #2498DD;
+}
+.filtros-acoes {
+    display: flex;
+    align-items: end;
+    gap: 9px;
+}
+.btn-filtrar, .btn-limpar {
+    min-height: 40px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font: 600 13px "Inter", sans-serif;
+    cursor: pointer;
+}
+.btn-filtrar { border: 0; background: #2960AB; color: #fff; }
+.btn-filtrar:hover { background: #2498DD; }
+.btn-limpar { border: 1px solid #D5E0E7; background: #fff; color: #52636D; }
+.resultados { margin-top: 22px; }
+.sem-resultados, .erro, .carregando {
+    background: #fff;
+    border: 1px solid #DDE5EA;
+    border-radius: 12px;
+}
+.sem-resultados p, .erro p { margin: 7px 0; }
+.erro small { color: #71818B; }
+.cuidador-foto img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+}
+@media (max-width: 760px) {
+    .filtros-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+    .filtros-form { grid-template-columns: 1fr; }
+    .filtros-acoes { align-items: stretch; }
+    .btn-filtrar, .btn-limpar { flex: 1; }
+}

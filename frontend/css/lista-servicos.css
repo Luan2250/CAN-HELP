@@ -1,0 +1,428 @@
+/* =========================================
+   PÁGINA DE SERVIÇOS
+========================================= */
+
+.lista-servicos-page {
+    max-width: 1080px;
+}
+
+
+/* =========================================
+   CABEÇALHO AZUL
+========================================= */
+
+.lista-servicos-page .page-head {
+    background: #2960AB;
+
+    border-radius: 16px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(38, 59, 67, 0.12);
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.lista-servicos-page .page-head h1 {
+    color: #FFFFFF;
+}
+
+
+/* =========================================
+   TEXTO PEQUENO
+========================================= */
+
+.lista-servicos-page .eyebrow {
+    color: #5DD1E9;
+}
+
+
+/* =========================================
+   BOTÃO NOVO SERVIÇO
+========================================= */
+
+.lista-servicos-page .page-head .btn-primary {
+    background: #FFFFFF;
+
+    color: #2960AB;
+
+    border: 1px solid #FFFFFF;
+
+    border-radius: 10px;
+
+    padding: 11px 20px;
+
+    box-shadow: none;
+
+    font-weight: 700;
+}
+
+.lista-servicos-page .page-head .btn-primary:hover {
+    background: #5DD1E9;
+
+    border-color: #5DD1E9;
+
+    color: #263B43;
+}
+
+
+/* =========================================
+   TABELA
+========================================= */
+
+.lista-servicos-page .card {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(38, 59, 67, 0.06);
+
+    overflow: hidden;
+}
+
+.lista-servicos-page .table th {
+    color: #263B43;
+
+    background: #F4F4F5;
+}
+
+.lista-servicos-page .table td {
+    color: #5B6B75;
+}
+
+.lista-servicos-page .table tbody tr:hover td {
+    background: #F4F7FA;
+}
+
+
+/* =========================================
+   FUNDO DO MODAL
+========================================= */
+
+.lista-servicos-page .modal-backdrop {
+    background: rgba(38, 59, 67, 0.55);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.lista-servicos-page .cadastro-modal {
+    width: 500px !important;
+
+    max-width: calc(100vw - 30px);
+
+    padding: 0 !important;
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(38, 59, 67, 0.30);
+}
+
+
+/* =========================================
+   CABEÇALHO AZUL DO MODAL
+========================================= */
+
+.lista-servicos-page .cadastro-header {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 28px 30px 25px;
+
+    background: #2960AB;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================
+   ÍCONE CH
+========================================= */
+
+.lista-servicos-page .cadastro-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #5DD1E9;
+
+    border-radius: 15px;
+
+    color: #263B43;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TÍTULO DO MODAL
+========================================= */
+
+.lista-servicos-page .cadastro-header h2 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TEXTO DO MODAL
+========================================= */
+
+.lista-servicos-page .cadastro-header p {
+    margin: 8px 0 0;
+
+    color: #EAF6FA;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CORPO DO MODAL
+========================================= */
+
+.lista-servicos-page .cadastro-conteudo {
+    padding: 28px 30px 30px;
+
+    background: #FFFFFF;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.lista-servicos-page .cadastro-conteudo label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.lista-servicos-page .cadastro-conteudo input {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 7px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #AEC5D7;
+
+    border-radius: 9px;
+
+    background: #FFFFFF;
+
+    color: #263B43;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.lista-servicos-page .cadastro-conteudo input::placeholder {
+    color: #7B858A;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+.lista-servicos-page .cadastro-conteudo input:focus {
+    border-color: #2498DD;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+/* =========================================
+   BOTÕES DO MODAL
+========================================= */
+
+.lista-servicos-page .modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   CANCELAR
+========================================= */
+
+.lista-servicos-page .modal-actions .btn-ghost {
+    background: #FFFFFF;
+
+    border: 1px solid #AEC5D7;
+
+    color: #5B6B75;
+
+    border-radius: 999px;
+}
+
+.lista-servicos-page .modal-actions .btn-ghost:hover {
+    border-color: #2960AB;
+
+    color: #2960AB;
+
+    background: #F4F7F6;
+}
+
+
+/* =========================================
+   SALVAR
+========================================= */
+
+.lista-servicos-page .modal-actions .btn-primary {
+    background: #2960AB;
+
+    color: #FFFFFF;
+
+    border-radius: 999px;
+}
+
+.lista-servicos-page .modal-actions .btn-primary:hover {
+    background: #2498DD;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+    .lista-servicos-page {
+        padding: 28px 20px 60px;
+    }
+
+    .lista-servicos-page .page-head {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .lista-servicos-page .page-head .btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .lista-servicos-page .card {
+        overflow-x: auto;
+    }
+
+    .lista-servicos-page .table {
+        min-width: 600px;
+    }
+
+    .lista-servicos-page .cadastro-modal {
+        width: calc(100vw - 30px) !important;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+        border-radius: 16px;
+    }
+
+    .lista-servicos-page .cadastro-header {
+        padding: 24px 20px;
+    }
+
+    .lista-servicos-page .cadastro-conteudo {
+        padding: 22px 20px 25px;
+    }
+
+    .lista-servicos-page .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .lista-servicos-page .modal-actions button {
+        width: 100%;
+    }
+}
