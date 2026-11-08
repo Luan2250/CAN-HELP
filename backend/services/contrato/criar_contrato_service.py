@@ -7,7 +7,6 @@ from models.agenda import Agenda
 from models.listaServicos import ListaServicos
 from extensions import db
 from datetime import datetime
-from services.notificacao.notificar_contrato_service import NotificarContratoService
 
 class CriarContratoService:
     @staticmethod
@@ -108,8 +107,6 @@ class CriarContratoService:
         except Exception as e:
             db.session.rollback()
             raise e
-
-        NotificarContratoService.nova_solicitacao(novo_contrato)
 
         return novo_contrato
         

@@ -12,7 +12,8 @@ app = Flask(__name__)
 CORS(app)
 # Configuração do banco de dados
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:l230908*@localhost/canhelp'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost:3306/canhelp'
+
 
 
 # Conecta o SQLAlchemy a essa aplicação Flask

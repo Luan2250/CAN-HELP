@@ -1,5 +1,8 @@
+
 CREATE DATABASE IF NOT EXISTS CanHelp;
 USE CanHelp;
+
+## Tabelas 
 
 CREATE TABLE Usuario(
 	idUsuario INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
@@ -83,6 +86,7 @@ CREATE TABLE Denuncias(
     FOREIGN KEY (idDenunciante)
     REFERENCES Usuario (idUsuario)
     ON DELETE CASCADE,
+    
 	CONSTRAINT fkDenunciado
     FOREIGN KEY (idDenunciado)
     REFERENCES Usuario (idUsuario)
@@ -94,7 +98,6 @@ CREATE TABLE ListaServicos(
     tipoServico VARCHAR(50) NOT NULL UNIQUE,
     precoBase DECIMAL(10,2) NOT NULL DEFAULT 0.00
 ) ENGINE=InnoDB;
-INSERT INTO ListaServicos (tipoServico, precoBase) VALUES ('Transporte', 40.00), ('Banho', 35.00), ('Alimentação', 25.00), ('Compras', 30.00), ('Medicação', 20.00), ('Companhia', 30.00);
 
 CREATE TABLE Contrato(
 	idContrato INT AUTO_INCREMENT PRIMARY KEY,
@@ -111,6 +114,7 @@ CREATE TABLE Contrato(
     FOREIGN KEY (idCliente) 
     REFERENCES Cliente(idUsuario) 
     ON DELETE CASCADE,
+    
     CONSTRAINT fkContratoCuidador 
     FOREIGN KEY (idCuidador) 
     REFERENCES Cuidador(idUsuario) 
@@ -126,6 +130,7 @@ CREATE TABLE ItensContrato(
     FOREIGN KEY (idContrato) 
     REFERENCES Contrato(idContrato) 
     ON DELETE CASCADE,
+    
     CONSTRAINT fkItensServico 
     FOREIGN KEY (idServico) 
     REFERENCES ListaServicos(idServico) 
@@ -153,11 +158,12 @@ CREATE TABLE Tarefa (
     horaTarefa TIME NOT NULL,
     notificacao BOOLEAN DEFAULT TRUE,
     statusTarefa ENUM('pendente', 'concluida') DEFAULT 'pendente',
-    CONSTRAINT fkTarefaAgenda FOREIGN KEY (idAgenda)
-        REFERENCES Agenda (idAgenda)
-        ON DELETE CASCADE
+    
+    CONSTRAINT fkTarefaAgenda 
+    FOREIGN KEY (idAgenda)
+	REFERENCES Agenda (idAgenda)
+	ON DELETE CASCADE
 )  ENGINE=INNODB;
-
 
 CREATE TABLE Mensagem(
 	idMensagem INT AUTO_INCREMENT PRIMARY KEY,
@@ -178,15 +184,23 @@ CREATE TABLE Mensagem(
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-SELECT idUsuario FROM Usuario;
+CREATE TABLE Lembrete(
+    idLembrete INT AUTO_INCREMENT PRIMARY KEY,
+    idUsuario INT NOT NULL,
+    titulo VARCHAR(100) NOT NULL,
+    descricao VARCHAR(255),
+    dataLembrete DATE NOT NULL,
+    horaLembrete TIME NOT NULL,
+    
+    CONSTRAINT fkLembreteUsuario
+    FOREIGN KEY (idUsuario) 
+    REFERENCES Usuario(idUsuario) 
+    ON DELETE CASCADE
+) ENGINE=InnoDB;
 
-INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
-VALUES ('12345678901', 'Rua das Flores, 123 - Centro', '11999998888', 'usuario@email.com', '1995-05-15', 'senha_criptografada_aqui');
-INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
-VALUES ('98765432100', 'Avenida Paulista, 1000 - Bela Vista', '21988887777', 'contato@email.com', '1988-10-25', 'outra_senha_segura');
+## Procedures ##
 
-SELECT * FROM contrato;
-
+DROP PROCEDURE IF EXISTS BuscarCuidadoresFiltro;
 
 DELIMITER $
 CREATE PROCEDURE BuscarCuidadoresFiltro(
@@ -205,8 +219,8 @@ BEGIN
         c.disponibilidade,
         COALESCE(AVG(a.nota), 0) AS notaMedia
     FROM Cuidador c
-    INNER JOIN Perfil p ON c.idUsuario = p.idUsuario
-    LEFT JOIN Avaliacoes a ON c.idUsuario = a.idAvaliado AND a.tipoAvaliador = 'cliente'
+		INNER JOIN Perfil p ON c.idUsuario = p.idUsuario
+		LEFT JOIN Avaliacoes a ON c.idUsuario = a.idAvaliado AND a.tipoAvaliador = 'cliente'
     WHERE (p_cidade IS NULL OR p_cidade = '' OR p.cidade LIKE CONCAT('%', p_cidade, '%'))
     GROUP BY c.idUsuario, p.nome, p.fotoURL, p.bio, p.cidade, p.estado, c.valorServico, c.disponibilidade
     ORDER BY 
@@ -215,6 +229,7 @@ BEGIN
 END$
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS RelatorioContratosCliente;
 
 DELIMITER $
 CREATE PROCEDURE RelatorioContratosCliente(
@@ -230,15 +245,16 @@ BEGIN
         c.valorFinal,
         GROUP_CONCAT(ls.tipoServico SEPARATOR ', ') AS servicosContratados
     FROM Contrato c
-    INNER JOIN Perfil p_cuidador ON c.idCuidador = p_cuidador.idUsuario
-    LEFT JOIN ItensContrato ic ON c.idContrato = ic.idContrato
-    LEFT JOIN ListaServicos ls ON ic.idServico = ls.idServico
+		INNER JOIN Perfil p_cuidador ON c.idCuidador = p_cuidador.idUsuario
+		LEFT JOIN ItensContrato ic ON c.idContrato = ic.idContrato
+		LEFT JOIN ListaServicos ls ON ic.idServico = ls.idServico
     WHERE c.idCliente = p_idCliente
     GROUP BY c.idContrato, p_cuidador.nome, c.dataAtendimento, c.nomeAuxiliado, c.statusContrato, c.valorFinal
     ORDER BY c.dataAtendimento DESC;
 END$
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS IdentificarTipoUsuario;
 
 DELIMITER $
 CREATE PROCEDURE IdentificarTipoUsuario(
@@ -252,12 +268,14 @@ BEGIN
         CASE WHEN c.idUsuario IS NOT NULL THEN TRUE ELSE FALSE END AS ehCliente,
         CASE WHEN cu.idUsuario IS NOT NULL THEN TRUE ELSE FALSE END AS ehCuidador
     FROM Usuario u
-    INNER JOIN Perfil p ON u.idUsuario = p.idUsuario
-    LEFT JOIN Cliente c ON u.idUsuario = c.idUsuario
-    LEFT JOIN Cuidador cu ON u.idUsuario = cu.idUsuario
+		INNER JOIN Perfil p ON u.idUsuario = p.idUsuario
+		LEFT JOIN Cliente c ON u.idUsuario = c.idUsuario
+		LEFT JOIN Cuidador cu ON u.idUsuario = cu.idUsuario
     WHERE u.idUsuario = p_idUsuario;
 END$
 DELIMITER ;
+
+DROP PROCEDURE IF EXISTS EncontrarCuidadoresDisponiveis;
 
 DELIMITER $
 CREATE PROCEDURE EncontrarCuidadoresDisponiveis(
@@ -275,8 +293,8 @@ BEGIN
         cu.disponibilidade,
         COALESCE(AVG(a.nota), 0) AS notaMedia
     FROM Cuidador cu
-    INNER JOIN Perfil p ON cu.idUsuario = p.idUsuario
-    LEFT JOIN Avaliacoes a ON cu.idUsuario = a.idAvaliado AND a.tipoAvaliador = 'cliente'
+		INNER JOIN Perfil p ON cu.idUsuario = p.idUsuario
+		LEFT JOIN Avaliacoes a ON cu.idUsuario = a.idAvaliado AND a.tipoAvaliador = 'cliente'
     WHERE cu.idUsuario NOT IN (
         SELECT c.idCuidador
         FROM Contrato c
@@ -288,19 +306,8 @@ BEGIN
 END$
 DELIMITER ;
 
-CREATE TABLE Lembrete(
-    idLembrete INT AUTO_INCREMENT PRIMARY KEY,
-    idUsuario INT NOT NULL,
-    titulo VARCHAR(100) NOT NULL,
-    descricao VARCHAR(255),
-    dataLembrete DATE NOT NULL,
-    horaLembrete TIME NOT NULL,
-    CONSTRAINT fkLembreteUsuario
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE
-) ENGINE=InnoDB;
-
-
 DROP PROCEDURE IF EXISTS HistoricoDeServicos;
+
 DELIMITER $
 CREATE PROCEDURE HistoricoDeServicos(
     IN p_idUsuario INT
@@ -319,18 +326,18 @@ BEGIN
         c.valorFinal,
         GROUP_CONCAT(ls.tipoServico SEPARATOR ', ') AS servicosContratados
     FROM Contrato c
-    INNER JOIN Perfil pCl ON c.idCliente  = pCl.idUsuario
-    INNER JOIN Perfil pCu ON c.idCuidador = pCu.idUsuario
-    LEFT JOIN ItensContrato ic ON c.idContrato = ic.idContrato
-    LEFT JOIN ListaServicos ls ON ic.idServico = ls.idServico
+		INNER JOIN Perfil pCl ON c.idCliente  = pCl.idUsuario
+		INNER JOIN Perfil pCu ON c.idCuidador = pCu.idUsuario
+		LEFT JOIN ItensContrato ic ON c.idContrato = ic.idContrato
+		LEFT JOIN ListaServicos ls ON ic.idServico = ls.idServico
     WHERE c.idCliente = p_idUsuario OR c.idCuidador = p_idUsuario
     GROUP BY c.idContrato, c.idCliente, pCl.nome, pCu.nome, c.dataContrato, c.dataAtendimento, c.localizacao, c.nomeAuxiliado, c.statusContrato, c.valorFinal
     ORDER BY c.dataAtendimento DESC, c.idContrato DESC;
 END$
 DELIMITER ;
 
-
 DROP PROCEDURE IF EXISTS FiltrarCuidadores;
+
 DELIMITER $
 CREATE PROCEDURE FiltrarCuidadores(
     IN p_cidade     VARCHAR(40),
@@ -352,8 +359,8 @@ BEGIN
         c.disponibilidade,
         COALESCE(AVG(a.nota), 0) AS notaMedia
     FROM Cuidador c
-    INNER JOIN Perfil p ON c.idUsuario = p.idUsuario
-    LEFT JOIN Avaliacoes a ON c.idUsuario = a.idAvaliado AND a.tipoAvaliador = 'cliente'
+		INNER JOIN Perfil p ON c.idUsuario = p.idUsuario
+		LEFT JOIN Avaliacoes a ON c.idUsuario = a.idAvaliado AND a.tipoAvaliador = 'cliente'
     WHERE (p_cidade IS NULL OR p_cidade = '' OR p.cidade LIKE CONCAT('%', p_cidade, '%'))
       AND (p_estado IS NULL OR p_estado = '' OR p.estado LIKE CONCAT('%', p_estado, '%'))
       AND (p_valor_max IS NULL OR c.valorServico <= p_valor_max)
@@ -373,6 +380,7 @@ END$
 DELIMITER ;
 
 DROP PROCEDURE IF EXISTS AvaliacoesDoUsuario;
+
 DELIMITER $
 CREATE PROCEDURE AvaliacoesDoUsuario(
     IN p_idUsuario INT
@@ -386,13 +394,39 @@ BEGIN
         a.comentario,
         a.dataAvaliacao
     FROM Avaliacoes a
-    INNER JOIN Perfil p ON a.idAvaliador = p.idUsuario
+		INNER JOIN Perfil p ON a.idAvaliador = p.idUsuario
     WHERE a.idAvaliado = p_idUsuario
     ORDER BY a.dataAvaliacao DESC, a.idAvaliacao DESC;
 END$
 DELIMITER ;
 
-ALTER TABLE ListaServicos ADD COLUMN precoBase DECIMAL(10,2) NOT NULL DEFAULT 0.00;
+DROP PROCEDURE IF EXISTS NotificacoesDoUsuario;
+
+DELIMITER $
+CREATE PROCEDURE NotificacoesDoUsuario(
+    IN p_idUsuario INT
+)
+BEGIN
+    SELECT
+        c.idContrato,
+        CASE WHEN c.idCuidador = p_idUsuario THEN 'cuidador' ELSE 'cliente' END AS papel,
+        c.statusContrato,
+        c.imediato,
+        c.dataContrato,
+        c.dataAtendimento,
+        CASE WHEN c.idCuidador = p_idUsuario THEN pCl.nome ELSE pCu.nome END AS nomeOutraPessoa
+    FROM Contrato c
+    LEFT JOIN Perfil pCl ON c.idCliente  = pCl.idUsuario
+    LEFT JOIN Perfil pCu ON c.idCuidador = pCu.idUsuario
+    WHERE c.idCliente = p_idUsuario OR c.idCuidador = p_idUsuario
+    ORDER BY c.dataContrato DESC, c.idContrato DESC
+    LIMIT 50;
+END$
+DELIMITER ;
+
+## Alteraçoes
+
+ALTER TABLE ListaServicos MODIFY COLUMN precoBase DECIMAL(10,2) NOT NULL DEFAULT 0.00;
 
 UPDATE ListaServicos SET precoBase = CASE tipoServico
     WHEN 'Transporte'   THEN 40.00
@@ -401,21 +435,19 @@ UPDATE ListaServicos SET precoBase = CASE tipoServico
     WHEN 'Compras'      THEN 30.00
     WHEN 'Medicação'    THEN 20.00
     WHEN 'Companhia'    THEN 30.00
-    ELSE precoBase END
+	END
 WHERE idServico > 0;
 
-CREATE TABLE Notificacao(
-    idNotificacao INT AUTO_INCREMENT PRIMARY KEY,
-    idUsuario INT NOT NULL,
-    idContrato INT NULL,
-    mensagem VARCHAR(200) NOT NULL,
-    lida BOOLEAN NOT NULL DEFAULT FALSE,
-    dataCriacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fkNotificacaoUsuario
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE,
-    CONSTRAINT fkNotificacaoContrato
-    FOREIGN KEY (idContrato) REFERENCES Contrato(idContrato) ON DELETE CASCADE
-) ENGINE=InnoDB;
-
-SHOW COLUMNS FROM Perfil LIKE 'fotoURL';
 ALTER TABLE Perfil MODIFY fotoURL LONGTEXT;
+
+DROP TABLE IF EXISTS Notificacao;
+
+## Inserts
+
+INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
+VALUES ('12345678901', 'Rua das Flores, 123 - Centro', '11999998888', 'usuario@email.com', '1995-05-15', 'senha_criptografada_aqui');
+INSERT INTO Usuario (cpf, endereco, telefone, email, dataNascimento, senha) 
+VALUES ('98765432100', 'Avenida Paulista, 1000 - Bela Vista', '21988887777', 'contato@email.com', '1988-10-25', 'outra_senha_segura');
+
+INSERT INTO ListaServicos (tipoServico, precoBase) VALUES ('Transporte', 40.00), ('Banho', 35.00), ('Alimentação', 25.00), ('Compras', 30.00), ('Medicação', 20.00), ('Companhia', 30.00);
+

@@ -2,7 +2,6 @@ from models.contrato import Contrato
 from models.agenda import Agenda
 from models.tarefa import Tarefa
 from models.itensContrato import ItensContrato
-from services.notificacao.notificar_contrato_service import NotificarContratoService
 
 class CancelarContratoService:
 
@@ -26,8 +25,6 @@ class CancelarContratoService:
                 raise ValueError("Não é possível cancelar um contrato recusado")
 
         contrato.atualizar(statusContrato='cancelado_cliente')
-        NotificarContratoService.status_alterado(contrato, 'cancelado_cliente')
-
         CancelarContratoService._cancelar_agendas_tarefas(idContrato)
 
         return contrato
@@ -52,8 +49,6 @@ class CancelarContratoService:
                 raise ValueError("Não é possível cancelar um contrato recusado")
 
         contrato.atualizar(statusContrato='cancelado_cuidador')
-        NotificarContratoService.status_alterado(contrato, 'cancelado_cuidador')
-
         CancelarContratoService._cancelar_agendas_tarefas(idContrato)
 
         return contrato

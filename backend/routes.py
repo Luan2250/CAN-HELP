@@ -165,5 +165,3 @@ lembrete_bp.add_url_rule('/lembretes', view_func=LembreteController.listar, meth
 notificacao_bp = Blueprint('notificacao_bp', __name__)
 
 notificacao_bp.add_url_rule('/notificacoes', view_func=NotificacaoController.listar, methods=['GET'])
-notificacao_bp.add_url_rule('/notificacoes/lidas', view_func=NotificacaoController.marcar_todas_lidas, methods=['PATCH'])
-notificacao_bp.add_url_rule('/notificacoes/<int:idNotificacao>/lida', view_func=NotificacaoController.marcar_lida, methods=['PATCH'])

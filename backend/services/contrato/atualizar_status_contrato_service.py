@@ -1,6 +1,5 @@
 # app/services/contrato/atualizar_status_contrato_service.py
 from models.contrato import Contrato
-from services.notificacao.notificar_contrato_service import NotificarContratoService
 
 class AtualizarStatusContratoService:
     # Transições válidas
@@ -39,7 +38,6 @@ class AtualizarStatusContratoService:
         AtualizarStatusContratoService._validar_regras_especificas(contrato, novo_status)
         
         contrato.atualizar(statusContrato=novo_status)
-        NotificarContratoService.status_alterado(contrato, novo_status)
         
         return contrato
 
