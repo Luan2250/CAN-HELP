@@ -33,7 +33,7 @@ function renderizarCuidadores(lista) {
     const foto = c.fotoURL || c.foto_url;
     const avatar = foto
       ? `<img src="${escaparHTML(foto)}" alt="Foto de ${nome}" onerror="this.remove()">`
-      : '<span aria-hidden="true">👩‍⚕️</span>';
+      : `<img class="img-avatar" src="../img/svg/user.png" alt="Avatar genérico">`;
 
     return `<article class="cuidador-card">
       <div class="cuidador-foto">${avatar}</div>

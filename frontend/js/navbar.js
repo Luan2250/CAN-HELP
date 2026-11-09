@@ -12,7 +12,6 @@
     ['home.html', 'Início'],
     ['buscar-cuidador.html', 'Buscar cuidador'],
     ['agenda.html', 'Agenda'],
-    ['servicos.html', 'Serviços'],
     ['chat.html', 'Chat'],
   ];
 
@@ -70,7 +69,7 @@
     return `
       <div class="topbar-inner">
         <a class="brand" href="home.html">
-          <span class="brand-mark">CH</span>
+          <img src="../img/canhelplogo.png" alt="Logo" class="brand-logo">
           <span class="brand-name">CanHelp</span>
         </a>
         <nav class="nav" aria-label="Navegação principal">

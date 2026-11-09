@@ -1,6 +1,3 @@
-/* =====================================================
-   SERVIÇOS
-===================================================== */
 
 const SERVICOS_URL = '/listasServicos';
 
@@ -16,37 +13,64 @@ let servicoSelecionado = null;
 
 
 /* =====================================================
-   ÍCONES
-===================================================== */
-
-const iconesServicos = {
-    'transporte': '🚗',
-    'banho': '🛁',
-    'alimentação': '🍴',
-    'alimentacao': '🍴',
-    'acompanhamento': '👥',
-    'compras': '🛒',
-    'farmácia': '💊',
-    'farmacia': '💊',
-    'lazer': '🎭'
-};
-
-
-/* =====================================================
-   PEGAR ÍCONE
+   ÍCONES (PNG DA PASTA IMG)
 ===================================================== */
 
 function pegarIcone(nome) {
 
-    const chave =
-        nome
-            .toLowerCase()
-            .trim();
+    const chave = (nome || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
 
-    return (
-        iconesServicos[chave] ||
-        '🛠️'
-    );
+    let arquivo = null;
+
+    if (chave.includes('transporte') || chave.includes('carro')) {
+        arquivo = 'transporte.png';
+
+    } else if (chave.includes('banho') || chave.includes('higiene')) {
+        arquivo = 'banho.png';
+
+    } else if (
+        chave.includes('alimentacao') ||
+        chave.includes('refeicao')
+    ) {
+        arquivo = 'alimentacao.png';
+
+    } else if (
+        chave.includes('acompanhamento') ||
+        chave.includes('companhia')
+    ) {
+        arquivo = 'companhia.png';
+
+    } else if (
+        chave.includes('compra') ||
+        chave.includes('supermercado')
+    ) {
+        arquivo = 'compras.png';
+
+    } else if (
+        chave.includes('farmacia') ||
+        chave.includes('remedio')
+    ) {
+        arquivo = 'farmacia.png';
+
+    } else if (chave.includes('medic')) {
+        arquivo = 'medicacao.png';
+    }
+
+    if (!arquivo) {
+        return '';
+    }
+
+    return `
+        <img
+            src="img/svg/${arquivo}"
+            alt="${nome}"
+            class="img-icone-servico"
+        >
+    `;
 }
 
 
@@ -116,9 +140,9 @@ function renderizarServicos() {
                 data-id="${servico.idServico}"
             >
 
-                <span class="servico-icone">
+                <div class="servico-icone">
                     ${pegarIcone(servico.tipoServico)}
-                </span>
+                </div>
 
                 <span class="servico-nome">
                     ${servico.tipoServico}
@@ -214,8 +238,6 @@ document
 
         const idServico = servicoSelecionado.idServico;
 
-        // Guarda apenas os dados disponíveis nesta etapa para a tela de resumo.
-        // A data, endereço, pessoa auxiliada e valor final dependem de definição no fluxo.
         const solicitacao = {
             idCuidador,
             idServico,

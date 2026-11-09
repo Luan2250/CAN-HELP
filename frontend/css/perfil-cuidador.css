@@ -83,30 +83,42 @@
     width: 280px;
 }
 
+
+/* =====================================================
+   FOTO
+===================================================== */
+
+.perfil-foto {
+    width: 280px;
+}
+
 .foto-exemplo {
     width: 100%;
-    height: 280px;
-
-    border-radius: 8px;
-
-    background: linear-gradient(
-        135deg,
-        #2498DD,
-        #5DD1E9
-    );
+    height: 240px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    font-size: 110px;
+    background: linear-gradient(135deg, #2498DD, #5DD1E9);
+
+    border-radius: 8px;
+    overflow: hidden;
 }
 
+.foto-perfil {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+}
 
-/* =====================================================
-   CONTEÚDO
-===================================================== */
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 
 .perfil-conteudo {
     display: flex;

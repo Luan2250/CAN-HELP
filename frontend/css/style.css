@@ -73,7 +73,11 @@ select {
 
 .brand-logo {
   object-fit: contain;
-  border-radius: 4px; /* Opcional: deixa as bordas levemente arredondadas como estava o bloco azul */
+  border-radius: 4px; /* Opcional: deixa as bordas levemente arredondadas como estava o bloco azul */ 
+  width: 38px;
+  height: 38px;
+
+
 }
 
 
@@ -95,6 +99,7 @@ select {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.08rem;
+  color: var(--ink);
 }
 
 .nav {
@@ -670,3 +675,4 @@ select {
   .mobile-nav-item svg { width:20px; height:20px; }
   .grid, .cards-grid, .areas-grid, .home-grid { grid-template-columns:1fr !important; }
 }
+

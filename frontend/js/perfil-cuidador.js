@@ -41,8 +41,7 @@ async function carregarPerfilCuidador() {
         document.getElementById('perfil-descricao');
 
     const fotoElemento =
-        document.querySelector('.foto-exemplo');
-
+    document.querySelector('.foto-perfil img');
 
     /* =================================================
        VERIFICAR ID
@@ -109,27 +108,20 @@ async function carregarPerfilCuidador() {
         }
 
 
-        /* =================================================
-           FOTO
-        ================================================== */
+     /* =================================================
+            FOTO
+            ================================================= */
 
-        if (fotoElemento && perfil.fotoURL) {
+            if (fotoElemento) {
 
-            fotoElemento.textContent = '';
+                fotoElemento.src = perfil.fotoURL || 'img/user.png';
 
-            fotoElemento.style.backgroundImage =
-                `url("${perfil.fotoURL}")`;
+                fotoElemento.onerror = () => {
+                    fotoElemento.onerror = null;
+                    fotoElemento.src = 'img/user.png';
+                };
 
-            fotoElemento.style.backgroundSize =
-                'cover';
-
-            fotoElemento.style.backgroundPosition =
-                'center';
-
-            fotoElemento.style.backgroundRepeat =
-                'no-repeat';
-
-        }
+            }
 
 
         /* =================================================
