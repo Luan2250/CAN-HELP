@@ -186,31 +186,51 @@ Este repositório contém a API e as telas do **CanHelp**, seguindo a arquitetur
 ```
 CAN-HELP/
 ├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── repositories/
-│   ├── services/
+│   ├── controllers/            (um Controller por recurso + auth_decorator.py)
+│   ├── models/                 (Usuario, Perfil, Cliente, Cuidador, Contrato, ItensContrato,
+│   │                            ListaServicos, Agenda, Tarefa, Avaliacoes, Denuncias,
+│   │                            Mensagem, Notificacao, Lembrete)
+│   ├── repositories/           (consultas especiais e chamadas às procedures)
+│   │   ├── agenda_tarefas_repository.py
+│   │   ├── avaliacoesDoUsuario_repository.py
+│   │   ├── conversas_repository.py
+│   │   ├── cuidadoresDisponiveis_repository.py
+│   │   ├── cuidadorImediato_repository.py
+│   │   ├── filtrarCuidadores_repository.py
+│   │   ├── filtrarCuidadoresAvancado_repository.py
+│   │   ├── historicoServicos_repository.py
+│   │   ├── lembrete_repository.py
+│   │   ├── mensagem_repository.py
+│   │   ├── notificacoesDoUsuario_repository.py
+│   │   ├── RelatorioContratos_repository.py
+│   │   └── tipoUsuario_repository.py
+│   ├── services/               (uma pasta por recurso, um Service por caso de uso:
+│   │                            agenda, auth, avaliacoes, cliente, contrato, cuidador,
+│   │                            denuncias, itensContrato, lembrete, listaServico,
+│   │                            mensagem, notificacao, perfil, tarefa, usuario)
 │   ├── database/
-│   │   └── CanHelp.sql
+│   │   └── CanHelp.sql         (tabelas e procedures)
 │   ├── extensions.py
 │   ├── routes.py
 │   ├── app.py
 │   └── requirements.txt
 └── frontend/
-    ├── index.html, login.html
-    ├── usuarios.html, perfis.html, meu-perfil.html
-    ├── clientes.html, cuidadores.html, busca-cuidadores.html
-    ├── contratos.html, itens-contrato.html, lista-servicos.html
+    ├── home.html, index.html, login.html, cadastro.html, confirmacao.html
+    ├── usuarios.html, perfis.html, meu-perfil.html, perfil-cuidador.html
+    ├── clientes.html, cuidadores.html, buscar-cuidador.html
+    ├── contratos.html, meus-contratos.html, itens-contrato.html
+    ├── lista-servicos.html, servicos.html
     ├── agenda.html, tarefas.html, minha-agenda.html, lembretes.html
     ├── avaliacoes.html, denuncias.html
-    ├── mensagens.html, notificacoes.html, historico.html
+    ├── chat.html, notificacoes.html, historico.html
     ├── css/
     │   └── style.css
+    ├── img/                    (logo e imagens)
     └── js/
-        ├── app.js        (acesso à API, token JWT, toasts, modais)
-        ├── auth.js       (sessão do usuário e menu)
+        ├── app.js              (acesso à API, token JWT, toasts, modais)
+        ├── auth.js             (sessão do usuário)
+        ├── navbar.js           (cabeçalho e menu compartilhados)
         └── (um arquivo .js por tela)
-```
 
 ## Arquitetura
 
