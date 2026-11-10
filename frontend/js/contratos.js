@@ -29,11 +29,11 @@ async function carregarContratos() {
     corpo.innerHTML = contratos.map((contrato) => `
       <tr>
         <td>${contrato.idContrato}</td>
-        <td>${contrato.idCliente}</td>
-        <td>${contrato.idCuidador}</td>
-        <td>${contrato.dataAtendimento ?? '—'}</td>
+        <td>${esc(nomeUsuario(contrato.idCliente))}</td>
+        <td>${esc(nomeUsuario(contrato.idCuidador))}</td>
+        <td>${dataBR(contrato.dataAtendimento)}</td>
         <td>${formatarStatus(contrato.statusContrato)}</td>
-        <td>R$ ${Number(contrato.valorFinal ?? 0).toFixed(2)}</td>
+        <td>${moedaBR(contrato.valorFinal)}</td>
         <td>
           <div class="row-actions">
             <button class="btn-icon" onclick='editarContrato(${JSON.stringify(contrato)})'>Editar</button>
@@ -83,7 +83,17 @@ async function removerContrato(id) {
 
 document.getElementById('btn-novo-contrato').addEventListener('click', () => {
   limparFormularioContrato();
+  const logado = usuarioLogadoEm(ref.clientes.map((c) => c.idUsuario));
+  if (logado) document.getElementById('contrato-id-cliente').value = logado;
   abrirModal('modal-contrato');
+});
+
+document.getElementById('contrato-id-cuidador').addEventListener('change', (e) => {
+  const valorInput = document.getElementById('contrato-valor-final');
+  const cuidador = ref.cuidadores.find((c) => String(c.idUsuario) === e.target.value);
+  if (cuidador && !valorInput.value && cuidador.valorServico) {
+    valorInput.value = Number(cuidador.valorServico).toFixed(2);
+  }
 });
 
 document.getElementById('btn-cancelar-contrato').addEventListener('click', () => {
@@ -126,4 +136,12 @@ document.getElementById('form-contrato').addEventListener('submit', async (event
   }
 });
 
-carregarContratos();
+async function iniciarContratos() {
+  // Nomes primeiro: a tabela e os selects dependem deles.
+  await carregarReferencias(['perfis', 'clientes', 'cuidadores']);
+  selectClientes(document.getElementById('contrato-id-cliente'));
+  selectCuidadores(document.getElementById('contrato-id-cuidador'));
+  carregarContratos();
+}
+
+iniciarContratos();

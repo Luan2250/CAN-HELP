@@ -19,6 +19,7 @@
 
   <!-- CSS DO INDEX -->
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/home-cuidadores.css">
     <link rel="icon" type="image/png" href="../img/canhelplogo.png">
 
 </head>
@@ -55,8 +56,14 @@
       </h1>
 
       <p>
-        Esta é a página inicial do sistema CanHelp.
+        Encontre um cuidador de confiança para quem você ama.
       </p>
+
+      <form class="home-busca" id="home-form-busca" role="search">
+        <label class="sr-only" for="home-busca">Buscar cuidador por nome ou cidade</label>
+        <input type="search" id="home-busca" placeholder="Buscar cuidador por nome ou cidade" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
 
     </section>
 
@@ -65,164 +72,22 @@
              ÁREAS DO SISTEMA
         ================================================== -->
 
-    <section class="index-section">
+    <section class="index-section" aria-labelledby="titulo-cuidadores">
 
-      <div class="section-title">
-
-        <span class="eyebrow">
-          Acessos rápidos
-        </span>
-
-        <h2>
-          Principais áreas
-        </h2>
-
+      <div class="home-secao-topo">
+        <div class="section-title">
+          <span class="eyebrow">Cuidadores</span>
+          <h2 id="titulo-cuidadores">Cuidadores cadastrados</h2>
+        </div>
+        <p class="home-contador" id="home-contador" aria-live="polite"></p>
       </div>
 
+      <div class="home-cuidadores-grid" id="home-cuidadores">
+        <div class="home-estado">Carregando cuidadores...</div>
+      </div>
 
-      <div class="index-cards">
-
-
-        <!-- =================================================
-                     BUSCAR CUIDADOR
-                ================================================== -->
-
-        <a href="buscar-cuidador.html" class="index-card">
-
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="#BDEFF8" stroke="currentColor" stroke-width="3"/><path d="m28 28 11 11" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M15 20a5 5 0 0 1 5-5" stroke="#2498DD" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>
-
-          <h3>
-            Buscar cuidador
-          </h3>
-
-        </a>
-
-
-        <!-- =================================================
-                     USUÁRIOS
-                ================================================== -->
-
-        
-
-
-        <!-- =================================================
-                     PERFIS
-                ================================================== -->
-
-        
-
-
-        <!-- =================================================
-                     CLIENTES
-                ================================================== -->
-
-        
-
-
-        <!-- =================================================
-                     CUIDADORES
-                ================================================== -->
-
-        
-
-
-        <!-- =================================================
-                     CONTRATOS
-                ================================================== -->
-
-        <a href="contratos.html" class="index-card">
-
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 5h17l8 8v30H12z" fill="#EAF5FA" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M29 5v9h8M18 22h13M18 28h13M18 34h9" stroke="#2498DD" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>
-
-          <h3>
-            Contratos
-          </h3>
-
-        </a>
-
-
-        <!-- =================================================
-                     AGENDA
-                ================================================== -->
-
-        <a href="agenda.html" class="index-card">
-
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="31" rx="5" fill="#EAF5FA" stroke="currentColor" stroke-width="2.5"/><path d="M7 18h34" stroke="#2498DD" stroke-width="5"/><path d="M16 6v9M32 6v9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="m17 29 4 4 9-9" stroke="#159B86" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-
-          <h3>
-            Agenda
-          </h3>
-
-        </a>
-
-
-        <!-- =================================================
-                     TAREFAS
-                ================================================== -->
-
-        <a href="tarefas.html" class="index-card">
-
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="36" height="36" rx="10" fill="#D9F6EF" stroke="currentColor" stroke-width="2.5"/><path d="m15 24 6 6 13-14" stroke="#159B86" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-
-          <h3>
-            Tarefas
-          </h3>
-
-        </a>
-
-
-        <!-- =================================================
-                     AVALIAÇÕES
-                ================================================== -->
-
-        <a href="avaliacoes.html" class="index-card">
-
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 5.8 11.8 13 1.9-9.4 9.2 2.2 13L24 34.8l-11.6 6.1 2.2-13L5.2 18.7l13-1.9z" fill="#FFE6A3" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="m24 12 3.5 7.1 7.8 1.1" stroke="#E5A52B" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-
-          <h3>
-            Avaliações
-          </h3>
-
-        </a>
-
-
-        <!-- =================================================
-                     DENÚNCIAS
-                ================================================== -->
-
-        
-
-
-        <!-- =================================================
-                     SERVIÇOS
-                ================================================== -->
-
-        
-
-
-        <!-- =================================================
-                     ITENS DO CONTRATO
-                ================================================== -->
-
-        <a href="itens-contrato.html" class="index-card">
-
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="9" width="30" height="34" rx="4" fill="#EAF5FA" stroke="currentColor" stroke-width="2.5"/><rect x="17" y="5" width="14" height="8" rx="3" fill="#BDEFF8" stroke="currentColor" stroke-width="2"/><path d="M16 21h16M16 27h16M16 33h11" stroke="#2498DD" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-
-          <h3>
-            Itens do contrato
-          </h3>
-
-        </a>
-
-        <a href="chat.html" class="index-card">
-          <div class="index-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 9a5 5 0 0 1 5-5h24a5 5 0 0 1 5 5v19a5 5 0 0 1-5 5H23L12 42v-9a5 5 0 0 1-5-5z" fill="#EAF5FA" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="17" cy="19" r="2.5" fill="#2498DD"/><circle cx="24" cy="19" r="2.5" fill="#2498DD"/><circle cx="31" cy="19" r="2.5" fill="#2498DD"/></svg></div>
-          <h3>Chat</h3>
-        </a>
-
-        
-
-
-
+      <div class="home-ver-todos">
+        <a id="home-ver-todos" href="buscar-cuidador.html">Ver todos e usar filtros</a>
       </div>
 
     </section>
@@ -245,6 +110,7 @@
 
   <script src="js/app.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/home.js"></script>
 
 <nav class="mobile-bottom-nav" aria-label="Navegação rápida no celular">
   <a class="mobile-nav-item" href="home.html" data-mobile-page="home.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg><span>Início</span></a>

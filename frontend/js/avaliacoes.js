@@ -188,11 +188,11 @@ function renderizarAvaliacoes(lista) {
                     </td>
 
                     <td>
-                        ${avaliacao.idAvaliador}
+                        ${esc(nomeUsuario(avaliacao.idAvaliador))}
                     </td>
 
                     <td>
-                        ${avaliacao.idAvaliado}
+                        ${esc(nomeUsuario(avaliacao.idAvaliado))}
                     </td>
 
                     <td>
@@ -250,6 +250,130 @@ function renderizarAvaliacoes(lista) {
             `
         ).join('');
 }
+
+
+/* =====================================================
+   SELECTS DO FORMULÁRIO (avaliador / tipo / avaliado)
+
+   O backend só aceita avaliar quem tem um contrato CONCLUÍDO
+   com o avaliador. Então a lista de "avaliado" já mostra só
+   essas pessoas, em vez de deixar digitar um ID e errar.
+===================================================== */
+
+function tipoDoUsuario(idUsuario) {
+    return ref.cuidadores.some(
+        (c) => Number(c.idUsuario) === Number(idUsuario)
+    ) ? 'cuidador' : 'cliente';
+}
+
+
+function atualizarAvaliados(idForcado = null) {
+
+    const avaliador =
+        document.getElementById('avaliacao-id-avaliador').value;
+
+    const tipo =
+        document.getElementById('avaliacao-tipo-avaliador').value;
+
+    const selectAvaliado =
+        document.getElementById('avaliacao-id-avaliado');
+
+    // Editando: o avaliado fica travado, não refaz a lista.
+    if (selectAvaliado.disabled) return;
+
+
+    let ids = [];
+
+    if (avaliador) {
+
+        ids = ref.contratos
+            .filter((c) =>
+                c.statusContrato === 'concluido' &&
+                Number(
+                    tipo === 'cliente' ? c.idCliente : c.idCuidador
+                ) === Number(avaliador)
+            )
+            .map((c) =>
+                Number(tipo === 'cliente' ? c.idCuidador : c.idCliente)
+            );
+    }
+
+    // Vindo do perfil do cuidador (?idAvaliado=) ou editando: o avaliado
+    // já definido precisa estar na lista mesmo que o backend vá recusar.
+    const forcado = idForcado ?? idAvaliadoURL;
+
+    if (forcado && !ids.includes(Number(forcado))) {
+        ids.push(Number(forcado));
+    }
+
+    ids = [...new Set(ids)];
+
+    const itens = ids
+        .map((id) => ({ id, nome: nomeUsuario(id) }))
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+
+    preencherSelect(selectAvaliado, itens, {
+        valor: (i) => i.id,
+        rotulo: (i) => i.nome,
+        placeholder: avaliador
+            ? 'Selecione quem será avaliado'
+            : 'Escolha o avaliador primeiro',
+    });
+
+    if (avaliador && itens.length === 0) {
+        selectAvaliado.options[0].textContent =
+            'Nenhum serviço concluído com este usuário';
+    }
+
+    if (forcado) {
+        selectAvaliado.value = String(forcado);
+    }
+}
+
+
+function prepararSelectsAvaliacao(
+    idAvaliador = null,
+    idAvaliado = null,
+    tipo = null
+) {
+
+    const selectAvaliador =
+        document.getElementById('avaliacao-id-avaliador');
+
+    const selectTipo =
+        document.getElementById('avaliacao-tipo-avaliador');
+
+
+    selectUsuarios(selectAvaliador, 'Selecione o avaliador');
+
+    const escolhido =
+        idAvaliador ??
+        usuarioLogadoEm(ref.perfis.map((p) => p.idUsuario));
+
+    if (escolhido) {
+        selectAvaliador.value = String(escolhido);
+        selectTipo.value = tipo ?? tipoDoUsuario(escolhido);
+    }
+
+    atualizarAvaliados(idAvaliado);
+}
+
+
+document
+    .getElementById('avaliacao-id-avaliador')
+    .addEventListener('change', (evento) => {
+
+        // Quem avalia define o tipo (cuidador ou cliente) automaticamente.
+        document.getElementById('avaliacao-tipo-avaliador').value =
+            tipoDoUsuario(evento.target.value);
+
+        atualizarAvaliados();
+    });
+
+
+document
+    .getElementById('avaliacao-tipo-avaliador')
+    .addEventListener('change', () => atualizarAvaliados());
 
 
 /* =====================================================
@@ -316,6 +440,9 @@ function limparFormularioAvaliacao() {
         'Preencha os dados para registrar uma avaliação.';
 
 
+    prepararSelectsAvaliacao();
+
+
     /*
      * Se a página veio do perfil,
      * já coloca o cuidador selecionado.
@@ -355,6 +482,13 @@ function limparFormularioAvaliacao() {
 ===================================================== */
 
 function editarAvaliacao(avaliacao) {
+
+    prepararSelectsAvaliacao(
+        avaliacao.idAvaliador,
+        avaliacao.idAvaliado,
+        avaliacao.tipoAvaliador ?? 'cliente'
+    );
+
 
     document
         .getElementById(
@@ -646,7 +780,7 @@ document
             if (!idAvaliador) {
 
                 showToast(
-                    'Informe o ID do avaliador.',
+                    'Selecione o avaliador.',
                     'error'
                 );
 
@@ -657,7 +791,7 @@ document
             if (!idAvaliado) {
 
                 showToast(
-                    'Informe o ID do avaliado.',
+                    'Selecione quem será avaliado.',
                     'error'
                 );
 
@@ -791,4 +925,15 @@ document
    INICIAR
 ===================================================== */
 
-carregarAvaliacoes();
+async function iniciarAvaliacoes() {
+
+    await carregarReferencias(
+        ['perfis', 'clientes', 'cuidadores', 'contratos']
+    );
+
+    prepararSelectsAvaliacao();
+
+    carregarAvaliacoes();
+}
+
+iniciarAvaliacoes();

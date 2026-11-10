@@ -265,7 +265,7 @@ function renderizarAgenda(lista) {
                                 <div class="agenda-contrato">
 
                                     Contrato:
-                                    ${item.idContrato ?? '—'}
+                                    ${item.idContrato ? esc(rotuloContratoCurto(item.idContrato)) : '—'}
 
                                 </div>
 
@@ -651,4 +651,16 @@ document
    INICIAR
 ===================================================== */
 
-carregarAgenda();
+async function iniciarAgenda() {
+
+    // Carrega os nomes antes de desenhar a tela e de montar a lista de contratos.
+    await carregarReferencias(['perfis', 'contratos']);
+
+    selectContratos(
+        document.getElementById('agenda-id-contrato')
+    );
+
+    carregarAgenda();
+}
+
+iniciarAgenda();

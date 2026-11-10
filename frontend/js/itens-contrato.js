@@ -18,8 +18,8 @@ async function carregarItens(idContratoFiltro = null) {
 
     corpo.innerHTML = itens.map((item) => `
       <tr>
-        <td>${item.idContrato}</td>
-        <td>${item.idServico}</td>
+        <td>${esc(rotuloContratoPorId(item.idContrato))}</td>
+        <td>${esc(nomeServico(item.idServico))}</td>
         <td>
           <div class="row-actions">
             <button class="btn-icon danger" onclick="removerItem(${item.idContrato}, ${item.idServico})">Excluir</button>
@@ -48,6 +48,25 @@ document.getElementById('btn-novo-item').addEventListener('click', () => {
   abrirModal('modal-item');
 });
 
+// Ao escolher o contrato, os serviços que já estão nele ficam desabilitados
+// (o par contrato + serviço é único, então vincular de novo daria erro).
+document.getElementById('item-id-contrato').addEventListener('change', async (e) => {
+  const selectServico = document.getElementById('item-id-servico');
+  let jaVinculados = [];
+  try {
+    const itens = await api.get(`${ITENS_URL}/${e.target.value}`);
+    jaVinculados = (itens || []).map((i) => Number(i.idServico));
+  } catch (_) {
+    jaVinculados = [];
+  }
+  preencherSelect(selectServico, ref.servicos, {
+    valor: (s) => s.idServico,
+    rotulo: (s) => `${s.tipoServico} — ${moedaBR(s.precoBase)}${jaVinculados.includes(Number(s.idServico)) ? ' (já vinculado)' : ''}`,
+    placeholder: 'Selecione o serviço',
+    desabilitar: (s) => jaVinculados.includes(Number(s.idServico)),
+  });
+});
+
 document.getElementById('btn-cancelar-item').addEventListener('click', () => {
   fecharModal('modal-item');
 });
@@ -61,6 +80,7 @@ document.getElementById('form-item').addEventListener('submit', async (evento) =
   try {
     await api.post(ITENS_URL, { idContrato, idServico });
     showToast('Serviço vinculado ao contrato.');
+    selectServicos(document.getElementById('item-id-servico'));
     fecharModal('modal-item');
     carregarItens();
   } catch (erro) {
@@ -78,4 +98,12 @@ document.getElementById('btn-limpar-filtro').addEventListener('click', () => {
   carregarItens();
 });
 
-carregarItens();
+async function iniciarItens() {
+  await carregarReferencias(['perfis', 'contratos', 'servicos']);
+  selectContratos(document.getElementById('item-id-contrato'));
+  selectServicos(document.getElementById('item-id-servico'));
+  selectContratos(document.getElementById('filtro-id-contrato'), 'Escolha um contrato');
+  carregarItens();
+}
+
+iniciarItens();
