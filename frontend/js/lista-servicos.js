@@ -1,5 +1,3 @@
-// Tela de Lista de Serviços: lista, cria, edita e remove usando /listasServicos.
-
 const SERVICOS_URL = '/listasServicos';
 
 async function carregarServicos() {

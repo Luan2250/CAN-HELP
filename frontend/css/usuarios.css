@@ -1,6 +1,3 @@
-/* =========================================
-   PÁGINA DE USUÁRIOS
-   ========================================= */
 
 .usuarios-page {
     max-width: 1080px;
@@ -10,9 +7,6 @@
 }
 
 
-/* =========================================
-   CABEÇALHO AZUL
-   ========================================= */
 
 .usuarios-page .page-head {
 
@@ -37,9 +31,6 @@
 }
 
 
-/* =========================================
-   TEXTO PEQUENO
-   ========================================= */
 
 .usuarios-page .eyebrow {
 
@@ -53,10 +44,6 @@
 }
 
 
-/* =========================================
-   TÍTULO
-   ========================================= */
-
 .usuarios-page .page-head h1 {
 
     color: #FFFFFF;
@@ -69,9 +56,6 @@
 }
 
 
-/* =========================================
-   BOTÃO NOVO USUÁRIO
-   ========================================= */
 
 .usuarios-page .page-head .btn-primary {
 
@@ -105,9 +89,6 @@
 }
 
 
-/* =========================================
-   TABELA
-   ========================================= */
 
 .usuarios-page .card {
 
@@ -124,7 +105,6 @@
 }
 
 
-/* CABEÇALHO DA TABELA */
 
 .usuarios-page .table th {
 
@@ -144,7 +124,6 @@
 }
 
 
-/* CÉLULAS */
 
 .usuarios-page .table td {
 
@@ -156,7 +135,6 @@
 }
 
 
-/* HOVER */
 
 .usuarios-page .table tbody tr:hover {
 
@@ -164,17 +142,12 @@
 }
 
 
-/* ÚLTIMA LINHA */
 
 .usuarios-page .table tbody tr:last-child td {
 
     border-bottom: none;
 }
 
-
-/* =========================================
-   MENSAGEM VAZIA / ERRO
-   ========================================= */
 
 .usuarios-page .empty {
 
@@ -184,9 +157,6 @@
 }
 
 
-/* =========================================
-   BOTÕES DA TABELA
-   ========================================= */
 
 .usuarios-page .btn-icon {
 
@@ -226,9 +196,6 @@
 }
 
 
-/* =========================================
-   MODAL
-   ========================================= */
 
 .usuarios-page .modal-backdrop {
 
@@ -238,9 +205,6 @@
 }
 
 
-/* =========================================
-   CAIXA DO MODAL
-   ========================================= */
 
 .usuarios-page .modal {
 
@@ -261,9 +225,6 @@
 }
 
 
-/* =========================================
-   TOPO DO MODAL
-   ========================================= */
 
 .usuarios-page .cadastro-header {
 
@@ -277,7 +238,6 @@
 }
 
 
-/* ÍCONE CH */
 
 .usuarios-page .cadastro-icon {
 
@@ -307,7 +267,6 @@
 }
 
 
-/* TÍTULO DO MODAL */
 
 .usuarios-page .cadastro-header h2 {
 
@@ -321,7 +280,6 @@
 }
 
 
-/* TEXTO DO MODAL */
 
 .usuarios-page .cadastro-header p {
 
@@ -335,9 +293,6 @@
 }
 
 
-/* =========================================
-   CONTEÚDO DO MODAL
-   ========================================= */
 
 .usuarios-page .cadastro-conteudo {
 
@@ -345,7 +300,6 @@
 }
 
 
-/* LABEL */
 
 .usuarios-page .modal label {
 
@@ -361,7 +315,6 @@
 }
 
 
-/* INPUTS */
 
 .usuarios-page .modal input,
 .usuarios-page .modal textarea,
@@ -391,7 +344,6 @@
 }
 
 
-/* PLACEHOLDER */
 
 .usuarios-page .modal input::placeholder,
 .usuarios-page .modal textarea::placeholder {
@@ -400,7 +352,6 @@
 }
 
 
-/* FOCO */
 
 .usuarios-page .modal input:focus,
 .usuarios-page .modal textarea:focus,
@@ -413,9 +364,6 @@
 }
 
 
-/* =========================================
-   BOTÕES DO MODAL
-   ========================================= */
 
 .usuarios-page .modal-actions {
 
@@ -429,7 +377,6 @@
 }
 
 
-/* CANCELAR */
 
 .usuarios-page .btn-ghost {
 
@@ -457,7 +404,6 @@
 }
 
 
-/* SALVAR */
 
 .usuarios-page .modal-actions .btn-primary {
 
@@ -485,9 +431,6 @@
 }
 
 
-/* =========================================
-   RESPONSIVO
-   ========================================= */
 
 @media (max-width: 800px) {
 

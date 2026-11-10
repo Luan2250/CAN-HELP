@@ -1,4 +1,3 @@
-/* CanHelp — telas de confirmação e cancelamento */
 .confirmacao-page {
   min-height: 100vh;
   display: grid;
@@ -103,5 +102,4 @@
   .resumo p { font-size: .75rem; }
 }
 
-/* Compensa o cabeçalho de navegação nesta tela. */
 .confirmacao-page { min-height: calc(100vh - 74px); }

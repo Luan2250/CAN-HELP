@@ -9,8 +9,7 @@ from models.avaliacoes import Avaliacoes
 class CuidadorImediatoRepository:
     @staticmethod
     def buscar_melhor_disponivel(data, id_cliente, cidade=None):
-        """Retorna o idUsuario do cuidador mais bem avaliado que está livre
-        na data informada, ou None se não houver nenhum."""
+#Retorna o idUsuario do cuidador mais bem avaliado que está livre na data informada, ou None se não houver nenhum
 
         ocupados = select(Contrato.idCuidador).where(
             Contrato.dataAtendimento == data,
@@ -26,7 +25,7 @@ class CuidadorImediatoRepository:
                 and_(Avaliacoes.idAvaliado == Cuidador.idUsuario,
                      Avaliacoes.tipoAvaliador == 'cliente')
             )
-            .filter(Cuidador.idUsuario != id_cliente)      # não chamar a si mesmo
+            .filter(Cuidador.idUsuario != id_cliente)     
             .filter(Cuidador.idUsuario.not_in(ocupados))
         )
 

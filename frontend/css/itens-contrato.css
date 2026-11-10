@@ -1,15 +1,10 @@
-/* =========================================
-   PÁGINA
-========================================= */
+
 
 .itens-contrato-page {
     max-width: 1080px;
 }
 
 
-/* =========================================
-   CABEÇALHO AZUL
-========================================= */
 
 .itens-contrato-page .page-head {
     background: #2960AB;
@@ -33,9 +28,6 @@
 }
 
 
-/* =========================================
-   TEXTO PEQUENO
-========================================= */
 
 .itens-contrato-page .eyebrow {
     color: #5DD1E9;
@@ -48,9 +40,6 @@
 }
 
 
-/* =========================================
-   TÍTULO
-========================================= */
 
 .itens-contrato-page .page-head h1 {
     color: #FFFFFF;
@@ -63,9 +52,6 @@
 }
 
 
-/* =========================================
-   BOTÃO PRINCIPAL
-========================================= */
 
 .itens-contrato-page .page-head .btn-primary {
     background: #FFFFFF;
@@ -94,9 +80,6 @@
 }
 
 
-/* =========================================
-   TEXTO
-========================================= */
 
 .itens-contrato-page .hint {
     color: #5B6B75;
@@ -109,9 +92,6 @@
 }
 
 
-/* =========================================
-   FILTRO
-========================================= */
 
 .itens-contrato-page .filtro-card {
     margin-bottom: 20px;
@@ -174,9 +154,6 @@
 }
 
 
-/* =========================================
-   BOTÕES DO FILTRO
-========================================= */
 
 .itens-contrato-page .filtro-conteudo .btn-ghost {
     padding: 9px 15px;
@@ -199,9 +176,6 @@
 }
 
 
-/* =========================================
-   TABELA
-========================================= */
 
 .itens-contrato-page .card {
     background: #FFFFFF;
@@ -231,9 +205,6 @@
 }
 
 
-/* =========================================
-   BOTÃO EXCLUIR
-========================================= */
 
 .itens-contrato-page .btn-icon.danger {
     color: #2960AB;
@@ -252,9 +223,6 @@
 }
 
 
-/* =========================================
-   FUNDO DO MODAL
-========================================= */
 
 .itens-contrato-page .modal-backdrop {
     background: rgba(38, 59, 67, 0.55);
@@ -263,9 +231,6 @@
 }
 
 
-/* =========================================
-   MODAL
-========================================= */
 
 .itens-contrato-page .cadastro-modal {
     width: 500px !important;
@@ -287,9 +252,6 @@
 }
 
 
-/* =========================================
-   CABEÇALHO AZUL DO MODAL
-========================================= */
 
 .itens-contrato-page .cadastro-header {
     width: 100%;
@@ -306,9 +268,6 @@
 }
 
 
-/* =========================================
-   ÍCONE CH
-========================================= */
 
 .itens-contrato-page .cadastro-icon {
     width: 58px;
@@ -337,9 +296,6 @@
 }
 
 
-/* =========================================
-   TÍTULO DO MODAL
-========================================= */
 
 .itens-contrato-page .cadastro-header h2 {
     margin: 0;
@@ -354,10 +310,6 @@
 }
 
 
-/* =========================================
-   TEXTO DO CABEÇALHO
-========================================= */
-
 .itens-contrato-page .cadastro-header p {
     margin: 8px 0 0;
 
@@ -369,9 +321,6 @@
 }
 
 
-/* =========================================
-   CORPO DO MODAL
-========================================= */
 
 .itens-contrato-page .cadastro-conteudo {
     padding: 28px 30px 30px;
@@ -380,9 +329,6 @@
 }
 
 
-/* =========================================
-   LABELS
-========================================= */
 
 .itens-contrato-page .cadastro-conteudo label {
     display: block;
@@ -398,10 +344,6 @@
     font-weight: 600;
 }
 
-
-/* =========================================
-   INPUTS
-========================================= */
 
 .itens-contrato-page .cadastro-conteudo input {
     display: block;
@@ -430,18 +372,12 @@
 }
 
 
-/* =========================================
-   PLACEHOLDER
-========================================= */
 
 .itens-contrato-page .cadastro-conteudo input::placeholder {
     color: #7B858A;
 }
 
 
-/* =========================================
-   INPUT FOCUS
-========================================= */
 
 .itens-contrato-page .cadastro-conteudo input:focus {
     border-color: #2498DD;
@@ -451,9 +387,6 @@
 }
 
 
-/* =========================================
-   CAIXA DE INFORMAÇÃO
-========================================= */
 
 .itens-contrato-page .info-box {
     display: flex;
@@ -488,10 +421,6 @@
 }
 
 
-/* =========================================
-   BOTÕES
-========================================= */
-
 .itens-contrato-page .modal-actions {
     display: flex;
 
@@ -505,9 +434,6 @@
 }
 
 
-/* =========================================
-   CANCELAR
-========================================= */
 
 .itens-contrato-page .modal-actions .btn-ghost {
     background: #FFFFFF;
@@ -528,9 +454,6 @@
 }
 
 
-/* =========================================
-   SALVAR
-========================================= */
 
 .itens-contrato-page .modal-actions .btn-primary {
     background: #2960AB;
@@ -545,9 +468,6 @@
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
 
 @media (max-width: 640px) {
 

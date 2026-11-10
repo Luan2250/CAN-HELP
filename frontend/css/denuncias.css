@@ -1,6 +1,4 @@
-/* =========================================
-   PÁGINA DE DENÚNCIAS
-========================================= */
+
 
 .denuncias-page {
     max-width: 1080px;
@@ -8,9 +6,6 @@
 }
 
 
-/* =========================================
-   CABEÇALHO AZUL
-========================================= */
 
 .denuncias-page .page-head {
     background: #2960AB;
@@ -34,9 +29,6 @@
 }
 
 
-/* =========================================
-   TEXTO PEQUENO
-========================================= */
 
 .denuncias-page .eyebrow {
     color: #5DD1E9;
@@ -49,9 +41,6 @@
 }
 
 
-/* =========================================
-   TÍTULO
-========================================= */
 
 .denuncias-page .page-head h1 {
     color: #FFFFFF;
@@ -62,10 +51,6 @@
 }
 
 
-/* =========================================
-   TEXTO DE AJUDA
-========================================= */
-
 .denuncias-page .hint {
     color: #5B6B75;
 
@@ -75,9 +60,6 @@
 }
 
 
-/* =========================================
-   BOTÃO NOVA DENÚNCIA
-========================================= */
 
 .denuncias-page .page-head .btn-primary {
     background: #FFFFFF;
@@ -106,9 +88,6 @@
 }
 
 
-/* =========================================
-   TABELA
-========================================= */
 
 .denuncias-page .card {
     background: #FFFFFF;
@@ -162,9 +141,6 @@
 }
 
 
-/* =========================================
-   BOTÕES DA TABELA
-========================================= */
 
 .denuncias-page .btn-icon {
     color: #2960AB;
@@ -199,9 +175,6 @@
 }
 
 
-/* =========================================
-   FUNDO ESCURO DO MODAL
-========================================= */
 
 .denuncias-page .modal-backdrop {
     background: rgba(38, 59, 67, 0.55);
@@ -210,9 +183,6 @@
 }
 
 
-/* =========================================
-   MODAL
-========================================= */
 
 .denuncias-page .cadastro-modal {
     width: 500px !important;
@@ -238,9 +208,6 @@
 }
 
 
-/* =========================================
-   TOPO AZUL DO MODAL
-========================================= */
 
 .denuncias-page .cadastro-header {
     width: 100%;
@@ -257,9 +224,6 @@
 }
 
 
-/* =========================================
-   LOGO CH
-========================================= */
 
 .denuncias-page .cadastro-icon {
     width: 58px;
@@ -288,9 +252,6 @@
 }
 
 
-/* =========================================
-   TÍTULO DO MODAL
-========================================= */
 
 .denuncias-page .cadastro-header h2 {
     margin: 0;
@@ -305,9 +266,6 @@
 }
 
 
-/* =========================================
-   TEXTO DO TOPO
-========================================= */
 
 .denuncias-page .cadastro-header p {
     margin: 8px 0 0;
@@ -320,9 +278,6 @@
 }
 
 
-/* =========================================
-   CORPO DO FORMULÁRIO
-========================================= */
 
 .denuncias-page .cadastro-conteudo {
     padding: 25px 30px 30px;
@@ -331,9 +286,6 @@
 }
 
 
-/* =========================================
-   LABELS
-========================================= */
 
 .denuncias-page .cadastro-conteudo label {
     display: block;
@@ -350,9 +302,6 @@
 }
 
 
-/* =========================================
-   INPUTS
-========================================= */
 
 .denuncias-page .cadastro-conteudo input,
 .denuncias-page .cadastro-conteudo select,
@@ -383,9 +332,6 @@
 }
 
 
-/* =========================================
-   TEXTAREA
-========================================= */
 
 .denuncias-page .cadastro-conteudo textarea {
     min-height: 90px;
@@ -394,9 +340,6 @@
 }
 
 
-/* =========================================
-   PLACEHOLDER
-========================================= */
 
 .denuncias-page .cadastro-conteudo input::placeholder,
 .denuncias-page .cadastro-conteudo textarea::placeholder {
@@ -404,18 +347,12 @@
 }
 
 
-/* =========================================
-   SELECT
-========================================= */
 
 .denuncias-page .cadastro-conteudo select {
     cursor: pointer;
 }
 
 
-/* =========================================
-   FOCO
-========================================= */
 
 .denuncias-page .cadastro-conteudo input:focus,
 .denuncias-page .cadastro-conteudo select:focus,
@@ -427,9 +364,6 @@
 }
 
 
-/* =========================================
-   BOTÕES DO MODAL
-========================================= */
 
 .denuncias-page .modal-actions {
     display: flex;
@@ -446,9 +380,6 @@
 }
 
 
-/* =========================================
-   BOTÃO CANCELAR
-========================================= */
 
 .denuncias-page .modal-actions .btn-ghost {
     background: #FFFFFF;
@@ -469,9 +400,6 @@
 }
 
 
-/* =========================================
-   BOTÃO SALVAR
-========================================= */
 
 .denuncias-page .modal-actions .btn-primary {
     background: #2960AB;
@@ -486,9 +414,6 @@
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
 
 @media (max-width: 640px) {
 
@@ -519,9 +444,6 @@
     }
 
 
-    /* =====================================
-       MODAL MOBILE
-    ===================================== */
 
     .denuncias-page .cadastro-modal {
         width: calc(100vw - 24px) !important;
@@ -538,9 +460,6 @@
     }
 
 
-    /* =====================================
-       TOPO AZUL MOBILE
-    ===================================== */
 
     .denuncias-page .cadastro-header {
         padding: 22px 20px 20px;
@@ -563,18 +482,10 @@
     }
 
 
-    /* =====================================
-       CORPO MOBILE
-    ===================================== */
-
     .denuncias-page .cadastro-conteudo {
         padding: 20px 20px 24px;
     }
 
-
-    /* =====================================
-       CAMPOS MOBILE
-    ===================================== */
 
     .denuncias-page .cadastro-conteudo label {
         margin-bottom: 11px;
@@ -597,9 +508,6 @@
     }
 
 
-    /* =====================================
-       BOTÕES MOBILE
-    ===================================== */
 
     .denuncias-page .modal-actions {
         flex-direction: row;

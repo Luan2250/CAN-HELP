@@ -1,7 +1,4 @@
-// Barra de navegação ÚNICA do CanHelp.
-// Todas as páginas usam este arquivo, então o menu é sempre o mesmo.
-// Só muda a área da conta: visitante vê "Entrar" e "Criar conta";
-// quem está logado vê "Notificações", "Minha área" e "Sair" (sem Entrar/Criar conta).
+
 (function () {
   const cabecalho = document.getElementById('site-header');
   if (!cabecalho) return;
@@ -82,7 +79,7 @@
   const usuario = usuarioLogado();
   cabecalho.innerHTML = montar(usuario);
 
-  // Sair
+  
   const botaoSair = document.getElementById('nav-sair');
   if (botaoSair) {
     botaoSair.addEventListener('click', (evento) => {

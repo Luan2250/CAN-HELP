@@ -1,4 +1,4 @@
-/* Chat CanHelp: conversas vinculadas a contratos, usando a API existente. */
+
 const CHAT_POLL_MS = 3500;
 const CHAT_ID_STORAGE_KEY = 'canhelp_chat_id_usuario';
 let chatMeuId = null;

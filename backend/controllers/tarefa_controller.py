@@ -46,7 +46,7 @@ class TarefaController:
             return jsonify({"erro": "Tarefa não encontrada"}), 404
         return jsonify({"mensagem": "Tarefa deletada com sucesso"}), 200
 
-    # ---- RF13: agenda do usuário autenticado (o usuário vem do token) ----
+# agenda do usuário autenticado (o usuário vem do token)
 
     @staticmethod
     @exigir_autenticacao

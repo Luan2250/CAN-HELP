@@ -1,7 +1,5 @@
-// Página inicial: busca rápida e vitrine de cuidadores cadastrados.
-// Os dados vêm de GET /cuidadores/filtrar (a mesma rota da tela "Buscar cuidador").
 
-const QTD_INICIAL = 8; // quantos cuidadores aparecem antes de a pessoa digitar algo
+const QTD_INICIAL = 8; 
 
 const listaEl = document.getElementById('home-cuidadores');
 const campoEl = document.getElementById('home-busca');
@@ -17,7 +15,7 @@ function esc(valor) {
   }[c]));
 }
 
-// Para a busca ignorar acentos e maiúsculas: "maria" encontra "Mária"
+
 function normalizar(texto) {
   return String(texto ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
@@ -64,7 +62,7 @@ function cartao(c) {
     </article>`;
 }
 
-// Sem busca: os melhores avaliados (QTD_INICIAL). Com busca: todos que combinam.
+
 function selecionar(cuidadores, termo) {
   const t = normalizar(termo.trim());
   if (!t) return cuidadores.slice(0, QTD_INICIAL);
@@ -105,7 +103,7 @@ async function carregar() {
   contadorEl.textContent = '';
 
   try {
-    // ordenar=nota: os mais bem avaliados primeiro
+
     const resposta = await api.get('/cuidadores/filtrar?ordenar=nota');
     todosCuidadores = Array.isArray(resposta) ? resposta : [];
     desenhar();
@@ -120,7 +118,7 @@ async function carregar() {
   }
 }
 
-// Filtra enquanto a pessoa digita; Enter / botão Buscar também funcionam.
+
 campoEl.addEventListener('input', desenhar);
 formEl.addEventListener('submit', (evento) => {
   evento.preventDefault();

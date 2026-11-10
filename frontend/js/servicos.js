@@ -12,9 +12,7 @@ let servicos = [];
 let servicoSelecionado = null;
 
 
-/* =====================================================
-   ÍCONES (PNG DA PASTA IMG)
-===================================================== */
+
 
 function pegarIcone(nome) {
 
@@ -74,9 +72,6 @@ function pegarIcone(nome) {
 }
 
 
-/* =====================================================
-   CARREGAR SERVIÇOS
-===================================================== */
 
 async function carregarServicos() {
 
@@ -122,9 +117,7 @@ async function carregarServicos() {
 }
 
 
-/* =====================================================
-   RENDERIZAR
-===================================================== */
+
 
 function renderizarServicos() {
 
@@ -168,9 +161,7 @@ function renderizarServicos() {
 }
 
 
-/* =====================================================
-   SELECIONAR SERVIÇO
-===================================================== */
+
 
 function selecionarServico(idServico) {
 
@@ -208,9 +199,7 @@ function selecionarServico(idServico) {
 }
 
 
-/* =====================================================
-   CONTINUAR
-===================================================== */
+
 
 document
     .getElementById('btn-continuar')
@@ -251,8 +240,5 @@ document
     });
 
 
-/* =====================================================
-   INICIAR
-===================================================== */
 
 carregarServicos();

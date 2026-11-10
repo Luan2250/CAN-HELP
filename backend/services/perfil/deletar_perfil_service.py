@@ -7,7 +7,7 @@ class DeletarPerfilService:
         usuario = Usuario.buscar_por_id(id_usuario)
         if not usuario:
             return False
-        usuario.deletar()  # CASCADE cuida de Perfil, Cliente/Cuidador, Contratos, etc.
+        usuario.deletar() 
         return True
 
     

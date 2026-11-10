@@ -1,15 +1,10 @@
-/* ================================
-   PÁGINA DE PERFIS
-================================ */
+
 
 .perfis-page {
   max-width: 1080px;
 }
 
 
-/* ================================
-   CABEÇALHO AZUL DA PÁGINA
-================================ */
 
 .perfis-page .page-head {
   background: #2960AB;
@@ -27,7 +22,6 @@
 }
 
 
-/* TEXTO PEQUENO */
 
 .perfis-page .eyebrow {
   color: #5DD1E9;
@@ -37,7 +31,6 @@
 }
 
 
-/* TÍTULO */
 
 .perfis-page .page-head h1 {
   color: #FFFFFF;
@@ -47,7 +40,6 @@
 }
 
 
-/* BOTÃO NOVO PERFIL */
 
 .perfis-page .page-head .btn-primary {
   background: #FFFFFF;
@@ -74,9 +66,6 @@
 }
 
 
-/* ================================
-   TABELA
-================================ */
 
 .perfis-page .card {
   background: #FFFFFF;
@@ -95,9 +84,6 @@
 }
 
 
-/* ================================
-   MODAL
-================================ */
 
 .perfis-page .modal-backdrop {
   background: rgba(38, 59, 67, 0.50);
@@ -105,9 +91,6 @@
 }
 
 
-/* ================================
-   CAIXA DO MODAL
-================================ */
 
 .perfis-page .cadastro-modal {
   width: 500px;
@@ -122,9 +105,6 @@
 }
 
 
-/* ================================
-   TOPO AZUL DO MODAL
-================================ */
 
 .perfis-page .cadastro-header {
   background: #2960AB;
@@ -134,9 +114,6 @@
 }
 
 
-/* ================================
-   QUADRADO CH
-================================ */
 
 .perfis-page .cadastro-icon {
   width: 58px;
@@ -158,9 +135,6 @@
 }
 
 
-/* ================================
-   TÍTULO DO MODAL
-================================ */
 
 .perfis-page .cadastro-header h2 {
   margin: 0;
@@ -173,9 +147,6 @@
 }
 
 
-/* ================================
-   TEXTO DO TOPO
-================================ */
 
 .perfis-page .cadastro-header p {
   margin: 8px 0 0;
@@ -187,18 +158,12 @@
 }
 
 
-/* ================================
-   CONTEÚDO BRANCO
-================================ */
 
 .perfis-page .cadastro-conteudo {
   padding: 26px 30px 30px;
 }
 
 
-/* ================================
-   LABELS
-================================ */
 
 .perfis-page .cadastro-conteudo label {
   display: block;
@@ -213,9 +178,6 @@
 }
 
 
-/* ================================
-   INPUTS
-================================ */
 
 .perfis-page .cadastro-conteudo input,
 .perfis-page .cadastro-conteudo textarea,
@@ -243,9 +205,6 @@
 }
 
 
-/* ================================
-   PLACEHOLDER
-================================ */
 
 .perfis-page .cadastro-conteudo input::placeholder,
 .perfis-page .cadastro-conteudo textarea::placeholder {
@@ -253,9 +212,6 @@
 }
 
 
-/* ================================
-   FOCO
-================================ */
 
 .perfis-page .cadastro-conteudo input:focus,
 .perfis-page .cadastro-conteudo textarea:focus,
@@ -267,9 +223,6 @@
 }
 
 
-/* ================================
-   TEXTAREA
-================================ */
 
 .perfis-page .cadastro-conteudo textarea {
   resize: vertical;
@@ -277,18 +230,12 @@
 }
 
 
-/* ================================
-   TIPO DE PERFIL
-================================ */
 
 .perfis-page .tipo-label {
   margin-bottom: 8px !important;
 }
 
 
-/* ================================
-   BOTÕES CUIDADOR / CLIENTE
-================================ */
 
 .perfis-page .tipos-perfil {
   display: flex;
@@ -324,7 +271,6 @@
 }
 
 
-/* BOTÃO ATIVO */
 
 .perfis-page .tipos-perfil .tipo.ativo {
   background: #2960AB;
@@ -333,18 +279,12 @@
 }
 
 
-/* ================================
-   CAMPOS DO CUIDADOR
-================================ */
 
 .perfis-page #campos-cuidador {
   margin-top: 8px;
 }
 
 
-/* ================================
-   UPLOAD DA FOTO
-================================ */
 
 .perfis-page .file-upload {
   margin-bottom: 18px;
@@ -364,10 +304,6 @@
 }
 
 
-/* ================================
-   PREVIEW DA FOTO
-================================ */
-
 .perfis-page .foto-preview {
   display: block;
 
@@ -384,9 +320,6 @@
 }
 
 
-/* ================================
-   BOTÕES DO MODAL
-================================ */
 
 .perfis-page .modal-actions {
   display: flex;
@@ -399,9 +332,6 @@
 }
 
 
-/* ================================
-   BOTÃO CANCELAR
-================================ */
 
 .perfis-page .btn-ghost {
   border: 1px solid #DDE5EA;
@@ -420,9 +350,6 @@
 }
 
 
-/* ================================
-   RESPONSIVO
-================================ */
 
 @media (max-width: 640px) {
 

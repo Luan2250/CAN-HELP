@@ -32,7 +32,6 @@ class ListarNotificacoesService:
         notificacoes.sort(key=lambda n: n["quando"] or "", reverse=True)
         return {"total": len(notificacoes), "notificacoes": notificacoes}
 
-    # ---------- uma fonte por método ----------
 
     @staticmethod
     def _de_contratos(id_usuario):

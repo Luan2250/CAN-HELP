@@ -84,15 +84,15 @@ class CriarContratoService:
         )
         
         try:
-            # ADICIONAR contrato à sessão (sem commit ainda)
+            # ADICIONAR contrato à sessão
             db.session.add(novo_contrato)
-            db.session.flush()  # Gera o ID sem commitar
+            db.session.flush()  
             
-            # 9. ADICIONAR SERVIÇOS AO CONTRATO (se fornecidos)
+            # 9. ADICIONAR SERVIÇOS AO CONTRATO
             if dados.get('servicos'):
                 CriarContratoService._adicionar_servicos(novo_contrato.idContrato, dados.get('servicos'))
             
-            # 10. CRIAR AGENDA (se fornecida)
+            # 10. CRIAR AGENDA
             if dados.get('ocasiao') or dados.get('horaAtendimento'):
                 CriarContratoService._criar_agenda(
                     novo_contrato.idContrato,
@@ -101,7 +101,6 @@ class CriarContratoService:
                     dados.get('ocasiao')
                 )
             
-            # COMMIT ÚNICO para tudo
             db.session.commit()
             
         except Exception as e:

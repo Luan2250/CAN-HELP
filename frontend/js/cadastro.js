@@ -77,7 +77,7 @@ formCadastro.addEventListener('submit', async (evento) => {
   botao.textContent = 'Criando conta...';
 
   try {
-    // O endpoint /perfis cria o usuário, o perfil e o registro de cliente/cuidador.
+   
     const resultado = await api.post('/perfis', dados);
     feedbackCadastro.classList.add('success');
     feedbackCadastro.textContent = `Conta de ${tipo === 'cliente' ? 'cliente' : 'cuidador(a)'} criada com sucesso! Agora você pode entrar.`;

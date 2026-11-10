@@ -1,5 +1,4 @@
-// Tela de Clientes: lista, cria e remove usando a API /clientes.
-// Não tem edição porque a Model Cliente só tem idUsuario (nada a alterar).
+
 
 const CLIENTES_URL = '/clientes';
 

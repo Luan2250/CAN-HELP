@@ -1,4 +1,3 @@
-// Tela de Denúncias: lista, cria, edita e remove usando a API /denuncias.
 
 const DENUNCIAS_URL = '/denuncias';
 

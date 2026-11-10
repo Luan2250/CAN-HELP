@@ -18,7 +18,7 @@ class AgendaController:
     def listar():
         # Executa o serviço que busca todos os usuários
         agendas = ListarAgendaService.executar()
-        # Converte a lista de objetos Model para uma lista de dicionários JSON
+        # Converte a lista dos models para uma lista dicionários JSON
         return jsonify([u.to_dict() for u in agendas]), 200
 
     @staticmethod

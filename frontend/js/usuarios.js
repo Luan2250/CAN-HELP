@@ -1,16 +1,7 @@
-// Tela de Usuários: lista, cria, edita e remove usando a API /usuarios.
-//
-// Esse arquivo é o MODELO para as outras 9 telas. A receita é sempre:
-// 1. carregarX()      -> busca a lista e monta as linhas da tabela
-// 2. limparFormulario -> reseta o form pro modo "criar"
-// 3. editarX(objeto)  -> preenche o form com os dados de uma linha (modo "editar")
-// 4. removerX(id)     -> confirma e chama api.del
-// 5. listeners de clique (botão novo / cancelar) e de submit do form
 
 const USUARIOS_URL = '/usuarios';
 
-// ATENÇÃO: assume que o to_dict() do Model Usuario devolve "idUsuario".
-// Se usar outro nome, essa linha nos devemos mudar.
+
 function pegarId(usuario) {
   return usuario.idUsuario ?? usuario.id;
 }
@@ -105,8 +96,7 @@ document.getElementById('form-usuario').addEventListener('submit', async (evento
 
   try {
     if (id) {
-      // Atualização: manda só os campos que o AtualizarUsuarioService aceita
-      // (cpf e dataNascimento não são atualizáveis no seu Service).
+    
       await api.put(`${USUARIOS_URL}/${id}`, {
         email: dados.email,
         telefone: dados.telefone,

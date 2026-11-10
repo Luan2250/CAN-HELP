@@ -1,4 +1,3 @@
-// Tela de Cuidadores: lista, cria, edita e remove usando a API /cuidadores.
 
 const CUIDADORES_URL = '/cuidadores';
 

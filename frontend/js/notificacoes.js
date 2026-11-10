@@ -15,7 +15,7 @@ function esc(texto) {
 }
 
 function quandoBR(quando) {
-  // "2026-11-05 20:30:00" -> "05/11/2026 20:30"
+ 
   if (!quando) return '—';
   const [data, hora] = quando.split(' ');
   return data.split('-').reverse().join('/') + ' ' + (hora || '').slice(0, 5);
@@ -71,7 +71,7 @@ async function carregarNotificacoes() {
   }
 }
 
-// Cliques nos botões da tabela ("Abrir" também marca como lida antes de navegar)
+
 document.getElementById('notificacoes-corpo').addEventListener('click', (evento) => {
   const alvo = evento.target.closest('[data-acao]');
   if (!alvo) return;

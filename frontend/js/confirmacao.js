@@ -1,4 +1,4 @@
-/* CanHelp — confirmação dos detalhes da solicitação. */
+
 const params = new URLSearchParams(window.location.search);
 let solicitacao = {};
 try { solicitacao = JSON.parse(localStorage.getItem('canhelpSolicitacao') || '{}'); } catch (_) {}
@@ -31,6 +31,6 @@ function preencherResumo() {
 }
 
 document.getElementById('btn-confirmar')?.addEventListener('click', () => {
-  // Ação visual sem mensagem adicional.
+
 });
 preencherResumo();

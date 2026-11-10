@@ -1,17 +1,7 @@
-/* =====================================================
-   AVALIAÇÕES
-===================================================== */
-
 const AVALIACOES_URL = '/avaliacoess';
 
 
-/* =====================================================
-   ID DO AVALIADO VINDO DA URL
 
-   Exemplo:
-
-   avaliacoes.html?idAvaliado=5
-===================================================== */
 
 const parametros =
     new URLSearchParams(
@@ -25,9 +15,7 @@ const idAvaliadoURL =
 let avaliacoes = [];
 
 
-/* =====================================================
-   FORMATAR NOTA
-===================================================== */
+
 
 function formatarNota(nota) {
 
@@ -46,9 +34,7 @@ function formatarNota(nota) {
 }
 
 
-/* =====================================================
-   CARREGAR AVALIAÇÕES
-===================================================== */
+
 
 async function carregarAvaliacoes() {
 
@@ -82,9 +68,7 @@ async function carregarAvaliacoes() {
             dados || [];
 
 
-        /* =============================================
-           SE VEIO DO PERFIL DO CUIDADOR
-        ============================================== */
+    
 
         if (idAvaliadoURL) {
 
@@ -148,9 +132,7 @@ async function carregarAvaliacoes() {
 }
 
 
-/* =====================================================
-   RENDERIZAR
-===================================================== */
+
 
 function renderizarAvaliacoes(lista) {
 
@@ -252,13 +234,7 @@ function renderizarAvaliacoes(lista) {
 }
 
 
-/* =====================================================
-   SELECTS DO FORMULÁRIO (avaliador / tipo / avaliado)
 
-   O backend só aceita avaliar quem tem um contrato CONCLUÍDO
-   com o avaliador. Então a lista de "avaliado" já mostra só
-   essas pessoas, em vez de deixar digitar um ID e errar.
-===================================================== */
 
 function tipoDoUsuario(idUsuario) {
     return ref.cuidadores.some(
@@ -278,7 +254,7 @@ function atualizarAvaliados(idForcado = null) {
     const selectAvaliado =
         document.getElementById('avaliacao-id-avaliado');
 
-    // Editando: o avaliado fica travado, não refaz a lista.
+   
     if (selectAvaliado.disabled) return;
 
 
@@ -298,8 +274,6 @@ function atualizarAvaliados(idForcado = null) {
             );
     }
 
-    // Vindo do perfil do cuidador (?idAvaliado=) ou editando: o avaliado
-    // já definido precisa estar na lista mesmo que o backend vá recusar.
     const forcado = idForcado ?? idAvaliadoURL;
 
     if (forcado && !ids.includes(Number(forcado))) {
@@ -363,7 +337,7 @@ document
     .getElementById('avaliacao-id-avaliador')
     .addEventListener('change', (evento) => {
 
-        // Quem avalia define o tipo (cuidador ou cliente) automaticamente.
+     
         document.getElementById('avaliacao-tipo-avaliador').value =
             tipoDoUsuario(evento.target.value);
 
@@ -376,9 +350,7 @@ document
     .addEventListener('change', () => atualizarAvaliados());
 
 
-/* =====================================================
-   LIMPAR FORMULÁRIO
-===================================================== */
+
 
 function limparFormularioAvaliacao() {
 
@@ -443,10 +415,7 @@ function limparFormularioAvaliacao() {
     prepararSelectsAvaliacao();
 
 
-    /*
-     * Se a página veio do perfil,
-     * já coloca o cuidador selecionado.
-     */
+    
 
     if (idAvaliadoURL) {
 
@@ -477,9 +446,6 @@ function limparFormularioAvaliacao() {
 }
 
 
-/* =====================================================
-   EDITAR
-===================================================== */
 
 function editarAvaliacao(avaliacao) {
 
@@ -583,9 +549,7 @@ function editarAvaliacao(avaliacao) {
 }
 
 
-/* =====================================================
-   REMOVER
-===================================================== */
+
 
 async function removerAvaliacao(id) {
 
@@ -625,10 +589,6 @@ async function removerAvaliacao(id) {
 }
 
 
-/* =====================================================
-   NOVA AVALIAÇÃO
-===================================================== */
-
 document
     .getElementById(
         'btn-nova-avaliacao'
@@ -647,10 +607,6 @@ document
     );
 
 
-/* =====================================================
-   CANCELAR
-===================================================== */
-
 document
     .getElementById(
         'btn-cancelar-avaliacao'
@@ -667,9 +623,6 @@ document
     );
 
 
-/* =====================================================
-   VALIDAR NOTA
-===================================================== */
 
 document
     .getElementById(
@@ -702,9 +655,6 @@ document
     );
 
 
-/* =====================================================
-   SUBMIT
-===================================================== */
 
 document
     .getElementById(
@@ -773,9 +723,7 @@ document
                     .value;
 
 
-            /* =========================================
-               VALIDAÇÕES
-            ========================================== */
+
 
             if (!idAvaliador) {
 
@@ -843,9 +791,7 @@ document
 
             try {
 
-                /* =====================================
-                   EDITAR
-                ====================================== */
+    
 
                 if (id) {
 
@@ -876,9 +822,7 @@ document
                 }
 
 
-                /* =====================================
-                   CRIAR
-                ====================================== */
+          
 
                 else {
 
@@ -921,9 +865,6 @@ document
     );
 
 
-/* =====================================================
-   INICIAR
-===================================================== */
 
 async function iniciarAvaliacoes() {
 

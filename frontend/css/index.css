@@ -1,6 +1,4 @@
-/* =========================================
-   PÁGINA INICIAL - CANHELP
-   ========================================= */
+
 
 .index-page {
     max-width: 1180px;
@@ -10,9 +8,6 @@
 }
 
 
-/* =========================================
-   ÁREA DE APRESENTAÇÃO
-   ========================================= */
 
 .index-hero {
     
@@ -37,15 +32,14 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Mantém centralizado verticalmente (no meio da altura) */
-    align-items: flex-start;  /* Alinha tudo na esquerda horizontalmente */
-    text-align: left;        /* Garante que os textos comecem da esquerda */
+    justify-content: center; 
+    align-items: flex-start;  
+    text-align: left;        
     gap: 15px;               
     padding-left: 10%;      
 }
 
 
-/* CANHELP */
 
 .index-hero .eyebrow {
     color: #5DD1E9;
@@ -58,7 +52,6 @@
 }
 
 
-/* TÍTULO */
 
 .index-hero h1 {
     color: #FFFFFF;
@@ -71,7 +64,6 @@
 }
 
 
-/* TEXTO */
 
 .index-hero p {
     color: #FFFFFF;
@@ -86,9 +78,6 @@
 }
 
 
-/* =========================================
-   TÍTULO DA SEÇÃO
-   ========================================= */
 
 .index-section {
     width: 100%;
@@ -99,7 +88,6 @@
 }
 
 
-/* TEXTO "ACESSOS RÁPIDOS" */
 
 .index-section .section-title .eyebrow {
     color: #2498DD;
@@ -112,7 +100,6 @@
 }
 
 
-/* PRINCIPAIS ÁREAS */
 
 .index-section .section-title h2 {
     color: #263B43;
@@ -125,9 +112,6 @@
 }
 
 
-/* =========================================
-   GRADE DOS QUADRADOS
-   ========================================= */
 
 .index-cards {
     display: grid;
@@ -138,9 +122,6 @@
 }
 
 
-/* =========================================
-   QUADRADOS AZUIS
-   ========================================= */
 
 .index-card {
     min-height: 180px;
@@ -179,9 +160,6 @@
 }
 
 
-/* =========================================
-   QUADRADO DO EMOJI
-   ========================================= */
 
 .index-card-icon {
     width: 64px;
@@ -205,9 +183,6 @@
 }
 
 
-/* =========================================
-   NOME DA PÁGINA
-   ========================================= */
 
 .index-card h3 {
     margin: 0;
@@ -222,9 +197,6 @@
 }
 
 
-/* =========================================
-   EFEITO AO PASSAR O MOUSE
-   ========================================= */
 
 .index-card:hover {
     transform: translateY(-4px);
@@ -235,9 +207,6 @@
 }
 
 
-/* =========================================
-   TABLET
-   ========================================= */
 
 @media (max-width: 900px) {
 
@@ -252,9 +221,6 @@
 }
 
 
-/* =========================================
-   CELULAR
-   ========================================= */
 
 @media (max-width: 640px) {
 
@@ -291,9 +257,6 @@
 }
 
 
-/* =========================================
-   CELULAR PEQUENO
-   ========================================= */
 
 @media (max-width: 420px) {
 
@@ -323,7 +286,6 @@
 
 }
 
-/* Acabamento visual dos atalhos */
 .index-card::before {
     content: "";
     position: absolute;

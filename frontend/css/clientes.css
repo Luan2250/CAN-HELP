@@ -1,15 +1,10 @@
-/* ================================
-   PÁGINA DE CLIENTES
-================================ */
+
 
 .clientes-page {
   max-width: 1080px;
 }
 
 
-/* ================================
-   CABEÇALHO AZUL
-================================ */
 
 .clientes-page .page-head {
   background: #2960AB;
@@ -27,7 +22,6 @@
 }
 
 
-/* TEXTO PEQUENO */
 
 .clientes-page .eyebrow {
   color: #5DD1E9;
@@ -37,7 +31,6 @@
 }
 
 
-/* TÍTULO */
 
 .clientes-page .page-head h1 {
   color: #FFFFFF;
@@ -47,7 +40,6 @@
 }
 
 
-/* BOTÃO PRINCIPAL */
 
 .clientes-page .page-head .btn-primary {
   background: #FFFFFF;
@@ -74,9 +66,7 @@
 }
 
 
-/* ================================
-   TABELA
-================================ */
+
 
 .clientes-page .card {
   background: #FFFFFF;
@@ -95,9 +85,6 @@
 }
 
 
-/* ================================
-   MODAL BACKDROP
-================================ */
 
 .clientes-page .modal-backdrop {
   background: rgba(38, 59, 67, 0.50);
@@ -105,9 +92,6 @@
 }
 
 
-/* ================================
-   MODAL
-================================ */
 
 .clientes-page .cadastro-modal {
   width: 500px;
@@ -124,9 +108,6 @@
 }
 
 
-/* ================================
-   TOPO AZUL
-================================ */
 
 .clientes-page .cadastro-header {
   background: #2960AB;
@@ -139,9 +120,6 @@
 }
 
 
-/* ================================
-   ÍCONE CH
-================================ */
 
 .clientes-page .cadastro-icon {
   width: 58px;
@@ -164,9 +142,6 @@
 }
 
 
-/* ================================
-   TÍTULO
-================================ */
 
 .clientes-page .cadastro-header h2 {
   margin: 0;
@@ -179,9 +154,6 @@
 }
 
 
-/* ================================
-   TEXTO
-================================ */
 
 .clientes-page .cadastro-header p {
   margin: 8px 0 0;
@@ -193,18 +165,12 @@
 }
 
 
-/* ================================
-   CONTEÚDO BRANCO
-================================ */
 
 .clientes-page .cadastro-conteudo {
   padding: 26px 30px 30px;
 }
 
 
-/* ================================
-   LABEL
-================================ */
 
 .clientes-page .cadastro-conteudo label {
   display: block;
@@ -219,9 +185,6 @@
 }
 
 
-/* ================================
-   INPUT
-================================ */
 
 .clientes-page .cadastro-conteudo input {
   width: 100%;
@@ -247,18 +210,12 @@
 }
 
 
-/* ================================
-   PLACEHOLDER
-================================ */
 
 .clientes-page .cadastro-conteudo input::placeholder {
   color: #7B8A92;
 }
 
 
-/* ================================
-   FOCO
-================================ */
 
 .clientes-page .cadastro-conteudo input:focus {
   border-color: #2498DD;
@@ -268,9 +225,6 @@
 }
 
 
-/* ================================
-   BOTÕES
-================================ */
 
 .clientes-page .modal-actions {
   display: flex;
@@ -283,9 +237,6 @@
 }
 
 
-/* ================================
-   CANCELAR
-================================ */
 
 .clientes-page .btn-ghost {
   border: 1px solid #DDE5EA;
@@ -304,9 +255,6 @@
 }
 
 
-/* ================================
-   RESPONSIVO
-================================ */
 
 @media (max-width: 640px) {
 

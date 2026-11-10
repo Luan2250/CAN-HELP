@@ -1,4 +1,4 @@
-// Funções compartilhadas de acesso à API e feedback visual (toast).
+
 const API_BASE = 'http://127.0.0.1:5000';
 
 async function apiRequest(caminho, opcoes = {}) {
@@ -25,7 +25,7 @@ async function apiRequest(caminho, opcoes = {}) {
   }
 
   if (!resposta.ok) {
-    // Token inválido/expirado: encerra a sessão (só se havia alguém logado).
+
     if (resposta.status === 401 && usuario && typeof logout === 'function') logout();
     const mensagem = (corpo && (corpo.erro || corpo.message)) || `Erro ${resposta.status}`;
     throw new Error(mensagem);
@@ -59,7 +59,6 @@ function fecharModal(id) {
   document.getElementById(id).classList.remove('open');
 }
 
-// Destaca no menu o link da página atual.
 document.addEventListener('DOMContentLoaded', () => {
   const paginaAtual = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach((link) => {

@@ -1,5 +1,4 @@
-// Tela de Itens do Contrato: lista (todos ou filtrado por contrato), cria e remove.
-// Não tem edição: o vínculo contrato+serviço é criado ou removido, não editado.
+
 
 const ITENS_URL = '/itensContrato';
 
@@ -48,8 +47,7 @@ document.getElementById('btn-novo-item').addEventListener('click', () => {
   abrirModal('modal-item');
 });
 
-// Ao escolher o contrato, os serviços que já estão nele ficam desabilitados
-// (o par contrato + serviço é único, então vincular de novo daria erro).
+
 document.getElementById('item-id-contrato').addEventListener('change', async (e) => {
   const selectServico = document.getElementById('item-id-servico');
   let jaVinculados = [];

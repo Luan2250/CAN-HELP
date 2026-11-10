@@ -1,4 +1,4 @@
-/* Busca de cuidadores integrada à rota avançada do Backend. */
+
 const RESULTADOS = document.getElementById('resultados-cuidadores');
 let cuidadoresCarregados = [];
 

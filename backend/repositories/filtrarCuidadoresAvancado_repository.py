@@ -3,7 +3,6 @@ from extensions import db
 class FiltrarCuidadoresAvancadoRepository:
     @staticmethod
     def filtrar_cuidadores(cidade=None, estado=None, valor_max=None, nota_min=None, data=None, ordenar=None):
-        # Chama a procedure passando os filtros recebidos da rota (None = filtro não aplicado)
         query = db.text(
             "CALL FiltrarCuidadores(:cidade, :estado, :valor_max, :nota_min, :data, :ordenar)"
         )

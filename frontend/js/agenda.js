@@ -1,15 +1,11 @@
-/* =====================================================
-   AGENDA
-===================================================== */
+
 
 const AGENDA_URL = '/agendas';
 
 let agendas = [];
 
 
-/* =====================================================
-   FORMATAR DATA
-===================================================== */
+
 
 function formatarData(data) {
 
@@ -27,9 +23,6 @@ function formatarData(data) {
 }
 
 
-/* =====================================================
-   VERIFICAR SE É HOJE
-===================================================== */
 
 function ehHoje(data) {
 
@@ -52,9 +45,6 @@ function ehHoje(data) {
 }
 
 
-/* =====================================================
-   VERIFICAR SE É AMANHÃ
-===================================================== */
 
 function ehAmanha(data) {
 
@@ -81,9 +71,6 @@ function ehAmanha(data) {
 }
 
 
-/* =====================================================
-   TITULO DO DIA
-===================================================== */
 
 function tituloDoDia(data) {
 
@@ -98,10 +85,6 @@ function tituloDoDia(data) {
     return formatarData(data);
 }
 
-
-/* =====================================================
-   CARREGAR AGENDA
-===================================================== */
 
 async function carregarAgenda() {
 
@@ -151,9 +134,6 @@ async function carregarAgenda() {
 }
 
 
-/* =====================================================
-   AGRUPAR POR DATA
-===================================================== */
 
 function agruparPorData(lista) {
 
@@ -182,9 +162,6 @@ function agruparPorData(lista) {
 }
 
 
-/* =====================================================
-   RENDERIZAR AGENDA
-===================================================== */
 
 function renderizarAgenda(lista) {
 
@@ -320,9 +297,7 @@ function renderizarAgenda(lista) {
 }
 
 
-/* =====================================================
-   LIMPAR FORMULÁRIO
-===================================================== */
+
 
 function limparFormularioAgenda() {
 
@@ -353,9 +328,6 @@ function limparFormularioAgenda() {
 }
 
 
-/* =====================================================
-   EDITAR
-===================================================== */
 
 function editarAgenda(item) {
 
@@ -412,9 +384,7 @@ function editarAgenda(item) {
 }
 
 
-/* =====================================================
-   REMOVER
-===================================================== */
+
 
 async function removerAgenda(id) {
 
@@ -452,9 +422,7 @@ async function removerAgenda(id) {
 }
 
 
-/* =====================================================
-   NOVO
-===================================================== */
+
 
 document
     .getElementById('btn-novo-agenda')
@@ -467,9 +435,7 @@ document
     });
 
 
-/* =====================================================
-   CANCELAR
-===================================================== */
+
 
 document
     .getElementById('btn-cancelar-agenda')
@@ -480,9 +446,6 @@ document
     });
 
 
-/* =====================================================
-   SALVAR
-===================================================== */
 
 document
     .getElementById('form-agenda')
@@ -589,9 +552,6 @@ document
     });
 
 
-/* =====================================================
-   FILTRAR POR DATA
-===================================================== */
 
 document
     .getElementById('btn-filtrar-data')
@@ -627,10 +587,6 @@ document
     });
 
 
-/* =====================================================
-   LIMPAR FILTRO
-===================================================== */
-
 document
     .getElementById('btn-limpar-data')
     .addEventListener('click', () => {
@@ -647,13 +603,11 @@ document
     });
 
 
-/* =====================================================
-   INICIAR
-===================================================== */
+
 
 async function iniciarAgenda() {
 
-    // Carrega os nomes antes de desenhar a tela e de montar a lista de contratos.
+
     await carregarReferencias(['perfis', 'contratos']);
 
     selectContratos(

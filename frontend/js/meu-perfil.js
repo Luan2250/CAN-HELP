@@ -40,7 +40,7 @@ document.getElementById('form-meu-perfil').addEventListener('submit', async (eve
   }
 });
 
-const TAMANHO_MAXIMO_FOTO = 2 * 1024 * 1024; // 2 MB
+const TAMANHO_MAXIMO_FOTO = 2 * 1024 * 1024; 
 
 document.getElementById('meu-foto-arquivo').addEventListener('change', (evento) => {
   const arquivo = evento.target.files[0];

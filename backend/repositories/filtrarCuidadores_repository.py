@@ -6,11 +6,9 @@ class FiltrarCuidadorRepository:
         # Converte booleano do Python para 1 ou 0 do MySQL
         ordem_nota = 1 if ordenar_por_nota else 0
         
-        # Chama a procedure passando os parâmetros recebidos da rota
         query = db.text("CALL BuscarCuidadoresFiltro(:cidade, :ordem_nota)")
         result = db.session.execute(query, {"cidade": cidade, "ordem_nota": ordem_nota}).fetchall()
         
-        # Transforma o resultado do banco em uma lista de dicionários legível para o Flask
         cuidadores = []
         for row in result:
             cuidadores.append({

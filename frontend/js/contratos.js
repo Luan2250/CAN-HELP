@@ -1,5 +1,3 @@
-// Tela de Contratos: lista, cria, edita e remove usando a API /contratos.
-
 const CONTRATOS_URL = '/contratos';
 
 function formatarStatus(status) {
@@ -137,7 +135,7 @@ document.getElementById('form-contrato').addEventListener('submit', async (event
 });
 
 async function iniciarContratos() {
-  // Nomes primeiro: a tabela e os selects dependem deles.
+
   await carregarReferencias(['perfis', 'clientes', 'cuidadores']);
   selectClientes(document.getElementById('contrato-id-cliente'));
   selectCuidadores(document.getElementById('contrato-id-cuidador'));

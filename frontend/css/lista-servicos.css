@@ -1,15 +1,9 @@
-/* =========================================
-   PÁGINA DE SERVIÇOS
-========================================= */
 
 .lista-servicos-page {
     max-width: 1080px;
 }
 
 
-/* =========================================
-   CABEÇALHO AZUL
-========================================= */
 
 .lista-servicos-page .page-head {
     background: #2960AB;
@@ -33,27 +27,17 @@
 }
 
 
-/* =========================================
-   TÍTULO
-========================================= */
 
 .lista-servicos-page .page-head h1 {
     color: #FFFFFF;
 }
 
 
-/* =========================================
-   TEXTO PEQUENO
-========================================= */
-
 .lista-servicos-page .eyebrow {
     color: #5DD1E9;
 }
 
 
-/* =========================================
-   BOTÃO NOVO SERVIÇO
-========================================= */
 
 .lista-servicos-page .page-head .btn-primary {
     background: #FFFFFF;
@@ -80,9 +64,6 @@
 }
 
 
-/* =========================================
-   TABELA
-========================================= */
 
 .lista-servicos-page .card {
     background: #FFFFFF;
@@ -112,9 +93,6 @@
 }
 
 
-/* =========================================
-   FUNDO DO MODAL
-========================================= */
 
 .lista-servicos-page .modal-backdrop {
     background: rgba(38, 59, 67, 0.55);
@@ -123,9 +101,6 @@
 }
 
 
-/* =========================================
-   MODAL
-========================================= */
 
 .lista-servicos-page .cadastro-modal {
     width: 500px !important;
@@ -147,9 +122,6 @@
 }
 
 
-/* =========================================
-   CABEÇALHO AZUL DO MODAL
-========================================= */
 
 .lista-servicos-page .cadastro-header {
     width: 100%;
@@ -166,9 +138,6 @@
 }
 
 
-/* =========================================
-   ÍCONE CH
-========================================= */
 
 .lista-servicos-page .cadastro-icon {
     width: 58px;
@@ -197,9 +166,6 @@
 }
 
 
-/* =========================================
-   TÍTULO DO MODAL
-========================================= */
 
 .lista-servicos-page .cadastro-header h2 {
     margin: 0;
@@ -214,9 +180,6 @@
 }
 
 
-/* =========================================
-   TEXTO DO MODAL
-========================================= */
 
 .lista-servicos-page .cadastro-header p {
     margin: 8px 0 0;
@@ -229,9 +192,6 @@
 }
 
 
-/* =========================================
-   CORPO DO MODAL
-========================================= */
 
 .lista-servicos-page .cadastro-conteudo {
     padding: 28px 30px 30px;
@@ -240,9 +200,6 @@
 }
 
 
-/* =========================================
-   LABEL
-========================================= */
 
 .lista-servicos-page .cadastro-conteudo label {
     display: block;
@@ -259,9 +216,6 @@
 }
 
 
-/* =========================================
-   INPUT
-========================================= */
 
 .lista-servicos-page .cadastro-conteudo input {
     display: block;
@@ -290,18 +244,12 @@
 }
 
 
-/* =========================================
-   PLACEHOLDER
-========================================= */
 
 .lista-servicos-page .cadastro-conteudo input::placeholder {
     color: #7B858A;
 }
 
 
-/* =========================================
-   INPUT FOCUS
-========================================= */
 
 .lista-servicos-page .cadastro-conteudo input:focus {
     border-color: #2498DD;
@@ -311,9 +259,6 @@
 }
 
 
-/* =========================================
-   BOTÕES DO MODAL
-========================================= */
 
 .lista-servicos-page .modal-actions {
     display: flex;
@@ -327,10 +272,6 @@
     margin-top: 25px;
 }
 
-
-/* =========================================
-   CANCELAR
-========================================= */
 
 .lista-servicos-page .modal-actions .btn-ghost {
     background: #FFFFFF;
@@ -351,9 +292,6 @@
 }
 
 
-/* =========================================
-   SALVAR
-========================================= */
 
 .lista-servicos-page .modal-actions .btn-primary {
     background: #2960AB;
@@ -368,9 +306,6 @@
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
 
 @media (max-width: 640px) {
 

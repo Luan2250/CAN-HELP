@@ -1,14 +1,4 @@
-/* =====================================================
-   PERFIL DO CUIDADOR
-===================================================== */
 
-
-/* =====================================================
-   PEGAR ID DA URL
-
-   Exemplo:
-   perfil-cuidador.html?id=1
-===================================================== */
 
 const parametros =
     new URLSearchParams(window.location.search);
@@ -17,9 +7,7 @@ const idUsuario =
     parametros.get('id');
 
 
-/* =====================================================
-   URLS DA API
-===================================================== */
+
 
 const PERFIS_URL = '/perfis';
 
@@ -28,9 +16,7 @@ const CUIDADORES_URL = '/cuidadores';
 const AVALIACOES_URL = '/avaliacoess';
 
 
-/* =====================================================
-   CARREGAR PERFIL
-===================================================== */
+
 
 async function carregarPerfilCuidador() {
 
@@ -43,9 +29,7 @@ async function carregarPerfilCuidador() {
     const fotoElemento =
     document.querySelector('.foto-perfil img');
 
-    /* =================================================
-       VERIFICAR ID
-    ================================================== */
+ 
 
     if (!idUsuario) {
         const titulo = document.getElementById('perfil-nome');
@@ -62,9 +46,7 @@ async function carregarPerfilCuidador() {
 
     try {
 
-        /* =================================================
-           1. BUSCAR PERFIL
-        ================================================== */
+     
 
         const perfil =
             await api.get(
@@ -83,9 +65,7 @@ async function carregarPerfilCuidador() {
         }
 
 
-        /* =================================================
-           NOME
-        ================================================== */
+ 
 
         if (nomeElemento) {
 
@@ -94,10 +74,6 @@ async function carregarPerfilCuidador() {
 
         }
 
-
-        /* =================================================
-           BIO
-        ================================================== */
 
         if (descricaoElemento) {
 
@@ -108,9 +84,6 @@ async function carregarPerfilCuidador() {
         }
 
 
-     /* =================================================
-            FOTO
-            ================================================= */
 
             if (fotoElemento) {
 
@@ -124,9 +97,7 @@ async function carregarPerfilCuidador() {
             }
 
 
-        /* =================================================
-           LOCALIZAÇÃO
-        ================================================== */
+  
 
         const dadosPerfil =
             document.querySelector('.perfil-dados');
@@ -177,9 +148,6 @@ async function carregarPerfilCuidador() {
         }
 
 
-        /* =================================================
-           2. BUSCAR DADOS DO CUIDADOR
-        ================================================== */
 
         const cuidadores =
             await api.get(CUIDADORES_URL);
@@ -195,9 +163,7 @@ async function carregarPerfilCuidador() {
 
         if (cuidador) {
 
-            /* =============================================
-               VALOR DO SERVIÇO
-            ============================================== */
+   
 
             const precoElemento =
                 document.querySelector('.perfil-preco');
@@ -217,9 +183,7 @@ async function carregarPerfilCuidador() {
             }
 
 
-            /* =============================================
-               DISPONIBILIDADE
-            ============================================== */
+
 
             const dadosPerfilCuidador =
                 document.querySelector('.perfil-dados');
@@ -244,9 +208,7 @@ async function carregarPerfilCuidador() {
             }
 
 
-            /* =============================================
-               INFORMAÇÕES DO CUIDADOR
-            ============================================== */
+ 
 
             const experienciaBox =
                 document.querySelector('.experiencia-box');
@@ -258,7 +220,7 @@ async function carregarPerfilCuidador() {
                     experienciaBox.querySelectorAll('div');
 
 
-                /* CERTIFICADO */
+          
 
                 if (divs[0]) {
 
@@ -275,7 +237,6 @@ async function carregarPerfilCuidador() {
                 }
 
 
-                /* ÓRGÃO EMISSOR */
 
                 if (divs[1]) {
 
@@ -292,7 +253,6 @@ async function carregarPerfilCuidador() {
                 }
 
 
-                /* DISPONIBILIDADE */
 
                 if (divs[2]) {
 
@@ -313,9 +273,7 @@ async function carregarPerfilCuidador() {
         }
 
 
-        /* =================================================
-           3. BUSCAR AVALIAÇÕES
-        ================================================== */
+  
 
         const avaliacoes =
             await api.get(AVALIACOES_URL);
@@ -329,9 +287,7 @@ async function carregarPerfilCuidador() {
             );
 
 
-        /* =================================================
-           CALCULAR MÉDIA
-        ================================================== */
+     
 
         let media = 0;
 
@@ -361,9 +317,6 @@ async function carregarPerfilCuidador() {
         }
 
 
-        /* =================================================
-           MOSTRAR NOTA
-        ================================================== */
 
         const dadosPerfilNota =
             document.querySelector('.perfil-dados');
@@ -392,9 +345,6 @@ async function carregarPerfilCuidador() {
         }
 
 
-        /* =================================================
-           MOSTRAR AVALIAÇÕES
-        ================================================== */
 
         const caixasPerfil =
             document.querySelectorAll(
@@ -499,9 +449,6 @@ async function carregarPerfilCuidador() {
 }
 
 
-/* =====================================================
-   SOLICITAR AJUDA
-===================================================== */
 
 document
     .getElementById('btn-solicitar')
@@ -524,9 +471,6 @@ document
     });
 
 
-/* =====================================================
-   CHAT
-===================================================== */
 
 document
     .getElementById('btn-chat')
@@ -537,10 +481,6 @@ document
 
     });
 
-
-/* =====================================================
-   AVALIAR
-===================================================== */
 
 document
     .getElementById('btn-avaliar')
@@ -553,8 +493,5 @@ document
     });
 
 
-/* =====================================================
-   INICIAR
-===================================================== */
 
 carregarPerfilCuidador();

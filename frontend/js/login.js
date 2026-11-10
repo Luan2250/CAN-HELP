@@ -1,4 +1,4 @@
-// Login integrado à API do Backend (POST /login).
+
 const formLogin = document.getElementById('form-login');
 const inputEmail = document.getElementById('login-email');
 const inputSenha = document.getElementById('login-senha');
@@ -26,7 +26,7 @@ if (formLogin) formLogin.addEventListener('submit', async (evento) => {
   try {
     const usuario = await api.post('/login', { email: inputEmail.value.trim(), senha: inputSenha.value });
     localStorage.setItem('canhelp_usuario', JSON.stringify(usuario));
-    // Compatibilidade com páginas de autenticação usadas no projeto de referência.
+
     localStorage.setItem('canhelp_chat_id_usuario', String(usuario.idUsuario));
     feedbackLogin.textContent = 'Login realizado!';
     feedbackLogin.classList.add('success');

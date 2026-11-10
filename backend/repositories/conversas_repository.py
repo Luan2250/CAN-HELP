@@ -6,9 +6,6 @@ from models.perfil import Perfil
 class ConversasRepository:
     @staticmethod
     def listar_por_usuario(idUsuario):
-        """Retorna, para cada contrato em que o usuário é cliente ou
-        cuidador, um resumo da conversa (com quem é, última mensagem e
-        quantidade de mensagens não lidas) pra montar a lista de chats."""
         contratos = Contrato.query.filter(
             (Contrato.idCliente == idUsuario) | (Contrato.idCuidador == idUsuario)
         ).all()

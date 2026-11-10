@@ -39,8 +39,7 @@ class Mensagem(db.Model):
 
     @staticmethod
     def marcar_lidas_por_contrato(idContrato, idUsuarioLeitor):
-        """Marca como lidas todas as mensagens do contrato que NÃO foram
-        enviadas pelo próprio leitor (ou seja, as mensagens recebidas)."""
+# Marca como lidas todas as mensagens do contrato que NÃO foram enviadas pelo próprio leitor (ou seja, as mensagens recebidas).
         mensagens = Mensagem.query.filter(
             Mensagem.idContrato == idContrato,
             Mensagem.idRemetente != idUsuarioLeitor,

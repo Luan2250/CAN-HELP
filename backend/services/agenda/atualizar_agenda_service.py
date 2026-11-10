@@ -8,7 +8,7 @@ class AtualizarAgendaService:
         if not agenda:
             return None
         
-        # 2. Passa os dados novos para o método atualizar() da própria Model
+        # Passa os dados novos para o método atualizar() da própria Model
         agenda.atualizar(
             dataAgenda=dados.get('dataAgenda'),
             horaAgenda=dados.get('horaAgenda'),

@@ -7,37 +7,27 @@
 
   <title>CanHelp · Cuidadores</title>
 
-  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- CSS geral -->
   <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="../img/canhelplogo.png">
 
-  <!-- CSS específico dos cuidadores -->
   <link rel="stylesheet" href="css/cuidador.css">
 </head>
 
 <body>
 
-  <!-- =====================================================
-         MENU
-    ====================================================== -->
 
   <header class="topbar" id="site-header"></header>
   <script src="js/navbar.js"></script>
 
 
-  <!-- =====================================================
-         CONTEÚDO
-    ====================================================== -->
 
   <main class="page cuidadores-page">
 
-    <!-- Cabeçalho da página -->
 
     <section class="page-head">
 
@@ -62,9 +52,6 @@
     </section>
 
 
-    <!-- =================================================
-             TABELA
-        ================================================== -->
 
     <section class="card">
 
@@ -120,18 +107,12 @@
     </section>
 
 
-    <!-- =================================================
-             MODAL NOVO / EDITAR CUIDADOR
-        ================================================== -->
 
     <div class="modal-backdrop" id="modal-cuidador">
 
       <form class="modal cadastro-modal" id="form-cuidador">
 
 
-        <!-- =========================================
-                     TOPO AZUL DO MODAL
-                ========================================== -->
 
         <div class="cadastro-header">
 
@@ -150,18 +131,13 @@
         </div>
 
 
-        <!-- =========================================
-                     CORPO DO FORMULÁRIO
-                ========================================== -->
 
         <div class="cadastro-conteudo">
 
-          <!-- ID usado pelo JavaScript para edição -->
 
           <input type="hidden" id="cuidador-id-original">
 
 
-          <!-- ID DO USUÁRIO -->
 
           <label for="cuidador-id-usuario">
 
@@ -172,7 +148,6 @@
           </label>
 
 
-          <!-- CERTIFICADO -->
 
           <label for="cuidador-certificado">
 
@@ -183,7 +158,6 @@
           </label>
 
 
-          <!-- ÓRGÃO EMISSOR -->
 
           <label for="cuidador-orgao-emissor">
 
@@ -194,7 +168,6 @@
           </label>
 
 
-          <!-- VALOR DO SERVIÇO -->
 
           <label for="cuidador-valor-servico">
 
@@ -205,7 +178,6 @@
           </label>
 
 
-          <!-- DISPONIBILIDADE -->
 
           <label for="cuidador-disponibilidade">
 
@@ -216,9 +188,6 @@
           </label>
 
 
-          <!-- =====================================
-                         BOTÕES
-                    ====================================== -->
 
           <div class="modal-actions">
 
@@ -245,23 +214,15 @@
   </main>
 
 
-  <!-- =====================================================
-         TOAST
-    ====================================================== -->
 
   <div id="toast" class="toast">
   </div>
 
 
-  <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
 
-  <!-- Primeiro o app.js -->
   <script src="js/app.js"></script>
   <script src="js/auth.js"></script>
 
-  <!-- Depois o JavaScript dos cuidadores -->
   <script src="js/cuidadores.js"></script>
 
 <nav class="mobile-bottom-nav" aria-label="Navegação rápida no celular">
