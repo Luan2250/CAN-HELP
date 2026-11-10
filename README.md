@@ -231,7 +231,7 @@ CAN-HELP/
         ├── auth.js             (sessão do usuário)
         ├── navbar.js           (cabeçalho e menu compartilhados)
         └── (um arquivo .js por tela)
-
+```
 ## Arquitetura
 
 ```
