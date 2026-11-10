@@ -51,7 +51,7 @@
 
     <!-- TEXTO EXPLICATIVO -->
     <p class="hint">
-      Informe o ID de um contrato para ver os serviços vinculados a ele.
+      Escolha um contrato para ver os serviços vinculados a ele.
       Cada par contrato + serviço é único.
     </p>
 
@@ -65,7 +65,7 @@
           Ver itens do contrato
         </label>
 
-        <input type="number" id="filtro-id-contrato" placeholder="ID do contrato">
+        <select id="filtro-id-contrato"></select>
 
         <button class="btn btn-ghost" id="btn-filtrar" type="button">
           Buscar
@@ -138,18 +138,18 @@
 
           <label>
 
-            ID do contrato
+            Contrato
 
-            <input type="number" id="item-id-contrato" placeholder="Digite o ID do contrato" required>
+            <select id="item-id-contrato" required></select>
 
           </label>
 
 
           <label>
 
-            ID do serviço
+            Serviço
 
-            <input type="number" id="item-id-servico" placeholder="Digite o ID do serviço" required>
+            <select id="item-id-servico" required></select>
 
           </label>
 
@@ -197,6 +197,7 @@
   <!-- JAVASCRIPT -->
   <script src="js/app.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/seletores.js"></script>
   <script src="js/itens-contrato.js"></script>
 
 <nav class="mobile-bottom-nav" aria-label="Navegação rápida no celular">

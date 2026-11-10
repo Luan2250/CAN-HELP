@@ -139,7 +139,8 @@
     font-weight: 600;
 }
 
-.itens-contrato-page .filtro-conteudo input {
+.itens-contrato-page .filtro-conteudo input,
+.itens-contrato-page .filtro-conteudo select {
     width: 150px;
 
     padding: 9px 11px;
@@ -159,11 +160,17 @@
     outline: none;
 }
 
-.itens-contrato-page .filtro-conteudo input:focus {
+.itens-contrato-page .filtro-conteudo input:focus,
+.itens-contrato-page .filtro-conteudo select:focus {
     border-color: #2498DD;
 
     box-shadow:
         0 0 0 3px rgba(36, 152, 221, 0.15);
+}
+
+
+.itens-contrato-page .filtro-conteudo select {
+    width: min(420px, 100%);
 }
 
 

@@ -113,7 +113,7 @@ function renderizarTarefas(lista) {
 
                     <p>
                         Agenda:
-                        ${tarefa.idAgenda ?? '—'}
+                        ${tarefa.idAgenda ? esc(rotuloAgendaPorId(tarefa.idAgenda)) : '—'}
                     </p>
 
 
@@ -560,4 +560,15 @@ function ativarFiltro(id) {
    INICIAR
 ===================================================== */
 
-carregarTarefas();
+async function iniciarTarefas() {
+
+    await carregarReferencias(['perfis', 'contratos', 'agendas']);
+
+    selectAgendas(
+        document.getElementById('tarefa-id-agenda')
+    );
+
+    carregarTarefas();
+}
+
+iniciarTarefas();
