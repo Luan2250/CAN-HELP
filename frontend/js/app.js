@@ -1,5 +1,5 @@
 
-const API_BASE = 'http://127.0.0.1:5000';
+const API_BASE = 'https://can-help-pc6l.vercel.app/';
 
 async function apiRequest(caminho, opcoes = {}) {
   const headers = { 'Content-Type': 'application/json' };
